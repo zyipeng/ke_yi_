@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/26/windos命令行设置网络/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/83184710/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -369,7 +369,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/10/26/windos命令行设置网络/" class="post-title-link" itemprop="url">windos命令行设置网络</a>
+                <a href="/2019/05/16/83184710/" class="post-title-link" itemprop="url">0型文法、1型文法、2型文法、3型文法对照</a>
               
             
           </h1>
@@ -394,24 +394,12 @@
                 
               
 
-              <time title="创建时间：2018-10-26 14:12:43" itemprop="dateCreated datePublished" datetime="2018-10-26T14:12:43+08:00">2018-10-26</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:19" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:41" itemprop="dateModified" datetime="2019-05-09T15:38:41+08:00">2019-05-09</time>
               
             
           </span>
@@ -447,19 +435,7 @@
       
         
           
-            <p>   由于最近遇到一个问题，电脑更改IP保存的时候出先保存失败的问题</p>
-<p> 原因是由于权限不够，所导致的，由于时间问题也没有去追究为什么是这样的，以后有机会再找吧！</p>
-<p> 首先通过打开dos（强调：管理员运行）</p>
-<p> 将ip和dns改成自动获取方式：</p>
-<p> 命令1：netsh interface ip set address name=”以太网” source=dhcp（作用：更改ip地址为自动获取，“以太网”是根据自己的电脑决定的）</p>
-<p> 命令2：netsh interface ip set dns name=”以太网” source=dhcp（作用：更改dns服务器地址）</p>
-<p> 将IP和dns设置手动方式：</p>
-<p> 命令1：netsh interface ip set address”以太网” static (这里输入ip）（这里输入子网掩码）（这里输入网关）auto （作用：设置静态ip）</p>
-<p> 命令2：netsh interface ip set dns”以太网” static （这里输入dns服务器地址） （作用：设置dns服务器地址）</p>
-<p> 删除ip地址和dns方式：</p>
-<p> 命令1：netsh interface ip set address name=”以太网” source=dhcp（作用：更改ip地址为自动获取，“以太网”是根据自己的电脑决定的）</p>
-<p> 命令2：netsh interface ip set dns name=”以太网” source=dhcp（作用：更改dns服务器地址）</p>
-<p> <img src="https://img-blog.csdnimg.cn/20181026141147969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_27,color_FFFFFF,t_70" alt></p>
+            <div class="htmledit_views" id="content_views"><br>            <p>最近刚刚学编译原理，把对那几种文法罗列一下！</p><br><br><p> </p><br><br><p>0型文法<img alt="\alpha \rightarrow \beta" class="mathcode" src="https://private.codecogs.com/gif.latex?%5Calpha%20%5Crightarrow%20%5Cbeta">其中<img alt="\alpha \in (V_{N}\cup V_{T})^{+}" class="mathcode" src="https://private.codecogs.com/gif.latex?%5Calpha%20%5Cin%20%28V_%7BN%7D%5Ccup%20V_%7BT%7D%29%5E%7B&amp;plus;%7D">,<img alt="\alpha" class="mathcode" src="https://private.codecogs.com/gif.latex?%5Calpha">至少含有一个非终结符，并且<img alt="\beta \in (V_{N}\cup V_{T})^{*}" class="mathcode" src="https://private.codecogs.com/gif.latex?%5Cbeta%20%5Cin%20%28V_%7BN%7D%5Ccup%20V_%7BT%7D%29%5E%7B*%7D">，<img alt="V_{N}\cup V_{T}" class="mathcode" src="https://private.codecogs.com/gif.latex?V_%7BN%7D%5Ccup%20V_%7BT%7D">表示终结符和非终结符的并集。<br><br>1型文法：又称为上下文有关文法，</p><br><br><p>（1）：式子左边可以有多个字符，但必须有一个非终结符<br><br>（2）：式子右边可以有多个字符，可以是终结符，也可以是非终结符，但必须是有限个字符<br><br>（3）：左边长度必须小于右边（<img alt="\alpha \rightarrow \varepsilon" class="mathcode" src="https://private.codecogs.com/gif.latex?%5Calpha%20%5Crightarrow%20%5Cvarepsilon">例外）<br><br>2型文法：又称为上下文无关文法，<br><br>（1）：式子左边只能有一个字符，而且必须是非终结符<br><br>（2）：式子右边可以有多个字符，可以是终结符，也可以是非终结符，8但必须是有限个字符<br><br>3型文法：又称为正规文法（正规文法又包括左线性文法和右线性文法）<br><img alt="A\rightarrow a" class="mathcode" src="https://private.codecogs.com/gif.latex?A%5Crightarrow%20a">或<img alt="A\rightarrow Ba" class="mathcode" src="https://private.codecogs.com/gif.latex?A%5Crightarrow%20Ba">或<img alt="A\rightarrow aB" class="mathcode" src="https://private.codecogs.com/gif.latex?A%5Crightarrow%20aB">（大写字母表示非终结符，小写字母表示终结符）</p><br><br><p> </p>          </div>
 
           
         
@@ -516,7 +492,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/19/牛客网-21天刷题计划-第2节 进阶-对称的二叉树/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/83064233/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -536,7 +512,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/10/19/牛客网-21天刷题计划-第2节 进阶-对称的二叉树/" class="post-title-link" itemprop="url">牛客网-21天刷题计划-第2节 进阶-对称的二叉树</a>
+                <a href="/2019/05/16/83064233/" class="post-title-link" itemprop="url">ubuntu14+vmwear联网</a>
               
             
           </h1>
@@ -561,24 +537,12 @@
                 
               
 
-              <time title="创建时间：2018-10-19 20:32:13" itemprop="dateCreated datePublished" datetime="2018-10-19T20:32:13+08:00">2018-10-19</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:20" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:42" itemprop="dateModified" datetime="2019-05-09T15:38:42+08:00">2019-05-09</time>
               
             
           </span>
@@ -614,10 +578,7 @@
       
         
           
-            <p>   使用非递归的二叉树遍历实现。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"> #include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=10000;/*</span><br><span class="line">struct TreeNode &#123;</span><br><span class="line">    int val;</span><br><span class="line">    struct TreeNode *left;</span><br><span class="line">    struct TreeNode *right;</span><br><span class="line">    TreeNode(int x) :</span><br><span class="line">            val(x), left(NULL), right(NULL) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">*/</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool isSymmetrical(TreeNode* pRoot)</span><br><span class="line">    &#123;</span><br><span class="line">        //头节点为空</span><br><span class="line">        if(pRoot==NULL)return true;</span><br><span class="line">        //定义变量</span><br><span class="line">        int top=-1;</span><br><span class="line">        TreeNode*pl[maxn],*pr[maxn],*p_l,*p_r;</span><br><span class="line">        //初始化栈</span><br><span class="line">        top++;pl[top]=pr[top]=pRoot;</span><br><span class="line">        //左右序遍历</span><br><span class="line">        while(top!=-1)</span><br><span class="line">        &#123;</span><br><span class="line">            //头节点出栈</span><br><span class="line">            p_l=pl[top];p_r=pr[top];top--;</span><br><span class="line">            //判断是否对称</span><br><span class="line">            if(p_l-&gt;val!=p_r-&gt;val)return false;</span><br><span class="line">            bool bpll=p_l-&gt;left==NULL,bplr=p_l-&gt;right==NULL;</span><br><span class="line">            bool bprl=p_r-&gt;left==NULL,bprr=p_r-&gt;right==NULL;</span><br><span class="line">            if((bpll^bprr)||(bplr^bprl))break;</span><br><span class="line">            //将子节点入栈</span><br><span class="line">            if(p_l-&gt;left!=NULL)</span><br><span class="line">            &#123;</span><br><span class="line">                top++;</span><br><span class="line">                pl[top]=p_l-&gt;left;</span><br><span class="line">                pr[top]=p_r-&gt;right;</span><br><span class="line">            &#125;</span><br><span class="line">            if(p_l-&gt;right!=NULL)</span><br><span class="line">            &#123;</span><br><span class="line">                top++;</span><br><span class="line">                pl[top]=p_l-&gt;right;</span><br><span class="line">                pr[top]=p_r-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return top==-1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p> 经过数十次的提交最后终于过了<br> 第一次找出没有考虑这个if(pRoot==NULL)return true;<br> 提交多次，会想以前写过的遍历算法，递归和非递归都是一样的思路，没有什么漏洞<br> 怀疑栈定义的问题，将maxn改为1000没有用，又改成1e6还是没有用<br> 看了一眼老师和其它同学的提交记录都是使用递归的方法，开始就是怀疑栈溢出，但是使用了数组栈还是溢出应该不可能<br> 整理了一下思路，有看是整理了一下代码<br> 第二次找出判断出错<br> bool bpll=p_l-&gt;left==NULL,bplr=p_l-&gt;right==NULL;<br> bool bprl=p_r-&gt;left==NULL,bprr=p_r-&gt;right==NULL;<br> if((bpll^bprr)||(bplr^bprl))break;<br> 还是不行，继续往下找，发现入栈时，判断是这样写的if(p_l!=NULL)and if(p_l!=NULL)<br> 改了过来，过了10%<br> 开始肯定了自己的逻辑，找了一下代码，没错<br> 第三次找出题意的对称不仅仅是形状上的对称，数值上也要对称相等，加上了if(p_l-&gt;val!=p_r-&gt;val)return false;<br> 然后就过了。</p>
-<p> 思路：形状上的对称只要，同时先序遍历后序遍历，如果同时存在相同的子节点就对称，数值就在判断子节点的时候，判断一下数值就行。</p>
+            <div class="htmledit_views" id="content_views"><br>            <p>1.在虚拟机中添加vmnet8，设置为nat模式<br><br>点击虚拟机菜单栏的编辑–&gt;虚拟网络编辑器：弹出窗口如下</p><br><br><p> <img alt class="has" height="174" src="https://img-blog.csdn.net/20181015202545155?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="602"><img alt class="has" height="187" src="https://img-blog.csdn.net/20181015202619944?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="503"><img alt class="has" height="198" src="https://img-blog.csdn.net/20181015202705874?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="466"></p><br><br><p><img alt class="has" height="433" src="https://img-blog.csdn.net/20181015202820729?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="487"></p><br><br><p>2. 打开网络共享中心–&gt;更改适配器设置：可以看到有一个vmnet8</p><br><br><p>然后点击物理机联网的适配器–&gt;共享–&gt;勾选“允许其他网络用户。。。。”–&gt;选择vmnet8–&gt;确认保存</p><br><br><p><img alt class="has" height="382" src="https://img-blog.csdn.net/20181015203359579?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="856"></p><br><br><p> 3.设置ubuntu14虚拟计算机网络属性，选择自定义为vnet8，确认保存，进入虚拟计算机就可以了。</p><br><br><p><img alt class="has" height="317" src="https://img-blog.csdn.net/20181015203828806?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="948"></p><br><br><p> </p>          </div>
 
           
         
@@ -674,7 +635,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/19/0型文法、1型文法、2型文法、3型文法对照/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/83063776/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -694,7 +655,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/10/19/0型文法、1型文法、2型文法、3型文法对照/" class="post-title-link" itemprop="url">0型文法、1型文法、2型文法、3型文法对照</a>
+                <a href="/2019/05/16/83063776/" class="post-title-link" itemprop="url">实验室网线联网经验</a>
               
             
           </h1>
@@ -719,24 +680,12 @@
                 
               
 
-              <time title="创建时间：2018-10-19 17:13:30" itemprop="dateCreated datePublished" datetime="2018-10-19T17:13:30+08:00">2018-10-19</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:20" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:43" itemprop="dateModified" datetime="2019-05-09T15:38:43+08:00">2019-05-09</time>
               
             
           </span>
@@ -772,9 +721,7 @@
       
         
           
-            <p>   最近刚刚学编译原理，把对那几种文法罗列一下！</p>
-<p> 0型文法<img src="https://private.codecogs.com/gif.latex?%5Calpha%20%5Crightarrow%20%5Cbeta" alt="\alpha \rightarrow \beta">其中<img src="https://private.codecogs.com/gif.latex?%5Calpha%20%5Cin%20%28V_%7BN%7D%5Ccup%20V_%7BT%7D%29%5E%7B&amp;plus;%7D" alt="\alpha \in (V_{N}\cup V_{T})^{+}">,<img src="https://private.codecogs.com/gif.latex?%5Calpha" alt="\alpha">至少含有一个非终结符，并且<img src="https://private.codecogs.com/gif.latex?%5Cbeta%20%5Cin%20%28V_%7BN%7D%5Ccup%20V_%7BT%7D%29%5E%7B*%7D" alt="\beta \in (V_{N}\cup V_{T})^{*}">，<img src="https://private.codecogs.com/gif.latex?V_%7BN%7D%5Ccup%20V_%7BT%7D" alt="V_{N}\cup V_{T}">表示终结符和非终结符的并集。<br> 1型文法：又称为上下文有关文法，</p>
-<p> （1）：式子左边可以有多个字符，但必须有一个非终结符<br> （2）：式子右边可以有多个字符，可以是终结符，也可以是非终结符，但必须是有限个字符<br> （3）：左边长度必须小于右边（<img src="https://private.codecogs.com/gif.latex?%5Calpha%20%5Crightarrow%20%5Cvarepsilon" alt="\alpha \rightarrow \varepsilon">例外）<br> 2型文法：又称为上下文无关文法，<br> （1）：式子左边只能有一个字符，而且必须是非终结符<br> （2）：式子右边可以有多个字符，可以是终结符，也可以是非终结符，8但必须是有限个字符<br> 3型文法：又称为正规文法（正规文法又包括左线性文法和右线性文法）<br><img src="https://private.codecogs.com/gif.latex?A%5Crightarrow%20a" alt="A\rightarrow a">或<img src="https://private.codecogs.com/gif.latex?A%5Crightarrow%20Ba" alt="A\rightarrow Ba">或<img src="https://private.codecogs.com/gif.latex?A%5Crightarrow%20aB" alt="A\rightarrow aB">（大写字母表示非终结符，小写字母表示终结符）</p>
+            <div class="htmledit_views" id="content_views"><br>            <p> 由于学校实验室是局域网，所给的ip都是分配好了的，需要设置固定ip地址才能上网</p><br><br><p> </p><br><br><ol><li>打开文件管理（按win+E）</li><br>    <li>在搜索框输入（控制面板\网络和 Internet\网络和共享中心）括号中的内容，enter搜索（打开网络共享中心）<img alt class="has" height="179" src="https://img-blog.csdn.net/20181015195745643?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="528"></li><br>    <li>点击以太网<img alt class="has" height="204" src="https://img-blog.csdn.net/20181015195745660?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="299"></li><br>    <li>点击属性</li><br>    <li>双击击ipv4，如下<img alt class="has" height="241" src="https://img-blog.csdn.net/20181015195745703?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="408"></li><br>    <li>进入后就可以选择固定ip，输入IP相关信息<img alt class="has" height="346" src="https://img-blog.csdn.net/20181015195745715?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="283"></li><br>    <li>最后确认保存。</li><br></ol>          </div>
 
           
         
@@ -831,7 +778,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/15/ubuntu14+vmwear联网/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81981012/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -851,7 +798,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/10/15/ubuntu14+vmwear联网/" class="post-title-link" itemprop="url">ubuntu14+vmwear联网</a>
+                <a href="/2019/05/16/81981012/" class="post-title-link" itemprop="url">fzu  Problem 2169 shadow</a>
               
             
           </h1>
@@ -876,24 +823,12 @@
                 
               
 
-              <time title="创建时间：2018-10-15 20:38:48" itemprop="dateCreated datePublished" datetime="2018-10-15T20:38:48+08:00">2018-10-15</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:21" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:44" itemprop="dateModified" datetime="2019-05-09T15:38:44+08:00">2019-05-09</time>
               
             
           </span>
@@ -929,17 +864,7 @@
       
         
           
-            <p>   1.在虚拟机中添加vmnet8，设置为nat模式<br> 点击虚拟机菜单栏的编辑–&gt;虚拟网络编辑器：弹出窗口如下</p>
-<p> <img src="https://img-blog.csdn.net/20181015202545155?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt><img src="https://img-blog.csdn.net/20181015202619944?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt><img src="https://img-blog.csdn.net/20181015202705874?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p> <img src="https://img-blog.csdn.net/20181015202820729?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<ol start="2">
-<li><p>打开网络共享中心–&gt;更改适配器设置：可以看到有一个vmnet8</p>
-<p>然后点击物理机联网的适配器–&gt;共享–&gt;勾选“允许其他网络用户。。。。”–&gt;选择vmnet8–&gt;确认保存</p>
-<p><img src="https://img-blog.csdn.net/20181015203359579?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>3.设置ubuntu14虚拟计算机网络属性，选择自定义为vnet8，确认保存，进入虚拟计算机就可以了。</p>
-<p><img src="https://img-blog.csdn.net/20181015203828806?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-</li>
-</ol>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>Problem 2169 shadow</strong></p><br><br><h3>Accept: 425    Submit: 1666<br><br>Time Limit: 1000 mSec    Memory Limit : 32768 KB</h3><br><br><h2><img alt class="has" src="http://acm.fzu.edu.cn/image/prodesc.gif"> Problem Description</h2><br><br><p>YL是shadow国的国王,shadow国有N个城市。为了节省开支,shadow国只有N-1条道路,这N-1条道路使得N个城市连通。某一年,shadow国发生了叛乱,叛军占领了多个城市,王都岌岌可危。王都为编号为1的城市，除了王都外有K个城市有YL的军队。现在这K支军队要向王都进军，并且消灭沿途经过的城市中的叛军。现给出N个城市的道路情况以及城市的叛军数量，问总共需要消灭多少叛军？</p><br><br><h2><img alt class="has" src="http://acm.fzu.edu.cn/image/prodesc.gif"> Input</h2><br><br><p>第一行输入两个整数N，K，接下来输入N(1&lt;=N&lt;=100000)个整数Ai(0&lt;=Ai&lt;=10000)，表示第i个城市的叛军数量。接下来输入K个大于等于1且小于等于N的整数，表示有军队的城市的编号。数据保证王都以及有军队的城市没有叛军。接下来输入N-1行，每行两个整数u、v，表示连接u和v的一条道路。每支军队只能沿着道路走，并且是其所在城市与王都之间的最短路线走。</p><br><br><h2><img alt class="has" src="http://acm.fzu.edu.cn/image/prodesc.gif"> Output</h2><br><br><p>输出一行一个整数表示消灭的叛军数量。</p><br><br><h2><img alt class="has" src="http://acm.fzu.edu.cn/image/prodesc.gif"> Sample Input</h2><br><br><p>4 2 0 3 0 0 3 4 1 2 2 3 2 4</p><br><br><h2><img alt class="has" src="http://acm.fzu.edu.cn/image/prodesc.gif"> Sample Output</h2><br><br><p>3</p><br><br><p> 虽然数据很弱，可以很简单的代码就过，但是还是不要错过这个简单的图算法题目。</p><br><br><p>广度优先搜索，从1开始搜遇到一个有友军的城市就回溯，将路径上的所有敌军消灭，一个队列就可以解决，但是需要制作很多标记，敌军标记，友军标记，访问标记，然后队列就要有上一个城市标记，图因为太大使用邻接表存储，ylarmy.a[i]为0表示没有访问过，1表示访问过，2表示友军所在城市，为3表示皇城。ylarmy.b[i]表示回溯过的城市，也就是走过的路，这个标记是防止走重复路的，因为每一次回溯都回溯到皇城的话就会走太多的重复路，差不多就是dp中剪枝的意思。代码如下：</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;cstdio&gt;<br>#include&lt;cstdlib&gt;<br>#include&lt;cstring&gt;<br>#include&lt;iostream&gt;<br>using namespace std;<br>const int maxn=1e5+5;<br>struct Enode{int endpoint;Enode <em>nextEdg;};//边终点标记<br>struct Vnode{int reble_army;Enode </em>firstedg;};//叛军//第一条边<br>struct Graph{Vnode vnode[maxn];int n;}g;<br>struct{int a[maxn];bool b[maxn];}ylarmy;<br>struct queue{int pre,d;};<br>void clearg(int n){<br>    g.n=n;<br>    for(int i=0;i&lt;=n;i++)<br>        g.vnode[i].firstedg=NULL;<br>}<br>void insert(int start,int end){<br>    Enode <em>p=(Enode</em>)malloc(sizeof(Enode));<br>    p-&gt;endpoint=end;<br>    p-&gt;nextEdg=g.vnode[start].firstedg;<br>    g.vnode[start].firstedg=p;<br>}<br>int Bfs(){<br>    int ans=0,x;Enode *e;<br>    queue q[maxn];int front=-1,rear=-1;<br>    rear++;q[rear].pre=-1;q[rear].d=1;<br>    ylarmy.a[1]=3;ylarmy.b[1]=true;<br>    while(front!=rear){<br>        e=g.vnode[q[++front].d].firstedg;<br>        while(e!=NULL{<br>            if(ylarmy.a[e-&gt;endpoint]==2){<br>                ans+=g.vnode[e-&gt;endpoint].reble_army;<br>                int d=q[front].d;<br>                int pre=q[front].pre;<br>                while(!ylarmy.b[d]){<br>                    ans+=g.vnode[d].reble_army;<br>                    g.vnode[d].reble_army=0;<br>                    ylarmy.b[d]=true;<br>                    d=q[pre].d;<br>                    pre=q[pre].pre;<br>                }<br>                ylarmy.a[e-&gt;endpoint]=0;<br>            }<br>            if(ylarmy.a[e-&gt;endpoint]==0){<br>                ylarmy.a[e-&gt;endpoint]=1;///表示已经走过的点<br>                q[++rear].pre=front;<br>                q[rear].d=e-&gt;endpoint;<br>            }<br>            e=e-&gt;nextEdg;<br>        }<br>    }<br>    return ans;<br>}<br>int main()<br>{<br>    int n,k;<br>    int i,p1,p2,d;<br>    while(~scanf(“%d%d”,&amp;n,&amp;k)){<br>        memset(ylarmy.a,0,sizeof(ylarmy.a));<br>        memset(ylarmy.b,0,sizeof(ylarmy.b));<br>        clearg(n);<br>        for(i=1;i&lt;=n;i++)<br>            scanf(“%d”,&amp;g.vnode[i].reble_army);<br>        for(i=0;i&lt;k;i++){<br>            scanf(“%d”,&amp;d);<br>            ylarmy.a[d]=2;///表示友军<br>        }<br>        i=n-1;<br>        while(i–){<br>            scanf(“%d%d”,&amp;p1,&amp;p2);<br>            insert(p1,p2);<br>            insert(p2,p1);<br>        }<br>        printf(“%d\n”,Bfs());<br>    }<br>    return 0;<br>}<br></code></pre><br><br><p> 有点长，但是思路很清晰，容易理解。</p><br><br><p> </p>          </div>
 
           
         
@@ -996,7 +921,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/15/实验室网线联网经验/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81908835/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1016,7 +941,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/10/15/实验室网线联网经验/" class="post-title-link" itemprop="url">实验室网线联网经验</a>
+                <a href="/2019/05/16/81908835/" class="post-title-link" itemprop="url">while与string::length()使用的错误</a>
               
             
           </h1>
@@ -1041,24 +966,12 @@
                 
               
 
-              <time title="创建时间：2018-10-15 20:10:45" itemprop="dateCreated datePublished" datetime="2018-10-15T20:10:45+08:00">2018-10-15</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:22" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:45" itemprop="dateModified" datetime="2019-05-09T15:38:45+08:00">2019-05-09</time>
               
             
           </span>
@@ -1094,16 +1007,7 @@
       
         
           
-            <p>   由于学校实验室是局域网，所给的ip都是分配好了的，需要设置固定ip地址才能上网</p>
-<ol>
-<li>打开文件管理（按win+E） </li>
-<li>在搜索框输入（控制面板\网络和 Internet\网络和共享中心）括号中的内容，enter搜索（打开网络共享中心）<img src="https://img-blog.csdn.net/20181015195745643?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt> </li>
-<li>点击以太网<img src="https://img-blog.csdn.net/20181015195745660?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt> </li>
-<li>点击属性 </li>
-<li>双击击ipv4，如下<img src="https://img-blog.csdn.net/20181015195745703?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt> </li>
-<li>进入后就可以选择固定ip，输入IP相关信息<img src="https://img-blog.csdn.net/20181015195745715?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt> </li>
-<li>最后确认保存。    </li>
-</ol>
+            <div class="htmledit_views" id="content_views"><br>            <p>在一次做题中，发现while(j&lt;str.length())逻辑不正确的情况，比如当j=0并且str.length()==10的或者其它数，算数上j是要小于str.length()的，但是当用c/c++实现这条代码是cout&lt;&lt;j&lt;str.length()&lt;&lt;endl,输出的是0。很奇怪。</p><br><br><p>当时我做的是nyoj5Binary String Matching 使用的是一个自己改的kmp模板；在模板实现的时候遇到的这个问题</p><br><br><p>正确代码</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>#include&lt;string&gt;<br>using namespace std;<br>const int MaxSize=1e5;<br>void GetNextval(string t,int nextval[])<br>{<br>    int j=0,k=-1;<br>    nextval[0]=-1;<br>    while(j&lt;t.length())<br>    {<br>        if(k==-1||t[j]==t[k])<br>        {<br>            j++;k++;<br>            if(t[j]!=t[k])<br>                nextval[j]=k;<br>            else<br>                nextval[j]=nextval[k];<br>        }<br>        else<br>            k=nextval[k];<br>    }<br>}<br>int KMPIndex(string s,string t)<br>{<br>    int nextval[MaxSize],i=0,j=0;<br>    GetNextval(t,nextval);<br>    int result=0;<br>    int sl=s.length(),tl=t.length();<br>    while(i&lt;sl){<br>    //cout&lt;&lt;s.length()&lt;&lt;endl&lt;&lt;t.length()&lt;&lt;endl;<br>    //cout&lt;&lt;i&lt;&lt;endl&lt;&lt;j&lt;&lt;endl;<br>    //cout&lt;&lt;(i&lt;s.length()&amp;&amp;j&lt;t.length())&lt;&lt;endl;<br>    while(i&lt;sl&amp;&amp;j&lt;tl)///((i&lt;s.length())&amp;&amp;(j&lt;t.length()))//<br>    {<br>        if(j==-1||s[i]==t[j])<br>        {<br>            i++;<br>            j++;<br>        }<br>        else<br>            j=nextval[j];<br>    }<br>    if(j==t.length())<br>    {<br>        result++;<br>        i=i-j+1;<br>        j=0;<br>    }<br>    }<br>    return result;<br>}<br>int main()<br>{<br><br>    //freopen(“C:\Users\zhou\Desktop\in.txt”,”r”,stdin);<br>    //freopen(“C:\Users\zhou\Desktop\out.txt”,”w”,stdout);<br>    ios::sync_with_stdio(false);<br>    string s,t;<br>    int n;<br>    cin&gt;&gt;n;<br>    while(n–)<br>    {<br>        t.clear();s.clear();<br>        cin&gt;&gt;t&gt;&gt;s;<br>        //cout&lt;&lt;t&lt;&lt;endl&lt;&lt;s&lt;&lt;endl;<br>        int r=KMPIndex(s,t);<br>        cout&lt;&lt;r&lt;&lt;endl;<br>    }<br>    return 0;<br>}<br></code></pre><br><br><p> 错误代码如下：（错误代码比正确代码只有kmp函数的while（）中有区别）</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>#include&lt;string&gt;<br>using namespace std;<br>const int MaxSize=1e5;<br>void GetNextval(string t,int nextval[])<br>{<br>    int j=0,k=-1;<br>    nextval[0]=-1;<br>    while(j&lt;t.length())<br>    {<br>        if(k==-1||t[j]==t[k])<br>        {<br>            j++;k++;<br>            if(t[j]!=t[k])<br>                nextval[j]=k;<br>            else<br>                nextval[j]=nextval[k];<br>        }<br>        else<br>            k=nextval[k];<br>    }<br>}<br>int KMPIndex(string s,string t)<br>{<br>    int nextval[MaxSize],i=0,j=0;<br>    GetNextval(t,nextval);<br>    int result=0;<br>    int sl=s.length(),tl=t.length();<br>    while(i&lt;sl){<br>    //cout&lt;&lt;s.length()&lt;&lt;endl&lt;&lt;t.length()&lt;&lt;endl;<br>    //cout&lt;&lt;i&lt;&lt;endl&lt;&lt;j&lt;&lt;endl;<br>    //cout&lt;&lt;(i&lt;s.length()&amp;&amp;j&lt;t.length())&lt;&lt;endl;<br>    while((i&lt;s.length())&amp;&amp;(j&lt;t.length()))//(i&lt;sl&amp;&amp;j&lt;tl)///<br>    {<br>        if(j==-1||s[i]==t[j])<br>        {<br>            i++;<br>            j++;<br>        }<br>        else<br>            j=nextval[j];<br>    }<br>    if(j==t.length())<br>    {<br>        result++;<br>        i=i-j+1;<br>        j=0;<br>    }<br>    }<br>    return result;<br>}<br>int main()<br>{<br><br>    //freopen(“C:\Users\zhou\Desktop\in.txt”,”r”,stdin);<br>    //freopen(“C:\Users\zhou\Desktop\out.txt”,”w”,stdout);<br>    ios::sync_with_stdio(false);<br>    string s,t;<br>    int n;<br>    cin&gt;&gt;n;<br>    while(n–)<br>    {<br>        t.clear();s.clear();<br>        cin&gt;&gt;t&gt;&gt;s;<br>        //cout&lt;&lt;t&lt;&lt;endl&lt;&lt;s&lt;&lt;endl;<br>        int r=KMPIndex(s,t);<br>        cout&lt;&lt;r&lt;&lt;endl;<br>    }<br>    return 0;<br>}<br></code></pre><br><br><p>解释原因，来自百度知道<a href="https://zhidao.baidu.com/usercenter?uid=87fe4069236f25705e793901" rel="noopener" target="_blank">missgya</a>的<a href="https://zhidao.baidu.com/question/537621390.html" rel="noopener" target="_blank">回答</a></p><br><br><p>因为string的length函数，<a href="https://www.baidu.com/s?wd=%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" rel="noopener" target="_blank">返回类型</a><a href="https://www.baidu.com/s?wd=size_type&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" rel="noopener" target="_blank">size_type</a>是个无符号类型：</p><br><br><p><a href="https://www.baidu.com/s?wd=size_type&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" rel="noopener" target="_blank">size_type</a> length( ) const;</p><br><br><p><a href="https://www.baidu.com/s?wd=size_type&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" rel="noopener" target="_blank">size_type</a>   An unsigned integral type for the number of elements in a string</p><br><br><p> </p><br><br><p>而根据C语言的类型自动转换规则，当signed和unsigned作运算时，signed会自动转换为unsigned。</p><br><br><p>例如：</p><br><br><pre class="has"><br><code class="language-cpp">void main()<br>{<br>    int a = -1;<br>    unsigned int b = 10;<br>    if (a &lt; b)<br>    {<br>        cout&lt;&lt; “right\n”;<br>    }<br>    else<br>    {<br>        cout&lt;&lt; “wrong\n”;<br>    }<br>}</code></pre><br><br><p><br><br>程序输出结果是wrong。因为在把a和b做比较时，会自动把a变成一个unsigned。</p><br><br><p>同样的原因，当你用：</p><br><br><p>while(i&lt;test.length()&amp;&amp;j&lt;par.length())时，length函数返回的是个unsigned，假如在判断过程中，j变成了-1，j &lt; par.length()这个条件将不会再成立，因此循环退出。</p><br><br><p>为什么while(i&lt;length1&amp;&amp;j&lt;length)   正确呢，因为在此之前你定义的length1和length都是int，已经把length()函数返回的值变成signed了。</p><br><br><p>所以，你可以这么判断：</p><br><br><p>while(i&lt;(signed int)test.length()&amp;&amp;j&lt; (signed int)par.length())</p>          </div>
 
           
         
@@ -1160,7 +1064,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/23/fzu  Problem 2169 shadow/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81872158/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1180,7 +1084,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/08/23/fzu  Problem 2169 shadow/" class="post-title-link" itemprop="url">fzu  Problem 2169 shadow</a>
+                <a href="/2019/05/16/81872158/" class="post-title-link" itemprop="url">防线（Defense Lines,ACM/ICPC CERC 2010 UVa1471)</a>
               
             
           </h1>
@@ -1205,24 +1109,12 @@
                 
               
 
-              <time title="创建时间：2018-08-23 15:09:20" itemprop="dateCreated datePublished" datetime="2018-08-23T15:09:20+08:00">2018-08-23</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:23" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:46" itemprop="dateModified" datetime="2019-05-09T15:38:46+08:00">2019-05-09</time>
               
             
           </span>
@@ -1258,17 +1150,7 @@
       
         
           
-            <p>   <strong>Problem 2169 shadow</strong></p>
-<h3 id="Accept-425-Submit-1666"><a href="#Accept-425-Submit-1666" class="headerlink" title="Accept: 425 Submit: 1666"></a>Accept: 425 Submit: 1666</h3><p> Time Limit: 1000 mSec Memory Limit : 32768 KB</p>
-<h2 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title=" Problem Description"></a><img src="http://acm.fzu.edu.cn/image/prodesc.gif" alt> Problem Description</h2><p> YL是shadow国的国王,shadow国有N个城市。为了节省开支,shadow国只有N-1条道路,这N-1条道路使得N个城市连通。某一年,shadow国发生了叛乱,叛军占领了多个城市,王都岌岌可危。王都为编号为1的城市，除了王都外有K个城市有YL的军队。现在这K支军队要向王都进军，并且消灭沿途经过的城市中的叛军。现给出N个城市的道路情况以及城市的叛军数量，问总共需要消灭多少叛军？</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title=" Input"></a><img src="http://acm.fzu.edu.cn/image/prodesc.gif" alt> Input</h2><p> 第一行输入两个整数N，K，接下来输入N(1&lt;=N&lt;=100000)个整数Ai(0&lt;=Ai&lt;=10000)，表示第i个城市的叛军数量。接下来输入K个大于等于1且小于等于N的整数，表示有军队的城市的编号。数据保证王都以及有军队的城市没有叛军。接下来输入N-1行，每行两个整数u、v，表示连接u和v的一条道路。每支军队只能沿着道路走，并且是其所在城市与王都之间的最短路线走。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title=" Output"></a><img src="http://acm.fzu.edu.cn/image/prodesc.gif" alt> Output</h2><p> 输出一行一个整数表示消灭的叛军数量。</p>
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title=" Sample Input"></a><img src="http://acm.fzu.edu.cn/image/prodesc.gif" alt> Sample Input</h2><p> 4 2 0 3 0 0 3 4 1 2 2 3 2 4</p>
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title=" Sample Output"></a><img src="http://acm.fzu.edu.cn/image/prodesc.gif" alt> Sample Output</h2><p> 3</p>
-<p> 虽然数据很弱，可以很简单的代码就过，但是还是不要错过这个简单的图算法题目。</p>
-<p> 广度优先搜索，从1开始搜遇到一个有友军的城市就回溯，将路径上的所有敌军消灭，一个队列就可以解决，但是需要制作很多标记，敌军标记，友军标记，访问标记，然后队列就要有上一个城市标记，图因为太大使用邻接表存储，ylarmy.a[i]为0表示没有访问过，1表示访问过，2表示友军所在城市，为3表示皇城。ylarmy.b[i]表示回溯过的城市，也就是走过的路，这个标记是防止走重复路的，因为每一次回溯都回溯到皇城的话就会走太多的重复路，差不多就是dp中剪枝的意思。代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"> #include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=1e5+5;</span><br><span class="line">struct Enode&#123;int endpoint;Enode *nextEdg;&#125;;//边终点标记</span><br><span class="line">struct Vnode&#123;int reble_army;Enode *firstedg;&#125;;//叛军//第一条边</span><br><span class="line">struct Graph&#123;Vnode vnode[maxn];int n;&#125;g;</span><br><span class="line">struct&#123;int a[maxn];bool b[maxn];&#125;ylarmy;</span><br><span class="line">struct queue&#123;int pre,d;&#125;;</span><br><span class="line">void clearg(int n)&#123;</span><br><span class="line">    g.n=n;</span><br><span class="line">    for(int i=0;i&lt;=n;i++)</span><br><span class="line">        g.vnode[i].firstedg=NULL;</span><br><span class="line">&#125;</span><br><span class="line">void insert(int start,int end)&#123;</span><br><span class="line">    Enode *p=(Enode*)malloc(sizeof(Enode));</span><br><span class="line">    p-&gt;endpoint=end;</span><br><span class="line">    p-&gt;nextEdg=g.vnode[start].firstedg;</span><br><span class="line">    g.vnode[start].firstedg=p;</span><br><span class="line">&#125;</span><br><span class="line">int Bfs()&#123;</span><br><span class="line">    int ans=0,x;Enode *e;</span><br><span class="line">    queue q[maxn];int front=-1,rear=-1;</span><br><span class="line">    rear++;q[rear].pre=-1;q[rear].d=1;</span><br><span class="line">    ylarmy.a[1]=3;ylarmy.b[1]=true;</span><br><span class="line">    while(front!=rear)&#123;</span><br><span class="line">        e=g.vnode[q[++front].d].firstedg;</span><br><span class="line">        while(e!=NULL&#123;</span><br><span class="line">            if(ylarmy.a[e-&gt;endpoint]==2)&#123;</span><br><span class="line">                ans+=g.vnode[e-&gt;endpoint].reble_army;</span><br><span class="line">                int d=q[front].d;</span><br><span class="line">                int pre=q[front].pre;</span><br><span class="line">                while(!ylarmy.b[d])&#123;</span><br><span class="line">                    ans+=g.vnode[d].reble_army;</span><br><span class="line">                    g.vnode[d].reble_army=0;</span><br><span class="line">                    ylarmy.b[d]=true;</span><br><span class="line">                    d=q[pre].d;</span><br><span class="line">                    pre=q[pre].pre;</span><br><span class="line">                &#125;</span><br><span class="line">                ylarmy.a[e-&gt;endpoint]=0;</span><br><span class="line">            &#125;</span><br><span class="line">            if(ylarmy.a[e-&gt;endpoint]==0)&#123;</span><br><span class="line">                ylarmy.a[e-&gt;endpoint]=1;///表示已经走过的点</span><br><span class="line">                q[++rear].pre=front;</span><br><span class="line">                q[rear].d=e-&gt;endpoint;</span><br><span class="line">            &#125;</span><br><span class="line">            e=e-&gt;nextEdg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,k;</span><br><span class="line">    int i,p1,p2,d;</span><br><span class="line">    while(~scanf(&quot;%d%d&quot;,&amp;n,&amp;k))&#123;</span><br><span class="line">        memset(ylarmy.a,0,sizeof(ylarmy.a));</span><br><span class="line">        memset(ylarmy.b,0,sizeof(ylarmy.b));</span><br><span class="line">        clearg(n);</span><br><span class="line">        for(i=1;i&lt;=n;i++)</span><br><span class="line">            scanf(&quot;%d&quot;,&amp;g.vnode[i].reble_army);</span><br><span class="line">        for(i=0;i&lt;k;i++)&#123;</span><br><span class="line">            scanf(&quot;%d&quot;,&amp;d);</span><br><span class="line">            ylarmy.a[d]=2;///表示友军</span><br><span class="line">        &#125;</span><br><span class="line">        i=n-1;</span><br><span class="line">        while(i--)&#123;</span><br><span class="line">            scanf(&quot;%d%d&quot;,&amp;p1,&amp;p2);</span><br><span class="line">            insert(p1,p2);</span><br><span class="line">            insert(p2,p1);</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;%d\n&quot;,Bfs());</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 有点长，但是思路很清晰，容易理解。</p>
+            <div class="htmledit_views" id="content_views"><br>            <p>题目大意：</p><br><br><p>给一个长度为n（n&lt;=200000)的序列，你的任务时删除一个连续子序列，使得剩下的序列中有一个长度最大的连续增子序列。</p><br><br><p>预处理得到g[i]（表示a[i]结尾的最长连续增序列）f[i]（表示a[i]开头的最长连续增序列），用set存a[i],g[i],然后通过f[i]找最优的a[j],g[j]。</p><br><br><pre class="has"><br><code class="language-cpp">// UVa1471 Defense Lines<br>// Rujia Liu<br>// Algorithm 1: use STL set to maintain the candidates.<br>// This is a little bit more intuitive, but less efficient (than algorithm 2)<br>#include&lt;cstdio&gt;<br>#include&lt;set&gt;<br>#include&lt;cassert&gt;<br>using namespace std;<br><br>const int maxn = 200000 + 5;<br>int n, a[maxn], f[maxn], g[maxn];<br><br>struct Candidate {<br>  int a, g;<br>  Candidate(int a, int g):a(a),g(g) {}<br>  bool operator &lt; (const Candidate&amp; rhs) const {<br>    return a &lt; rhs.a;<br>  }<br>};<br><br>set&lt;Candidate&gt; s;<br><br>int main() {<br>  int T;<br>  scanf(“%d”, &amp;T);<br>  while(T–) {<br>    scanf(“%d”, &amp;n);<br>    for(int i = 0; i &lt; n; i++)<br>      scanf(“%d”, &amp;a[i]);<br>    if(n == 1) { printf(“1\n”); continue; }<br><br>    g[0] = 1;<br>    for(int i = 1; i &lt; n; i++)///得到g<br>      if(a[i-1] &lt; a[i]) g[i] = g[i-1] + 1;<br>      else g[i] = 1;<br><br>    f[n-1] = 1;<br>    for(int i = n-2; i &gt;= 0; i–)///得到f<br>      if(a[i] &lt; a[i+1]) f[i] = f[i+1] + 1;<br>      else f[i] = 1;<br><br>    s.clear();<br>    s.insert(Candidate(a[0], g[0]));//初始化s<br>    int ans = 1;//开始时字串的长度为1<br>    for(int i = 1; i &lt; n; i++) {<br>      Candidate c(a[i], g[i]);<br><br>      // 找到s中第一个第一个大于或等于c.a的位置<br><br>      set&lt;Candidate&gt;::iterator it = s.lower_bound(c);<br>      bool keep = true;<br>      //用于标记c是否满足进入后面考虑情况的条件<br>      //存在小于它的数时，如果c.g更小，那么就没有必要考虑，也就不满足条件<br><br>      if(it != s.begin()) {<br>        Candidate last = *(–it); //找到离它最近的一个小于它的数<br>        int len = f[i] + last.g;<br>        ans = max(ans, len);<br>        if(c.g &lt;= last.g) keep = false;<br>      }<br><br>      if(keep) {<br>        s.erase(c); // 删除原来那个c.a的那个<br>        s.insert(c);//插入新的c<br>        it = s.find(c);<br>        it++;<br>        //在c位置后面的数种删除不满足条件的数据<br>        while(it != s.end() &amp;&amp; it-&gt;a &gt; c.a &amp;&amp; it-&gt;g &lt;= c.g) s.erase(it++);<br>      }<br>    }<br>    printf(“%d\n”, ans);<br>  }<br>  return 0;<br>}<br><br>//代码来自<a href="https://github.com/aoapc-book/aoapc-bac2nd" target="_blank" rel="noopener">https://github.com/aoapc-book/aoapc-bac2nd</a></code></pre><br><br><p> </p>          </div>
 
           
         
@@ -1325,7 +1207,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/紫书中所说的代码仓库链接/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81870192/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1345,7 +1227,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/08/20/紫书中所说的代码仓库链接/" class="post-title-link" itemprop="url">紫书中所说的代码仓库链接</a>
+                <a href="/2019/05/16/81870192/" class="post-title-link" itemprop="url">紫书中所说的代码仓库链接</a>
               
             
           </h1>
@@ -1370,24 +1252,12 @@
                 
               
 
-              <time title="创建时间：2018-08-20 14:11:06" itemprop="dateCreated datePublished" datetime="2018-08-20T14:11:06+08:00">2018-08-20</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:24" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:39:02" itemprop="dateModified" datetime="2019-05-09T15:39:02+08:00">2019-05-09</time>
               
             
           </span>
@@ -1423,7 +1293,7 @@
       
         
           
-            <p>   <a href="https://github.com/aoapc-book/aoapc-bac2nd" target="_blank" rel="noopener">git</a></p>
+            <div class="htmledit_views" id="content_views"><br>            <p><a href="https://github.com/aoapc-book/aoapc-bac2nd" rel="noopener" target="_blank">git</a></p>          </div>
 
           
         
@@ -1480,7 +1350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/ZOJ Problem Set - 4020/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81869769/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1500,7 +1370,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/08/18/ZOJ Problem Set - 4020/" class="post-title-link" itemprop="url">ZOJ Problem Set - 4020</a>
+                <a href="/2019/05/16/81869769/" class="post-title-link" itemprop="url">poj2823----sliding window</a>
               
             
           </h1>
@@ -1525,24 +1395,12 @@
                 
               
 
-              <time title="创建时间：2018-08-18 14:44:51" itemprop="dateCreated datePublished" datetime="2018-08-18T14:44:51+08:00">2018-08-18</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:25" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:39:05" itemprop="dateModified" datetime="2019-05-09T15:39:05+08:00">2019-05-09</time>
               
             
           </span>
@@ -1578,8 +1436,7 @@
       
         
           
-            <p>   <a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=4020" target="_blank" rel="noopener">ZOJ Problem Set - 4020</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"> #include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=1e5+5;</span><br><span class="line">vector&lt;int&gt; mg[maxn];</span><br><span class="line">vector&lt;int&gt; t[maxn];</span><br><span class="line">int n,m;</span><br><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">    int x,y;</span><br><span class="line">    int step;</span><br><span class="line">&#125;;</span><br><span class="line">bool mgph(int xi,int yi,int xe,int ye)</span><br><span class="line">&#123;</span><br><span class="line">    queue&lt;node&gt; qu;</span><br><span class="line">    node temp;</span><br><span class="line">    temp.x=yi,temp.y=xi,temp.step=0;</span><br><span class="line">    t[xi][yi]=-1;</span><br><span class="line">    qu.push(temp);</span><br><span class="line">    int x,y;</span><br><span class="line">    while(!qu.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        temp=qu.front();</span><br><span class="line">        //cout&lt;&lt;temp.y&lt;&lt;ends&lt;&lt;temp.x&lt;&lt;ends&lt;&lt;temp.step&lt;&lt;endl;</span><br><span class="line">        qu.pop();</span><br><span class="line">        if(temp.x==ye&amp;&amp;temp.y==xe)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;%d\n&quot;,temp.step);</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;2;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if((mg[temp.y][temp.x]+temp.step)%2==0)</span><br><span class="line">            &#123;</span><br><span class="line">                x=temp.x;</span><br><span class="line">                switch(i)</span><br><span class="line">                &#123;</span><br><span class="line">                    case 0: y=temp.y+1;break;</span><br><span class="line">                    case 1: y=temp.y-1;break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                y=temp.y;</span><br><span class="line">                switch(i)</span><br><span class="line">                &#123;</span><br><span class="line">                    case 0: x=temp.x+1;break;</span><br><span class="line">                    case 1: x=temp.x-1;break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(x&gt;=0&amp;&amp;x&lt;m&amp;&amp;y&gt;=0&amp;&amp;y&lt;n&amp;&amp;(t[y][x]==0||(t[y][x]==-1&amp;&amp;temp.step%2==0)))</span><br><span class="line">            &#123;</span><br><span class="line">                node temp1;</span><br><span class="line">                temp1.x=x,temp1.y=y,temp1.step=temp.step+1;</span><br><span class="line">                t[y][x]-=1;</span><br><span class="line">                qu.push(temp1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int T;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;T);</span><br><span class="line">    while(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d%d&quot;,&amp;n,&amp;m);</span><br><span class="line">        int d;</span><br><span class="line">        for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">                mg[i].clear();</span><br><span class="line">                t[i].clear();</span><br><span class="line"></span><br><span class="line">        for(int j=0;j&lt;m;j++)&#123;</span><br><span class="line">           scanf(&quot;%d&quot;,&amp;d);</span><br><span class="line">           mg[i].push_back(d);</span><br><span class="line">           t[i].push_back(false);</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        int xi,yi,xe,ye;</span><br><span class="line">        scanf(&quot;%d%d%d%d&quot;,&amp;xi,&amp;yi,&amp;xe,&amp;ye);</span><br><span class="line">        if(!mgph(xi-1,yi-1,xe-1,ye-1))</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;-1\n&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <div class="htmledit_views" id="content_views"><br>            <p>单调队列_优先队列入门题</p><br><br><p><strong><span style="color:#0000ff;">Sliding Window</span></strong></p><br><br><table align="center"><tbody><tr><td><span style="color:#000000;"><strong>Time Limit:</strong> 12000MS</span></td><br>            <td> </td><br>            <td><span style="color:#000000;"><strong>Memory Limit:</strong> 65536K</span></td><br>        </tr><tr><td><span style="color:#000000;"><strong>Total Submissions:</strong> 71411</span></td><br>            <td> </td><br>            <td><span style="color:#000000;"><strong>Accepted:</strong> 20312</span></td><br>        </tr><tr><td colspan="3"><span style="color:#000000;"><span style="color:#0ead00;"><strong>Case Time Limit:</strong> 5000MS</span></span></td><br>        </tr></tbody></table><p><strong><span style="color:#0000ff;">Description</span></strong></p><br><br><p><span style="color:#000000;">An array of size <em>n</em> ≤ 106 is given to you. There is a sliding window of size <em>k</em> which is moving from the very left of the array to the very right. You can only see the <em>k</em> numbers in the window. Each time the sliding window moves rightwards by one position. Following is an example: <br><br>The array is [1 3 -1 -3 5 3 6 7], and <em>k</em> is 3.</span></p><br><br><table><tbody><tr><th><span style="color:#000000;">Window position</span></th><br>            <th><span style="color:#000000;">Minimum value</span></th><br>            <th><span style="color:#000000;">Maximum value</span></th><br>        </tr><tr><td><span style="color:#000000;">[1  3  -1] -3  5  3  6  7 </span></td><br>            <td><span style="color:#000000;">-1</span></td><br>            <td><span style="color:#000000;">3</span></td><br>        </tr><tr><td><span style="color:#000000;"> 1 [3  -1  -3] 5  3  6  7 </span></td><br>            <td><span style="color:#000000;">-3</span></td><br>            <td><span style="color:#000000;">3</span></td><br>        </tr><tr><td><span style="color:#000000;"> 1  3 [-1  -3  5] 3  6  7 </span></td><br>            <td><span style="color:#000000;">-3</span></td><br>            <td><span style="color:#000000;">5</span></td><br>        </tr><tr><td><span style="color:#000000;"> 1  3  -1 [-3  5  3] 6  7 </span></td><br>            <td><span style="color:#000000;">-3</span></td><br>            <td><span style="color:#000000;">5</span></td><br>        </tr><tr><td><span style="color:#000000;"> 1  3  -1  -3 [5  3  6] 7 </span></td><br>            <td><span style="color:#000000;">3</span></td><br>            <td><span style="color:#000000;">6</span></td><br>        </tr><tr><td><span style="color:#000000;"> 1  3  -1  -3  5 [3  6  7]</span></td><br>            <td><span style="color:#000000;">3</span></td><br>            <td><span style="color:#000000;">7</span></td><br>        </tr></tbody></table><p><span style="color:#000000;">Your task is to determine the maximum and minimum values in the sliding window at each position. </span></p><br><br><p><strong><span style="color:#0000ff;">Input</span></strong></p><br><br><p><span style="color:#000000;">The input consists of two lines. The first line contains two integers <em>n</em> and <em>k</em> which are the lengths of the array and the sliding window. There are <em>n</em> integers in the second line. </span></p><br><br><p><strong><span style="color:#0000ff;">Output</span></strong></p><br><br><p><span style="color:#000000;">There are two lines in the output. The first line gives the minimum values in the window at each position, from left to right, respectively. The second line gives the maximum values. </span></p><br><br><p><strong><span style="color:#0000ff;">Sample Input</span></strong></p><br><br><pre class="has"><br><code class="language-sio">8 3<br>1 3 -1 -3 5 3 6 7<br></code></pre><br><br><p><strong><span style="color:#0000ff;">Sample Output</span></strong></p><br><br><pre class="has"><br><code class="language-sio">-1 -3 -3 -3 3 3<br>3 3 5 5 6 7&lt;/span&gt;</code></pre><br><br><p> 两个priority_queue&lt;int&gt;（优先队列）可以实现。用双端队列实现单调队列，同样可以实现。</p><br><br><p>初学者，由于第一次没有初始化mq.k一直wa，后来又rt，因为maxn定义了100。/xk</p><br><br><p>双端队列实现代码：没有优化，优化可能空间会更小，这样看着比较直观。</p><br><br><p>*求最小时，因为窗口滑动的时候，如果是“小  大    较小”这个样的，然后k的范围大于3，那么中间哪个大的数完全可以不要记录在里面。同样求最大时也是一样的。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>#include&lt;deque&gt;<br>#define maxn 1000006<br>using namespace std;<br>int a[maxn],ma[maxn],mi[maxn];<br>struct node<br>{<br>    int d;<br>    int i;<br>    node(int dd,int ii)<br>    {<br>        d=dd;<br>        i=ii;<br>    }<br>};<br>template &lt;typename Item&gt;struct monotone_queue<br>{<br>    std::deque&lt;Item&gt; data,ma;<br>    int k;<br>    void push(Item it)<br>    {<br>        while(!data.empty()&amp;&amp;data.back().i&lt;=it.i-k)data.pop_back();<br>        while(!data.empty()&amp;&amp;data.front().d&gt;it.d)data.pop_front();<br>        data.push_front(it);<br>        while(!ma.empty()&amp;&amp;ma.back().i&lt;=it.i-k)ma.pop_back();<br>        while(!ma.empty()&amp;&amp;ma.front().d&lt;it.d)ma.pop_front();<br>        ma.push_front(it);<br>    }<br>    void clear(){data.clear();}<br>    Item min(){return data.back();}<br>    Item max(){return ma.back();}<br>};<br>int main()<br>{<br><br>    //freopen(“C:\Users\zhou\Desktop\1.in”,”r”,stdin);<br>    //freopen(“C:\Users\zhou\Desktop\1.out”,”w”,stdout);<br>    monotone_queue&lt;node&gt; mq;<br>    int n,k;<br>    scanf(“%d%d”,&amp;n,&amp;k);<br>    mq.k=k;<br>    for(int i=1;i&lt;=n;i++)<br>        scanf(“%d”,&amp;a[i]);<br>    for(int i=1;i&lt;k;i++)<br>        mq.push(node(a[i],i));<br>    int j=0;<br>    for(int i=k;i&lt;=n;i++)<br>    {<br>        mq.push(node(a[i],i));<br>        mi[j]=mq.min().d;<br>        ma[j]=mq.max().d;<br>        j++;<br>    }<br>    for(int i=0;i&lt;j-1;i++)<br>        printf(“%d “,mi[i]);<br>    printf(“%d\n”,mi[j-1]);<br>    for(int i=0;i&lt;j-1;i++)<br>        printf(“%d “,ma[i]);<br>    printf(“%d\n”,ma[j-1]);<br>    return 0;<br>}<br></code></pre><br><br><p> </p>          </div>
 
           
         
@@ -1636,7 +1493,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/多边形面积/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81808699/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1656,7 +1513,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/08/16/多边形面积/" class="post-title-link" itemprop="url">多边形面积</a>
+                <a href="/2019/05/16/81808699/" class="post-title-link" itemprop="url">ZOJ Problem Set - 4020</a>
               
             
           </h1>
@@ -1681,24 +1538,12 @@
                 
               
 
-              <time title="创建时间：2018-08-16 17:25:39" itemprop="dateCreated datePublished" datetime="2018-08-16T17:25:39+08:00">2018-08-16</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:26" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:39:13" itemprop="dateModified" datetime="2019-05-09T15:39:13+08:00">2019-05-09</time>
               
             
           </span>
@@ -1734,7 +1579,7 @@
       
         
           
-               <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"> #include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#define eps 1e-8</span><br><span class="line">using namespace std;</span><br><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">    double x,y;</span><br><span class="line">&#125;z;</span><br><span class="line"></span><br><span class="line">bool cmp_node(node a,node b)</span><br><span class="line">&#123;</span><br><span class="line">    double ans=(b.x-z.x)*(a.y-z.y)-(b.y-z.y)*(a.x-z.x);</span><br><span class="line">    if(fabs(ans)&lt;eps)</span><br><span class="line">        return sqrt(pow(a.x-z.x,2)+pow(a.y-z.y,2))&lt;sqrt(pow(b.x-z.x,2)+pow(b.y-z.y,2));</span><br><span class="line">    return ans&gt;0;</span><br><span class="line">&#125;</span><br><span class="line">double PolygonArea(node I[],int cnt)</span><br><span class="line">&#123;</span><br><span class="line">    int pos=0;</span><br><span class="line">    double ans=0;</span><br><span class="line">    if(cnt&lt;3)return 0;</span><br><span class="line">    for(int i=0;i&lt;cnt;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(I[pos].y&gt;I[i].y)</span><br><span class="line">            pos=i;</span><br><span class="line">        else if(I[pos].y==I[i].y&amp;&amp;I[pos].x&gt;I[i].x)</span><br><span class="line">            pos=i;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(I[pos],I[0]);</span><br><span class="line">    z=I[0];</span><br><span class="line">    sort(I+1,I+cnt,cmp_node);</span><br><span class="line">    for(int i=0;i&lt;cnt;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        ans+=(I[(i+1)%cnt].x*I[i].y-I[(i+1)%cnt].y*I[i].x)/2.0;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    node p[5];</span><br><span class="line">    p[0].x=1;p[0].y=5;</span><br><span class="line">    p[1].x=1;p[1].y=3;</span><br><span class="line">    p[2].x=3;p[2].y=1;</span><br><span class="line">    p[3].x=3;p[3].y=3;</span><br><span class="line">    double area=PolygonArea(p,4);</span><br><span class="line">    cout&lt;&lt;area&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <div class="htmledit_views" id="content_views"><br>            <p><a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=4020" rel="noopener" target="_blank">ZOJ Problem Set - 4020</a></p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>#include&lt;cstdio&gt;<br>#include&lt;vector&gt;<br>#include&lt;queue&gt;<br>using namespace std;<br>const int maxn=1e5+5;<br>vector&lt;int&gt; mg[maxn];<br>vector&lt;int&gt; t[maxn];<br>int n,m;<br>struct node<br>{<br>    int x,y;<br>    int step;<br>};<br>bool mgph(int xi,int yi,int xe,int ye)<br>{<br>    queue&lt;node&gt; qu;<br>    node temp;<br>    temp.x=yi,temp.y=xi,temp.step=0;<br>    t[xi][yi]=-1;<br>    qu.push(temp);<br>    int x,y;<br>    while(!qu.empty())<br>    {<br>        temp=qu.front();<br>        //cout&lt;&lt;temp.y&lt;&lt;ends&lt;&lt;temp.x&lt;&lt;ends&lt;&lt;temp.step&lt;&lt;endl;<br>        qu.pop();<br>        if(temp.x==ye&amp;&amp;temp.y==xe)<br>        {<br>            printf(“%d\n”,temp.step);<br>            return true;<br>        }<br>        for(int i=0;i&lt;2;i++)<br>        {<br>            if((mg[temp.y][temp.x]+temp.step)%2==0)<br>            {<br>                x=temp.x;<br>                switch(i)<br>                {<br>                    case 0: y=temp.y+1;break;<br>                    case 1: y=temp.y-1;break;<br>                }<br>            }<br>            else<br>            {<br>                y=temp.y;<br>                switch(i)<br>                {<br>                    case 0: x=temp.x+1;break;<br>                    case 1: x=temp.x-1;break;<br>                }<br>            }<br>            if(x&gt;=0&amp;&amp;x&lt;m&amp;&amp;y&gt;=0&amp;&amp;y&lt;n&amp;&amp;(t[y][x]==0||(t[y][x]==-1&amp;&amp;temp.step%2==0)))<br>            {<br>                node temp1;<br>                temp1.x=x,temp1.y=y,temp1.step=temp.step+1;<br>                t[y][x]-=1;<br>                qu.push(temp1);<br>            }<br>        }<br>    }<br>    return false;<br>}<br>int main()<br>{<br>    int T;<br>    scanf(“%d”,&amp;T);<br>    while(T–)<br>    {<br>        scanf(“%d%d”,&amp;n,&amp;m);<br>        int d;<br>        for(int i=0;i&lt;n;i++){<br>                mg[i].clear();<br>                t[i].clear();<br><br>        for(int j=0;j&lt;m;j++){<br>           scanf(“%d”,&amp;d);<br>           mg[i].push_back(d);<br>           t[i].push_back(false);<br>        }<br>        }<br>        int xi,yi,xe,ye;<br>        scanf(“%d%d%d%d”,&amp;xi,&amp;yi,&amp;xe,&amp;ye);<br>        if(!mgph(xi-1,yi-1,xe-1,ye-1))<br>        {<br>            printf(“-1\n”);<br>        }<br>    }<br>    return 0;<br>}</code></pre><br><br><p> </p>          </div>
 
           
         
@@ -1791,7 +1636,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/快速选择问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81748292/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1811,7 +1656,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/08/13/快速选择问题/" class="post-title-link" itemprop="url">快速选择问题</a>
+                <a href="/2019/05/16/81748292/" class="post-title-link" itemprop="url">csu----J(1812) 三角形和矩形</a>
               
             
           </h1>
@@ -1836,24 +1681,12 @@
                 
               
 
-              <time title="创建时间：2018-08-13 20:29:52" itemprop="dateCreated datePublished" datetime="2018-08-13T20:29:52+08:00">2018-08-13</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：14:35:45" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:39:14" itemprop="dateModified" datetime="2019-05-09T15:39:14+08:00">2019-05-09</time>
               
             
           </span>
@@ -1889,14 +1722,9 @@
       
         
           
-            <p>   输入n个整数和一个正整数k（1&lt;=k&lt;=n)，输出这k[n]。</p>
-<p> 快速排序</p>
-<p> 将序列分成两部分，大于tmp小于tmp</p>
-<p> 分别对两部分进行排序</p>
-<p> 不要合并</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> void QuickSort(RecType R[],int s,int t,int k)</span><br><span class="line">&#123;</span><br><span class="line">    int i=s,j=t;</span><br><span class="line">    RecType tmp;</span><br><span class="line">    if(s&lt;t)</span><br><span class="line">    &#123;</span><br><span class="line">        tmp=R[s];</span><br><span class="line">        while(i!=j)</span><br><span class="line">        &#123;</span><br><span class="line">            while(j&gt;i&amp;&amp;R[j].key&gt;=tmp.key)</span><br><span class="line">                j--;</span><br><span class="line">            R[i]=R[j];</span><br><span class="line">            while(i&lt;j&amp;&amp;R[i].key&lt;=tmp.key)</span><br><span class="line">                i++;</span><br><span class="line">            R[j]=R[i];</span><br><span class="line">        &#125;</span><br><span class="line">        R[i]=tmp;</span><br><span class="line">        QuickSort(R,i+1,t,k);</span><br><span class="line">        QuickSort(R,s,i-1,k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//代码来自数据结构-李春葆</span><br></pre></td></tr></table></figure>
-<p> <img src="https://private.codecogs.com/gif.latex?O%28n%29" alt="O(n)">的时间内将k[n]找出来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> #include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct RecType</span><br><span class="line">&#123;</span><br><span class="line">    int key;</span><br><span class="line">&#125;;</span><br><span class="line">int rk;</span><br><span class="line">void QuickSort(RecType R[],int s,int t,int k)</span><br><span class="line">&#123;</span><br><span class="line">    int i=s,j=t;</span><br><span class="line">    RecType tmp;</span><br><span class="line">    if(s&lt;t)</span><br><span class="line">    &#123;</span><br><span class="line">        tmp=R[s];</span><br><span class="line">        while(i!=j)</span><br><span class="line">        &#123;</span><br><span class="line">            while(j&gt;i&amp;&amp;R[j].key&gt;=tmp.key)</span><br><span class="line">                j--;</span><br><span class="line">            R[i]=R[j];</span><br><span class="line">            while(i&lt;j&amp;&amp;R[i].key&lt;=tmp.key)</span><br><span class="line">                i++;</span><br><span class="line">            R[j]=R[i];</span><br><span class="line">        &#125;</span><br><span class="line">        R[i]=tmp;</span><br><span class="line">        if(k&gt;i)</span><br><span class="line">            QuickSort(R,i+1,t,k);</span><br><span class="line">        else if(k&lt;i)</span><br><span class="line">            QuickSort(R,s,i-1,k);</span><br><span class="line">        else</span><br><span class="line">            rk=R[k].key;</span><br><span class="line">    &#125;</span><br><span class="line">    rk=R[k].key;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int s=1,t,k;</span><br><span class="line">    RecType r[100];</span><br><span class="line">    cin&gt;&gt;t&gt;&gt;k;</span><br><span class="line">    for(int i=1;i&lt;=t;i++)</span><br><span class="line">        cin&gt;&gt;r[i].key;</span><br><span class="line">    QuickSort(r,s,t,k);</span><br><span class="line">    cout&lt;&lt;rk&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <div class="htmledit_views" id="content_views"><br>            <h2>多边形交并补模板运用</h2><br><br><h2>J(<a href="http://acm.csu.edu.cn/csuoj/problemset/problem?pid=1812" rel="noopener" target="_blank">1812</a>): 三角形和矩形<a href="http://acm.csu.edu.cn/csuoj/contest/problem?cid=2146&amp;pid=J" rel="noopener" target="_blank">题目</a></h2><br><br><p>Submit Page<a> </a>   Summary<a href="http://acm.csu.edu.cn/csuoj/problemset/summary?pid=1812" rel="noopener" target="_blank"> </a>   Time Limit: 5 Sec     Memory Limit: 128 Mb     Submitted: 7     Solved: 3     SpecialJudge</p><br><br><hr><h2>Description</h2><br><br><p>Bobo 有一个三角形和一个矩形，他想求他们交的面积。</p><br><br><p>具体地，三角形和矩形由 8 个整数 x1,y1,x2,y2,x3,y3,x4,y4 描述。 表示三角形的顶点坐标是 (x1,y1),(x1,y2),(x2,y1)， 矩形的顶点坐标是 (x3,y3),(x3,y4),(x4,y4),(x4,y3).</p><br><br><h2>Input</h2><br><br><p>输入包含不超过 30000 组数据。</p><br><br><p>每组数据的第一行包含 4 个整数 x1,y1,x2,y2 (x1≠x2,y1≠y2).</p><br><br><p>第二行包含 4 个整数 x3,y3,x4,y4 (x3&lt;x4,y3&lt;y4).</p><br><br><p>(0≤xi,yi≤104)</p><br><br><h2>Output</h2><br><br><p>对于每组数据，输出一个实数表示交的面积。绝对误差或相对误差小于 10-6 即认为正确。</p><br><br><h2>Sample Input</h2><br><br><pre><br><code class="language-html hljs">1 1 3 3<br>0 0 2 2<br>0 3 3 1<br>0 0 2 2<br>4462 1420 2060 2969<br>4159 257 8787 2970</code></pre><br><br><h2>Sample Output</h2><br><br><pre><br><code class="language-html hljs">1.00000000<br>0.75000000<br>439744.13967527</code></pre><br><br><h2>Hint</h2><br><br><p> </p><br><br><pre class="has"><br><code class="language-cpp">/<em>
+ </em> 还要判断是凸包还是凹包，调用相应的函数<br> <em> 面积并，只要和面积减去交即可
+ </em>/<br>#include &lt;bits/stdc++.h&gt;<br>using namespace std;<br><br>const int maxn = 100005;<br>const double eps = 1e-8;<br>int dcmp(double x)<br>{<br>    if(x &gt; eps) return 1;<br>    return x &lt; -eps ? -1 : 0;<br>}<br>struct Point<br>{<br>    double x, y;<br>}z;<br>double cross(Point a,Point b,Point c) ///叉积<br>{<br>    return (a.x-c.x)<em>(b.y-c.y)-(b.x-c.x)</em>(a.y-c.y);<br>}<br>Point intersection(Point a,Point b,Point c,Point d)<br>{<br>    Point p = a;<br>    double t =((a.x-c.x)<em>(c.y-d.y)-(a.y-c.y)</em>(c.x-d.x))/((a.x-b.x)<em>(c.y-d.y)-(a.y-b.y)</em>(c.x-d.x));<br>    p.x +=(b.x-a.x)<em>t;<br>    p.y +=(b.y-a.y)</em>t;<br>    return p;<br>}<br>//计算多边形面积<br>double PolygonArea(Point p[], int n)<br>{<br>    if(n &lt; 3) return 0.0;<br>    double s = p[0].y <em> (p[n - 1].x - p[1].x);<br>    p[n] = p[0];<br>    for(int i = 1; i &lt; n; ++ i)<br>        s += p[i].y </em> (p[i - 1].x - p[i + 1].x);<br>    return fabs(s <em> 0.5);<br>}<br>double CPIA(Point a[], Point b[], int na, int nb)//ConvexPolygonIntersectArea<br>{<br>    Point p[20], tmp[20];<br>    int tn, sflag, eflag;<br>    a[na] = a[0], b[nb] = b[0];<br>    memcpy(p,b,sizeof(Point)</em>(nb + 1));<br>    for(int i = 0; i &lt; na &amp;&amp; nb &gt; 2; i++)<br>    {<br>        sflag = dcmp(cross(a[i + 1], p[0],a[i]));<br>        for(int j = tn = 0; j &lt; nb; j++, sflag = eflag)<br>        {<br>            if(sflag&gt;=0) tmp[tn++] = p[j];<br>            eflag = dcmp(cross(a[i + 1], p[j + 1],a[i]));<br>            if((sflag ^ eflag) == -2)<br>                tmp[tn++] = intersection(a[i], a[i + 1], p[j], p[j + 1]); ///求交点<br>        }<br>        memcpy(p, tmp, sizeof(Point) <em> tn);<br>        nb = tn, p[nb] = p[0];<br>    }<br>    if(nb &lt; 3) return 0.0;<br>    return PolygonArea(p, nb);<br>}<br>double SPIA(Point a[], Point b[], int na, int nb)///SimplePolygonIntersectArea 调用此函数<br>{<br>    int i, j;<br>    Point t1[4], t2[4];<br>    double res = 0, num1, num2;<br>    a[na] = t1[0] = a[0], b[nb] = t2[0] = b[0];<br>    for(i = 2; i &lt; na; i++)<br>    {<br>        t1[1] = a[i-1], t1[2] = a[i];<br>        num1 = dcmp(cross(t1[1], t1[2],t1[0]));<br>        if(num1 &lt; 0) swap(t1[1], t1[2]);<br>        for(j = 2; j &lt; nb; j++)<br>        {<br>            t2[1] = b[j - 1], t2[2] = b[j];<br>            num2 = dcmp(cross(t2[1], t2[2],t2[0]));<br>            if(num2 &lt; 0) swap(t2[1], t2[2]);<br>            res += CPIA(t1, t2, 3, 3) </em> num1 <em> num2;<br>        }<br>    }<br>    return res;<br>}<br>bool cmp_node(Point a,Point b)<br>{<br>    double ans=(b.x-z.x)</em>(a.y-z.y)-(b.y-z.y)*(a.x-z.x);<br>    if(fabs(ans)&lt;eps)<br>        return sqrt(pow(a.x-z.x,2)+pow(a.y-z.y,2))&lt;sqrt(pow(b.x-z.x,2)+pow(b.y-z.y,2));<br>    return ans&gt;0;<br>}<br>void sort_j(Point p[],int n)<br>{<br>    int pos=0;<br>    for(int i=0;i&lt;n;i++)<br>    {<br>        if(p[pos].y&gt;p[i].y)<br>            pos=i;<br>        if(p[pos].y==p[pos].y&amp;&amp;p[pos].x&gt;p[i].x)<br>            pos=i;<br>    }<br>    swap(p[pos],p[0]);<br>    z=p[0];<br>    sort(p+1,p+n,cmp_node);<br>}<br>Point p1[maxn], p2[maxn];<br>int n1, n2;<br>int main()<br>{<br>    double x1,x2,x3,x4,y1,y2,y3,y4;<br>    while(~scanf(“%lf%lf%lf%lf%lf%lf%lf%lf”,&amp;x1,&amp;y1,&amp;x2,&amp;y2,&amp;x3,&amp;y3,&amp;x4,&amp;y4))<br>    {<br>        p1[0].x=x2;p1[0].y=y1;<br>        p1[1].x=x1;p1[1].y=y1;<br>        p1[2].x=x1;p1[2].y=y2;<br>        p2[0].x=x4;p2[0].y=y3;<br>        p2[1].x=x3;p2[1].y=y3;<br>        p2[2].x=x4;p2[2].y=y4;<br>        p2[3].x=x3;p2[3].y=y4;<br>        sort_j(p1,3);<br>        sort_j(p2,4);<br>        double Area = SPIA(p1, p2,3,4);<br>        printf(“%.8f\n”,Area);<br>    }<br>    return 0;<br>}<br></code></pre><br><br><p> </p>          </div>
 
           
         
@@ -1942,7 +1770,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1986,50 +1814,14 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">85</span>
+                    <span class="site-state-item-count">103</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">0</span>
-                    <span class="site-state-item-name">分类</span>
-                  
-                </div>
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
               
             </nav>
           

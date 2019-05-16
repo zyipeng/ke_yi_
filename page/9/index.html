@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/19/磁盘使用率达到100%/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80930423/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -369,7 +369,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/19/磁盘使用率达到100%/" class="post-title-link" itemprop="url">磁盘使用率达到100%</a>
+                <a href="/2019/05/16/80930423/" class="post-title-link" itemprop="url">RegSetValueEx函数</a>
               
             
           </h1>
@@ -394,24 +394,12 @@
                 
               
 
-              <time title="创建时间：2018-06-19 17:13:10" itemprop="dateCreated datePublished" datetime="2018-06-19T17:13:10+08:00">2018-06-19</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:06" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:45" itemprop="dateModified" datetime="2019-05-09T15:40:45+08:00">2019-05-09</time>
               
             
           </span>
@@ -447,7 +435,7 @@
       
         
           
-            <p>   磁盘使用率达到100%<br>问题描述：电脑开机后电脑磁盘使用率100%且居高不下，通过在网上搜索办法，关闭服务家庭组、superfetch服务没有多大效果，开始关掉super fetch后发现有了效果，后来打开电脑后又出现了。我开始以为是电脑自启了服务然后我又点开设置发现关闭的服务没有启用，所以不是服务的问题。<br>解决办法：我再次去网上搜索后有一条贴说它将分区太多的分区删除后发现问题解决了，然后将注意了转移到磁盘文件调用这一块来，我回忆一下好像自从我将一些文件安装在e盘之后电脑就开始出现运行不顺畅的情况，然后我就开始找删以前安装在e盘的软件，在删的同时我打开任务管理器发现删到最后一个在外分区的软件的时候还是没有降下来，我看了一下使用磁盘的服务和软件后发现有一款叫Tiwork的程序占用占用非常大，然后我又在网上搜索这款软件，发现这款软件是在电脑装其他软件和卸载其他软件的时候才会出现，所以我就等到电脑卸载最后的软件的时候再打开任务管理器的，这个是时候磁盘占用也已经降到20%一下。因此这个问题才真正圆满解决。   </p>
+            <p><div class="htmledit_views" id="content_views"><br>            <p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">RegSetValueEx函数在注册表项下设置指定值的数据和类型。</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></p><pre class="syntax"><strong>LONG RegSetValueEx(<br>  HKEY</strong><em> <a class="synParam" href rel="nofollow">hKey</a></em><strong>,           </strong>// handle to key<br><strong>  LPCTSTR</strong><em> <a class="synParam" href rel="nofollow">lpValueName</a></em><strong>, </strong>// value name<br>  <strong>DWORD</strong> <em><a class="synParam" href rel="nofollow">Reserved</a></em><strong>,</strong>      // reserved<br><strong>  DWORD</strong><em> <a class="synParam" href rel="nofollow">dwType</a></em><strong>,        </strong>// value type<br><strong>  CONST BYTE</strong><em> </em><strong>*</strong><em><a class="synParam" href rel="nofollow">lpData</a></em><strong>,  </strong>// value data<br><strong>  DWORD</strong><em> <a class="synParam" href rel="nofollow">cbData</a></em>         // size of value data<br><strong>);</strong></pre><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">参数</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">hkey： <span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">当前打开的密钥或以下预定义密钥之一的句柄:</span> </span></p><p><strong>HKEY_CLASSES_ROOT<br>HKEY_CURRENT_CONFIG<br>HKEY_CURRENT_USER<br>HKEY_LOCAL_MACHINE<br>HKEY_USERS<br>Windows NT/2000/XP: HKEY_PERFORMANCE_DATA <br>Windows 95/98/Me: HKEY_DYN_DATA</strong></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">lpValueName：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指向一个字符串的指针，该字符串包含要设置的值的名称。如果键中不存在这个名称的值，函数将其添加到键中。</span><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">如果lpValueName是NULL或空字符串””，函数将为键的未命名或默认值设置类型和数据。</span></span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">Reserved：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">保留;必须是零。</span></span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">dwType：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指定由lpData参数指向的数据类型的代码。有关可能类型代码的列表，请参见注册表值类型。<img src="https://img-blog.csdn.net/20180705173320511?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></span></span></p><p><span style="font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;color:#2e3033;"><span style="font-size:14px;background-color:rgb(255,255,255);">Ipdata：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指向一个缓冲区的指针，该缓冲区包含以指定值名存储的数据。对于基于字符串的数据类型，如REG_SZ，字符串必须为空终止。对于REG_MULTI_SZ数据类型，字符串必须以双null结尾。</span></span></span></p><p><span style="font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;color:#2e3033;"><span style="font-size:14px;background-color:rgb(255,255,255);">cbData：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指定lpData参数指向的信息的大小(以字节为单位)。如果数据类型为REG_SZ、REG_EXPAND_SZ或REG_MULTI_SZ，则cbData必须包括终止null字符或字符的大小。</span></span></span></p><p><span style="font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;color:#2e3033;"><span style="font-size:14px;background-color:rgb(255,255,255);"><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">返回值</span><br style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></span></span></p><div class="br-height" style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></div>&lt;</div></p>
 
           
         
@@ -504,7 +492,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/10/eclipse编辑的代码在dos下运行的问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80928693/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -524,7 +512,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/10/eclipse编辑的代码在dos下运行的问题/" class="post-title-link" itemprop="url">eclipse编辑的代码在dos下运行的问题</a>
+                <a href="/2019/05/16/80928693/" class="post-title-link" itemprop="url">RegCreateKeyEx函数</a>
               
             
           </h1>
@@ -549,24 +537,12 @@
                 
               
 
-              <time title="创建时间：2018-06-10 21:10:11" itemprop="dateCreated datePublished" datetime="2018-06-10T21:10:11+08:00">2018-06-10</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:07" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:48" itemprop="dateModified" datetime="2019-05-09T15:40:48+08:00">2019-05-09</time>
               
             
           </span>
@@ -602,9 +578,7 @@
       
         
           
-            <p>   dos下也不能编译eclipse以前编辑的文件。因为eclipse文件里面有package<em>**</em>语句。</p>
-<p> 如果非要在dos下编译那就需要将程序里面的package语句注释掉，在前面加两条反斜杠\package</p>
-<p> 另外在eclipse下编译出来的.class文件，就我的的编译器而言是不可以的，可能是jdk不同的问题，具体我也不清楚，以后有时间再研究。</p>
+            <p><div class="htmledit_views" id="content_views"><br>            <p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">RegCreateKeyEx函数：创建指定的注册表项。如果键已经存在，函数将打开它。</span><br></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></p><pre class="syntax"><strong>LONG RegCreateKeyEx(<br>  HKEY</strong><em> <a class="synParam" href rel="nofollow">hKey</a></em><strong>,                                  </strong>// handle to open key<br><strong>  LPCTSTR</strong><em> <a class="synParam" href rel="nofollow">lpSubKey</a></em><strong>,                           </strong>// subkey name<br><strong>  DWORD</strong><em> <a class="synParam" href rel="nofollow">Reserved</a></em><strong>,                             </strong>// reserved<br><strong>  LPTSTR</strong><em> <a class="synParam" href rel="nofollow">lpClass</a></em><strong>,                             </strong>// class string<br><strong>  DWORD</strong><em> <a class="synParam" href rel="nofollow">dwOptions</a></em><strong>,                            </strong>// special options<br><strong>  REGSAM</strong><em> <a class="synParam" href rel="nofollow">samDesired</a></em><strong>,                          </strong>// desired security access<br><strong>  LPSECURITY_ATTRIBUTES</strong><em> <a class="synParam" href rel="nofollow">lpSecurityAttributes</a></em><strong>,</strong> // inheritance<br><strong>  PHKEY</strong><em> <a class="synParam" href rel="nofollow">phkResult</a></em><strong>,                            </strong>// key handle<br><strong>  LPDWORD</strong><em> <a class="synParam" href rel="nofollow">lpdwDisposition</a></em>  <strong>                  </strong> // disposition value buffer<br><strong>);</strong></pre><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">参数</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">hkey：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">当前打开的密钥或以下预定义密钥之一的句柄:</span><br style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></p><div class="br-height" style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></div>&lt;</div></p>
 
           
         
@@ -661,7 +635,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/eclipse的@override报错问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80928426/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -681,7 +655,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/05/27/eclipse的@override报错问题/" class="post-title-link" itemprop="url">eclipse的@override报错问题</a>
+                <a href="/2019/05/16/80928426/" class="post-title-link" itemprop="url">RegConnectRegistry函数</a>
               
             
           </h1>
@@ -706,24 +680,12 @@
                 
               
 
-              <time title="创建时间：2018-05-27 21:59:04" itemprop="dateCreated datePublished" datetime="2018-05-27T21:59:04+08:00">2018-05-27</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:08" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:49" itemprop="dateModified" datetime="2019-05-09T15:40:49+08:00">2019-05-09</time>
               
             
           </span>
@@ -759,16 +721,7 @@
       
         
           
-            <p>   要解决报错就要知道报错的原因。</p>
-<p> 在继承java父类的时候我们通过自动生成的时候会给我们自动加上@override。</p>
-<p> @Override是Java5的元数据，自动加上去的一个标志，告诉你说下面这个方法是从父类/接口 继承过来的，需要你重写一次，这样就可以方便你阅读，也不怕会忘记</p>
-<p> @Override是伪代码,表示重写(当然不写也可以),不过写上有如下好处:<br> 1&gt;可以当注释用,方便阅读<br> 2&gt;编译器可以给你验证@Override下面的方法名是否是你父类中所有的,如果没有则报错<br> 比如你如果没写@Override而你下面的方法名又写错了,这时你的编译器是可以通过的(它以为这个方法是你的子类中自己增加的方法)</p>
-<p> 使用该标记是为了增强程序在编译时候的检查，如果该方法并不是一个覆盖父类的方法，在编译时编译器就会报告错误。</p>
-<p> 在父类生成这个的时候报错我将“@override”删去就就可以了。但是当实现接口的时候，发现删掉还是会报错会报错。</p>
-<p> 把@override不能从根本上解决问题这是jdk的问题，@Override是JDK5就已经有了，但是不支持对接口的实现，认为这不是Override而报错。JDK6修正了这个Bug，无论是对父类的方法覆盖还是对接口的实现都可以加上@Override。</p>
-<p> 要解决该问题，首先要确保机器上安装了jdk 1.6，</p>
-<p> 然后，选择eclipse菜单Windows-&gt;Preferences–&gt;java-&gt;Compiler–&gt;compiler compliance level选择 1.6，刷新工程，重新编译。</p>
-<p> 如果问题还没解决，就在报错的工程上，鼠标右键选择 Properties–&gt;Java Compiler–&gt;compiler compliance level 中选择 1.6,刷新工程，重新编译。</p>
+            <p><div class="htmledit_views" id="content_views"><br>            <p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">RegConnectRegistry函数在另一台计算机上建立到预定义注册表键的连接。</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></p><pre class="syntax"><strong>LONG RegConnectRegistry(<br>  LPCTSTR</strong><em> <a class="synParam" href rel="nofollow">lpMachineName</a></em><strong>, </strong>// 计算机名称<br><strong>  HKEY</strong><em> <a class="synParam" href rel="nofollow">hKey</a></em><strong>,             </strong>// <span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">预定义的注册表处理</span><br><strong>  PHKEY</strong><em> <a class="synParam" href rel="nofollow">phkResult</a></em>        // <span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">用于远程关键句柄的缓冲区。</span><br><strong>);</strong></pre><p class="target" style="color:rgb(46,48,51);line-height:18px;font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;background-color:rgb(255,255,255);">参数</p><p class="target" style="color:rgb(46,48,51);line-height:18px;font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;background-color:rgb(255,255,255);">lpMachineName：指向指定远程计算机名称的空终止字符串的指针。如果该参数为空，则使用本地计算机名。</p><div class="br-height"></div>h</div></p>
 
           
         
@@ -825,7 +778,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/07/二叉树的宽度/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80928198/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -845,7 +798,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/08/07/二叉树的宽度/" class="post-title-link" itemprop="url">二叉树的宽度</a>
+                <a href="/2019/05/16/80928198/" class="post-title-link" itemprop="url">RegCloseKey函数</a>
               
             
           </h1>
@@ -870,24 +823,12 @@
                 
               
 
-              <time title="创建时间：2017-08-07 19:41:43" itemprop="dateCreated datePublished" datetime="2017-08-07T19:41:43+08:00">2017-08-07</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:09" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:50" itemprop="dateModified" datetime="2019-05-09T15:40:50+08:00">2019-05-09</time>
               
             
           </span>
@@ -923,12 +864,7 @@
       
         
           
-            <p>   二叉树的宽度就是每一层的宽度的最大值</p>
-<p> 要求二叉树的宽度，不许先求出每一层的宽度，求每一层的宽度必须知道每一层的元素</p>
-<p> 作为初学的我，看到树本来就是从括号表示来的，所以我在这里借助里开始时候的树的括号表示的字符串，对每一个元素都在字符串中查找并进进行括号匹配返回留下有括号的个数就是树的节点的层次。</p>
-<p> 其实，我的最外面的一层循环就是层次查找，所以每一次都是将同一层的元素放在一块。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"> int WidthBT(BTNode *b,char str[])</span><br><span class="line">&#123;</span><br><span class="line">	BTNode *St[MaxSize],*p;</span><br><span class="line">	int front,rear,tier,tier1=0;</span><br><span class="line">	int s=1,max=0;</span><br><span class="line">	char ch;</span><br><span class="line">	front=rear=-1;</span><br><span class="line">	if(b!=NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		rear++;</span><br><span class="line">		St[rear]=b;</span><br><span class="line">		while(front!=rear)</span><br><span class="line">		&#123;</span><br><span class="line">			p=St[front];</span><br><span class="line">			ch=str[0];</span><br><span class="line">			int j=0;</span><br><span class="line">			char ch1[MaxSize];</span><br><span class="line">			int top=-1;</span><br><span class="line">			front=(front+1)%MaxSize;</span><br><span class="line">			tier=0;</span><br><span class="line">			while(str[j]!=p-&gt;date)</span><br><span class="line">			&#123;</span><br><span class="line">				if(str[j]==&apos;(&apos;)</span><br><span class="line">					ch1[++top]=&apos;(&apos;;</span><br><span class="line">				else if(str[j]==&apos;)&apos;)</span><br><span class="line">					top--;</span><br><span class="line">				j++;</span><br><span class="line">			&#125;</span><br><span class="line">			tier=top+1;</span><br><span class="line">			if(tier1==tier)</span><br><span class="line">				s++;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				max=s&gt;max?s:max;</span><br><span class="line">				s=1;</span><br><span class="line">			&#125;</span><br><span class="line">			tier1=tier;</span><br><span class="line">			if(p-&gt;lchild!=NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				rear=(rear+1)%MaxSize;</span><br><span class="line">				St[rear]=p-&gt;lchild;</span><br><span class="line">			&#125;</span><br><span class="line">			if(p-&gt;rchild!=NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				rear=(rear+1)%MaxSize;</span><br><span class="line">				St[rear]=p-&gt;rchild;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 初学数据结构，不太懂，希望看到的大神能够多多指教。</p>
+            <p><div class="htmledit_views" id="content_views"><br>            <p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">RegCloseKey函数是释放一个对指定注册表项的句柄。<br></span></p><pre><code class="language-html">LONG RegCloseKey(<br>  HKEY hKey   // <span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">处理键关闭。</span><br>);</code></pre><h4></h4><h4><span style="font-size:12px;font-weight:normal;">Parameters<br>    hKey      对打开键的句柄关闭。</span></h4><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">返回值</span><br style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></p><div class="br-height" style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></div>&lt;</div></p>
 
           
         
@@ -985,7 +921,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/c语言字符串处理函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80927615/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1005,7 +941,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/07/27/c语言字符串处理函数/" class="post-title-link" itemprop="url">c语言字符串处理函数</a>
+                <a href="/2019/05/16/80927615/" class="post-title-link" itemprop="url">注册表函数</a>
               
             
           </h1>
@@ -1030,24 +966,12 @@
                 
               
 
-              <time title="创建时间：2017-07-27 16:52:36" itemprop="dateCreated datePublished" datetime="2017-07-27T16:52:36+08:00">2017-07-27</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:02" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:51" itemprop="dateModified" datetime="2019-05-09T15:40:51+08:00">2019-05-09</time>
               
             
           </span>
@@ -1083,108 +1007,722 @@
       
         
           
-            <p>   函数名: strcpy<br> 功 能: 拷贝一个字符串到另一个<br> 用 法: char <em>stpcpy(char </em>destin, char *source);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;<br> int main(void)<br> {<br> char string[10];<br> char *str1 = “abcdefghi”;<br> stpcpy(string, str1);<br> printf(“%sn”, string);<br> return 0;<br> }   </p>
-<p>函数名: strcat<br> 功 能: 字符串拼接函数<br> 用 法: char <em>strcat(char </em>destin, char *source);<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char destination[25];<br> char <em>blank = “ “, </em>c = “C++”, *Borland = “Borland”;<br> strcpy(destination, Borland);<br> strcat(destination, blank);<br> strcat(destination, c);<br> printf(“%sn”, destination);<br> return 0;<br> }   </p>
-<p>函数名: strchr<br> 功 能: 在一个串中查找给定字符的第一个匹配之处<br> 用 法: char <em>strchr(char </em>str, char c);<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char string[15];<br> char *ptr, c = ‘r’;<br> strcpy(string, “This is a string”);<br> ptr = strchr(string, c);<br> if (ptr)<br> printf(“The character %c is at position: %dn”, c, ptr-string);<br> else<br> printf(“The character was not foundn”);<br> return 0;<br> }   </p>
-<p>函数名: strcmp<br> 功 能: 串比较<br> 用 法: int strcmp(char <em>str1, char </em>str2);<br> 看Asic码，str1&gt;str2，返回值 &gt; 0；两串相等，返回0<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char <em>buf1 = “aaa”, </em>buf2 = “bbb”, *buf3 = “ccc”;<br> int ptr;<br> ptr = strcmp(buf2, buf1);<br> if (ptr &gt; 0)<br> printf(“buffer 2 is greater than buffer 1n”);<br> else<br> printf(“buffer 2 is less than buffer 1n”);<br> ptr = strcmp(buf2, buf3);<br> if (ptr &gt; 0)<br> printf(“buffer 2 is greater than buffer 3n”);<br> else<br> printf(“buffer 2 is less than buffer 3n”);<br> return 0;<br> }   </p>
-<p>函数名: strncmpi<br> 功 能: 将一个串中的一部分与另一个串比较, 不管大小写<br> 用 法: int strncmpi(char <em>str1, char </em>str2, unsigned maxlen);<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char <em>buf1 = “BBB”, </em>buf2 = “bbb”;<br> int ptr;<br> ptr = strcmpi(buf2, buf1);<br> if (ptr &gt; 0)<br> printf(“buffer 2 is greater than buffer 1n”);<br> if (ptr &lt; 0)<br> printf(“buffer 2 is less than buffer 1n”);<br> if (ptr == 0)<br> printf(“buffer 2 equals buffer 1n”);<br> return 0;<br> }   </p>
-<p>函数名: strcpy<br> 功 能: 串拷贝<br> 用 法: char <em>strcpy(char </em>str1, char *str2);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;<br> int main(void)<br> {<br> char string[10];<br> char *str1 = “abcdefghi”;<br> strcpy(string, str1);<br> printf(“%sn”, string);<br> return 0;<br> }   </p>
-<p>函数名: strcspn<br> 功 能: 在串中查找第一个给定字符集内容的段<br> 用 法: int strcspn(char <em>str1, char </em>str2);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;alloc.h&gt;<br> int main(void)<br> {<br> char <em>string1 = “1234567890”;<br> char </em>string2 = “747DC8”;<br> int length;<br> length = strcspn(string1, string2);<br> printf(“Character where strings intersect is at position %dn”, length);<br> return 0;<br> }   </p>
-<p>函数名: strdup<br> 功 能: 将串拷贝到新建的位置处<br> 用 法: char <em>strdup(char </em>str);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;alloc.h&gt;<br> int main(void)<br> {<br> char <em>dup_str, </em>string = “abcde”;<br> dup_str = strdup(string);<br> printf(“%sn”, dup_str);<br> free(dup_str);<br> return 0;<br> } </p>
-<p> 函数名: strcmp<br> 功 能: 比较字符串str1和str2。<br> 用 法: int strcmp(char <em>str1, char </em>str2);<br> 说 明: 当s1&lt;s2时，返回值<0 当s1="s2时，返回值=0">s2时，返回值&gt;0<br> 即：两个字符串自左向右逐个字符相比（按ASCII值大小相比较），直到出现不同的字符或遇’\0’为止。<br> 程序例:   </0></p>
-<p> #include&lt;stdio.h&gt;   </p>
-<p> #include&lt;string.h&gt;<br> void main()<br> {<br> char string[20];<br> char str[3][20];<br> int i;<br> for(i=0;i&lt;3;i++)<br> gets(str[i]);<br> if(strcmp(str[0],str[1])&gt;0)<br> strcpy(string,str[0]);<br> else<br> strcpy(string,str[1]);<br> if(strcmp(str[2],string)&gt;0)<br> strcpy(string,str[2]);<br> printf(“\nThe largest string is %s\n”,string);<br> }   </p>
-<p>函数名: stricmp<br> 功 能: 以大小写不敏感方式比较两个串<br> 用 法: int stricmp(char <em>str1, char </em>str2);<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char <em>buf1 = “BBB”, </em>buf2 = “bbb”;<br> int ptr;<br> ptr = stricmp(buf2, buf1);<br> if (ptr &gt; 0)<br> printf(“buffer 2 is greater than buffer 1n”);<br> if (ptr &lt; 0)<br> printf(“buffer 2 is less than buffer 1n”);<br> if (ptr == 0)<br> printf(“buffer 2 equals buffer 1n”);<br> return 0;<br> }   </p>
-<p>函数名: strerror<br> 功 能: 返回指向错误信息字符串的指针<br> 用 法: char *strerror(int errnum);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;errno.h&gt;<br> int main(void)<br> {<br> char *buffer;<br> buffer = strerror(errno);<br> printf(“Error: %sn”, buffer);<br> return 0;<br> }   </p>
-<p>函数名: strcmpi<br> 功 能: 将一个串与另一个比较, 不管大小写<br> 用 法: int strcmpi(char <em>str1, char </em>str2);<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char <em>buf1 = “BBB”, </em>buf2 = “bbb”;<br> int ptr;<br> ptr = strcmpi(buf2, buf1);<br> if (ptr &gt; 0)<br> printf(“buffer 2 is greater than buffer 1n”);<br> if (ptr &lt; 0)<br> printf(“buffer 2 is less than buffer 1n”);<br> if (ptr == 0)<br> printf(“buffer 2 equals buffer 1n”);<br> return 0;<br> }   </p>
-<p>函数名: strncmp<br> 功 能: 串比较<br> 用 法: int strncmp(char <em>str1, char </em>str2, int maxlen);<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char <em>buf1 = “aaabbb”, </em>buf2 = “bbbccc”, *buf3 = “ccc”;<br> int ptr;<br> ptr = strncmp(buf2,buf1,3);<br> if (ptr &gt; 0)<br> printf(“buffer 2 is greater than buffer 1n”);<br> else<br> printf(“buffer 2 is less than buffer 1n”);<br> ptr = strncmp(buf2,buf3,3);<br> if (ptr &gt; 0)<br> printf(“buffer 2 is greater than buffer 3n”);<br> else<br> printf(“buffer 2 is less than buffer 3n”);<br> return(0);<br> }   </p>
-<p>函数名: strncmpi<br> 功 能: 把串中的一部分与另一串中的一部分比较, 不管大小写<br> 用 法: int strncmpi(char <em>str1, char </em>str2);<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char <em>buf1 = “BBBccc”, </em>buf2 = “bbbccc”;<br> int ptr;<br> ptr = strncmpi(buf2,buf1,3);<br> if (ptr &gt; 0)<br> printf(“buffer 2 is greater than buffer 1n”);<br> if (ptr &lt; 0)<br> printf(“buffer 2 is less than buffer 1n”);<br> if (ptr == 0)<br> printf(“buffer 2 equals buffer 1n”);<br> return 0;<br> }   </p>
-<p>函数名: strncpy<br> 功 能: 串拷贝<br> 用 法: char <em>strncpy(char </em>destin, char *source, int maxlen);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;<br> int main(void)<br> {<br> char string[10];<br> char *str1 = “abcdefghi”;<br> strncpy(string, str1, 3);<br> string[3] = ‘’;<br> printf(“%sn”, string);<br> return 0;<br> }   </p>
-<p>函数名: strnicmp<br> 功 能: 不注重大小写地比较两个串<br> 用 法: int strnicmp(char <em>str1, char </em>str2, unsigned maxlen);<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char <em>buf1 = “BBBccc”, </em>buf2 = “bbbccc”;<br> int ptr;<br> ptr = strnicmp(buf2, buf1, 3);<br> if (ptr &gt; 0)<br> printf(“buffer 2 is greater than buffer 1n”);<br> if (ptr &lt; 0)<br> printf(“buffer 2 is less than buffer 1n”);<br> if (ptr == 0)<br> printf(“buffer 2 equals buffer 1n”);<br> return 0;<br> }   </p>
-<p>函数名: strnset<br> 功 能: 将一个串中的所有字符都设为指定字符<br> 用 法: char <em>strnset(char </em>str, char ch, unsigned n);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;<br> int main(void)<br> {<br> char *string = “abcdefghijklmnopqrstuvwxyz”;<br> char letter = ‘x’;<br> printf(“string before strnset: %sn”, string);<br> strnset(string, letter, 13);<br> printf(“string after strnset: %sn”, string);<br> return 0;<br> }   </p>
-<p>函数名: strpbrk<br> 功 能: 在串中查找给定字符集中的字符<br> 用 法: char <em>strpbrk(char </em>str1, char *str2);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;<br> int main(void)<br> {<br> char <em>string1 = “abcdefghijklmnopqrstuvwxyz”;<br> char </em>string2 = “onm”;<br> char <em>ptr;<br> ptr = strpbrk(string1, string2);<br> if (ptr)<br> printf(“strpbrk found first character: %cn”, </em>ptr);<br> else<br> printf(“strpbrk didn’t find character in setn”);<br> return 0;<br> }   </p>
-<p>函数名: strrchr<br> 功 能: 在串中查找指定字符的最后一个出现<br> 用 法: char <em>strrchr(char </em>str, char c);<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char string[15];<br> char *ptr, c = ‘r’;<br> strcpy(string, “This is a string”);<br> ptr = strrchr(string, c);<br> if (ptr)<br> printf(“The character %c is at position: %dn”, c, ptr-string);<br> else<br> printf(“The character was not foundn”);<br> return 0;<br> }   </p>
-<p>函数名: strrev<br> 功 能: 串倒转<br> 用 法: char <em>strrev(char </em>str);<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char *forward = “string”;<br> printf(“Before strrev(): %sn”, forward);<br> strrev(forward);<br> printf(“After strrev(): %sn”, forward);<br> return 0;<br> }   </p>
-<p>函数名: strset<br> 功 能: 将一个串中的所有字符都设为指定字符<br> 用 法: char <em>strset(char </em>str, char c);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;<br> int main(void)<br> {<br> char string[10] = “123456789”;<br> char symbol = ‘c’;<br> printf(“Before strset(): %sn”, string);<br> strset(string, symbol);<br> printf(“After strset(): %sn”, string);<br> return 0;<br> }   </p>
-<p>函数名: strspn<br> 功 能: 在串中查找指定字符集的子集的第一次出现<br> 用 法: int strspn(char <em>str1, char </em>str2);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;alloc.h&gt;<br> int main(void)<br> {<br> char <em>string1 = “1234567890”;<br> char </em>string2 = “123DC8”;<br> int length;<br> length = strspn(string1, string2);<br> printf(“Character where strings differ is at position %dn”, length);<br> return 0;<br> }   </p>
-<p>函数名: strstr<br> 功 能: 在串中查找指定字符串的第一次出现<br> 用 法: char <em>strstr(char </em>str1, char *str2);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;<br> int main(void)<br> {<br> char <em>str1 = “Borland International”, </em>str2 = “nation”, *ptr;<br> ptr = strstr(str1, str2);<br> printf(“The substring is: %sn”, ptr);<br> return 0;<br> }   </p>
-<p>函数名: strtod<br> 功 能: 将字符串转换为double型值<br> 用 法: double strtod(char *str, char **endptr);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;stdlib.h&gt;<br> int main(void)<br> {<br> char input[80], *endptr;<br> double value;<br> printf(“Enter a floating point number:”);<br> gets(input);<br> value = strtod(input, &amp;endptr);<br> printf(“The string is %s the number is %lfn”, input, value);<br> return 0;<br> }   </p>
-<p>函数名: strsep<br> 功 能: 分解字符串为一组字符串。从str1指向的位置起向后扫描，遇到delim指向位置的字符后，将此字符替换为NULL，返回str1指向的地址。<br> 用 法: char <em>strtok(char **str1, const char </em>delim);<br> 程序例:<br> int main()<br> {<br> int len, nel;<br> char query[] =”user_command=appleboy&amp;test=1&amp;test2=2”;<br> char <em>q, </em>name, <em>value; /</em> Parse into individualassignments <em>/<br> q = query; fprintf(stderr, “CGI[query string] : %s\n”,query);<br> len = strlen(query);<br> nel = 1;<br> while (strsep(&amp;q, “&amp;”))<br> nel++;<br> fprintf(stderr, “CGI[nel string] : %d\n”, nel);<br> for (q = query; q&lt; (query + len);)<br> {<br> value = name = q; /</em> Skip to next assignment <em>/<br> fprintf(stderr, “CGI[string] :%s\n”, q);<br> fprintf(stderr, “CGI[stringlen] : %d\n”, strlen(q));<br> fprintf(stderr, “CGI[address] :%x\n”, q);<br> for (q += strlen(q); q &lt; (query +len) &amp;&amp; !</em>q; q++); /<em> Assign variable </em>/<br> name = strsep(&amp;value,”=”);<br> fprintf(stderr, “CGI[name ] :%s\n”, name);<br> fprintf(stderr, “CGI[value] :%s\n”, value);<br> }<br> return 0;<br> }   </p>
-<p>函数名: strtok<br> 功 能: 查找由在第二个串中指定的分界符分隔开的单词<br> 用 法: char <em>strtok(char </em>str1, char *str2);<br> 程序例:   </p>
-<p> #include &lt;string.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char input[16] = “abc,d”;<br> char <em>p;<br> /</em> strtok places a NULL terminator<br> in front of the token, if found <em>/<br> p = strtok(input, “,”);<br> if (p) printf(“%sn”, p);<br> /</em> A second call to strtok using a NULL<br> as the first parameter returns a pointer<br> to the character following the token */<br> p = strtok(NULL, “,”);<br> if (p) printf(“%sn”, p);<br> return 0;<br> }   </p>
-<p>函数名: strtol<br> 功 能: 将串转换为长整数<br> 用 法: long strtol(char *str, char **endptr, int base);<br> 程序例:   </p>
-<p> #include &lt;stdlib.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;<br> int main(void)<br> {<br> char <em>string = “87654321”, </em>endptr;<br> long lnumber;<br> /<em> strtol converts string to long integer </em>/<br> lnumber = strtol(string, &amp;endptr, 10);<br> printf(“string = %s long = %ldn”, string, lnumber);<br> return 0;<br> }   </p>
-<p>函数名: strupr<br> 功 能: 将串中的小写字母转换为大写字母<br> 用 法: char <em>strupr(char </em>str);<br> 程序例:   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;<br> int main(void)<br> {<br> char <em>string = “abcdefghijklmnopqrstuvwxyz”, </em>ptr;<br> /<em> converts string to upper case characters </em>/<br> ptr = strupr(string);<br> printf(“%sn”, ptr);<br> return 0;<br> }   </p>
-<p>函数名: swab<br> 功 能: 交换字节<br> 用 法: void swab (char <em>from, char </em>to, int nbytes);<br> 程序例:   </p>
-<p> #include &lt;stdlib.h&gt;   </p>
-<p> #include &lt;stdio.h&gt;   </p>
-<p> #include &lt;string.h&gt;<br> char source[15] = “rFna koBlrna d”;<br> char target[15];<br> int main(void)<br> {<br> swab(source, target, strlen(source));<br> printf(“This is target: %sn”, target);<br> return 0;<br> }  </p>
-<p>PS:isalpha()是字符函数，不是字符串函数，  </p>
-<p>isalpha   </p>
-<p> 原型：extern int isalpha(int c);  </p>
-<p> 用法：#include &lt;ctype.h&gt;  </p>
-<p> 功能：判断字符c是否为英文字母  </p>
-<p> 说明：当c为英文字母a-z或A-Z时，返回非零值，否则返回零。  </p>
-<p> 举例：  </p>
-<p> // isalpha.c  </p>
-<p> #include &lt;syslib.h&gt;  </p>
-<p> #include &lt;ctype.h&gt;  </p>
-<p> #include &lt;stdio.h&gt;  </p>
-<p> main()<br> {<br> int c;  </p>
-<p> clrscr(); // clear screen<br> printf(“Press a key”);<br> for(;;)<br> {<br> c=getchar();<br> clrscr();<br> printf(“%c: %s letter”,c,isalpha(c)?”is”:”not”);<br> }<br> return 0; // just to avoid warnings by compiler<br> }</p>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong><a href rel="nofollow">RegCloseKey</a>：<span style="color:#333333;">释放对指定注册表项的句柄。<a href="https://blog.csdn.net/ke_yi_/article/details/80928198" rel="noopener" target="_blank">点击跳转到函数</a></span></strong></p><br><br><p><strong><span style="color:#333333;"><strong><a href rel="nofollow">RegConnectRegistry</a>：<span style="color:#2e3033;">在另一台计算机上建立到预定义注册表句柄的连接。<a href="https://blog.csdn.net/ke_yi_/article/details/80928426" rel="noopener" target="_blank">点击跳转到函数</a></span></strong></span></strong></p><br><br><p><strong><a href rel="nofollow">RegCreateKeyEx</a>：<span style="color:#2e3033;">创建指定的注册表项。<a href="https://blog.csdn.net/ke_yi_/article/details/80928693" rel="noopener" target="_blank">点击跳转到函数</a></span></strong></p><br><br><p><a href rel="nofollow"><strong>RegDeleteKey</strong></a>：<span style="color:#2e3033;"><strong>删除注册表子项。</strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegDeleteValue</a>：<span style="color:#2e3033;">从指定的注册表项中删除键值。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegDisablePredefinedCache</a>：<span style="color:#2e3033;">为指定的进程禁用HKEY_CURRENT_USER的预定义注册表句柄表。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegEnumKeyEx</a>：<span style="color:#2e3033;">枚举指定的打开注册表项的子键。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegEnumValue</a>：<span style="color:#2e3033;">枚举指定的打开注册表项的键值。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegFlushKey</a>：<span style="color:#2e3033;">将指定的打开注册表键的所有属性写入注册表。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><a><strong>RegGetKeySecurity：<span style="color:#2e3033;">检索保护指定开放注册表项的安全描述符的副本。</span></strong></a></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegLoadKey</a>：<span style="color:#2e3033;">在HKEY_USERS或HKEY_LOCAL_MACHINE下创建一个子键，并将指定文件中的注册信息存储到该子键中。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegNotifyChangeKeyValue</a>：<span style="color:#2e3033;">通知调用方对指定注册表项的属性或内容的更改。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegOpenCurrentUser</a>：<span style="color:#2e3033;">检索当前线程模拟的用户的HKEY_CURRENT_USER密钥的句柄。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegOpenKeyEx</a>：<span style="color:#2e3033;">打开指定的注册表键。<a href="https://blog.csdn.net/ke_yi_/article/details/80930685" rel="noopener" target="_blank">点击跳转到函数</a></span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegOpenUserClassesRoot</a>：<span style="color:#2e3033;">检索指定用户的HKEY_CLASSES_ROOT密钥的句柄。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegOverridePredefKey</a>：<span style="color:#2e3033;">检索与开放注册表键关联的指定值名称的类型和数据。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegQueryInfoKey</a>：<span style="color:#2e3033;">检索有关指定注册表项的信息。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegQueryMultipleValues</a>：<span style="color:#2e3033;">检索与开放注册表项相关联的值名称列表的类型和数据。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegQueryValueEx</a>：<span style="color:#2e3033;">检索与开放注册表键关联的指定值名称的类型和数据。<a href="https://blog.csdn.net/ke_yi_/article/details/80930883" rel="noopener" target="_blank">点击跳转到函数</a></span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegReplaceKey</a>：<span style="color:#2e3033;"><span style="color:#2e3033;">用另一个文件替换支持注册表键及其所有子键的文件。</span></span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegRestoreKey</a>：</strong></span><span style="color:#2e3033;"><strong>读取指定文件中的注册表信息，并将其复制到指定的键上。</strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegSaveKey</a>：<span style="color:#2e3033;">将指定的键及其所有子键和值保存到新文件中。</span></strong></span></p><br><br><p><span style="color:#2e3033;"><a><strong>RegSetKeySecurity：<span style="color:#2e3033;">设置开放注册表项的安全性。</span></strong></a></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegSetValueEx</a>：<span style="color:#2e3033;">在注册表项下设置指定值的数据和类型。<a href="https://blog.csdn.net/ke_yi_/article/details/80930423" rel="noopener" target="_blank">点击跳转到函数</a></span></strong></span></p><br><br><p><span style="color:#2e3033;"><strong><a href rel="nofollow">RegUnLoadKey</a>：<span style="color:#2e3033;">从注册表中卸载指定的注册表项及其子键。</span></strong></span></p><br>          </div>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80902628/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ke_yi_">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/ke_yi_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KE_YI_">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/16/80902628/" class="post-title-link" itemprop="url">WSASocket函数未定义和重定义错误</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:10" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div class="htmledit_views" id="content_views"><br>            <p>报错error C2065: ‘WSASocket’ : undeclared identifier</p><br><br><p>意思是WSASocket函数没有声明定义</p><br><br><p>WSASocket()是：创建一个与指定传送服务提供者捆绑的套接口，可选地创建和/或加入一个套接口组。</p><br><br><p>此函数为socket（）的扩展版本，其功能都是创建一个原始套接字。使用时需要包含</p><br><br><p>winsock2.h 头文件和链接ws2_32.lib库。</p><br><br><p>刚开始我的情况是再cpp文件中包含了windows.h的头文件，也链接了ws2_32.lib库，然后出现没有定义的错误，后来我通过百度查到其需要包含winsock2.h的头文件然后我再windows.h后面又包含了winsock2.h的头文件，但是出现的报错就更多了，报错如下：</p><br><br><p>c:\program files\microsoft visual studio\vc98\include\winsock2.h(99) : error C2011: ‘fd_set’ : ‘struct’ type redefinition<br><br>c:\program files\microsoft visual studio\vc98\include\winsock2.h(134) : warning C4005: ‘FD_SET’ : macro redefinition<br><br>        c:\program files\microsoft visual studio\vc98\include\winsock.h(84) : see previous definition of ‘FD_SET’</p><br><br><p>。。。。。。。。（还有好多）</p><br><br><p>然后我将winsock2.h的头文件删了，又到百度找答案，然后查到一篇博文说他误打误撞在winsock.h的头文件中包含stdafx.h头文件，我也试了一下，但是还是不行，可能是我的文件不同吧，因为编译之后我说stdafx.h没有定义，我找一下放头文件的文件夹是没有这个文件，我不至于这样就到网上找找一个包含进去吧，然后我打开我引入的头文件windows.h看了一下，里面包含了winsock.h，然后我到MSDN Library 找才知道winsock2.h是winsock.h的升级版，不能放在一起用，所以我就将winsock2.和定义到windows.h文件的前面，然后就可以了。</p><br><br><p>最后我打开winsock2.h和winsock.h两个文件，发现他们的宏定义是这样的</p><br><br><p><img alt class="has" src="https://img-blog.csdn.net/20180703185814153?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p><br><br><p>winsock2.h中定义了winsock.h的宏，说明如果先引入了winsock2.h同文件再引入winsock.h头文件，编译器是不会去编译winsock.h头文件的，如果倒过来就不同，并且会出现很多错误，是因为winsock.h和winsock2.h存在很多相同的定义或者其它。其实在winsock2.h文件中就能找到答案，下图“阻止包含windows.h中的winsock.h”。</p><br><br><p><img alt class="has" src="https://img-blog.csdn.net/20180703190149690?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p><br><br><p> </p><br><br><p> </p>          </div>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80896692/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ke_yi_">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/ke_yi_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KE_YI_">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/16/80896692/" class="post-title-link" itemprop="url">windows xp蓝屏英文翻译</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:29" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div class="htmledit_views" id="content_views"><br>            <p> </p><br><br><p><span style="color:#000000;">a problem has been detected and windows has been shut down to prevent damage to you computer.<br><br>if this is the first time you`ve seen this stop error screen,restart your computer. if this screen appears again,follow these steps:<br><br>check to be sure you have adequate disk space .if a driver is identified in the stop message,disable the driver or check with the manufacturer for driver updates. try changing video adapters.<br><br>check with your hardware vendor for any bios updates.disavle bios memory options such as caching or shadowing.if you need to use safe mode to remove or disable componnents,restart your computer,press F8 to select advanced startup options,and then select safe mode.<br><br>Technical information:</span></p><br><br><p> </p><br><br><p><span style="color:#000000;"><em>** stop:0x0000008E(0xC0000005,0x8057CC62,0xB2CBC9D4,0x00000000)</em></span></p><br><br><p> </p><br><br><p><span style="color:#000000;">已检测到一个问题，windows已被关闭，以防止损坏您的计算机。</span></p><br><br><p><span style="color:#000000;">如果这是您第一次看到停止错误屏幕，请重新启动计算机。如果此屏幕再次出现，请遵循以下步骤:</span></p><br><br><p><span style="color:#000000;">检查是否有足够的磁盘空间。如果停止消息中标识了一个驱动程序，请禁用该驱动程序或与制造商检查驱动程序更新。试着改变视频适配器。</span></p><br><br><p><span style="color:#000000;">请与您的硬件供应商检查任何bios更新。取消bios内存选项，如缓存或隐藏。如果需要使用安全模式删除或禁用组件，请重新启动计算机，按F8选择高级启动选项，然后选择安全模式。</span></p><br><br><p><span style="color:#000000;">技术信息:</span></p><br><br><p><span style="color:#000000;"> <em> </em>站:0 x0000008e(0 xc0000005,0 x8057cc62 0 xb2cbc9d4 0 x00000000)</span></p><br><br><p> </p><br><br><p><span style="color:#000000;">第一次重启没有成功，第二次我本来想通过高级启动进入安全模式的但是重启之后没有来得及按F8就启动了，输入密码直接开机了，问题也就没有了。</span></p><br><br><p>下次如果再遇到类似的问题就可以多重启几次，如果实在不行再进入安全模式，每个电脑进入安全模式的方式是不同的，百度一下，有些事ctrl、F8、等</p>          </div>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80828286/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ke_yi_">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/ke_yi_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KE_YI_">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/16/80828286/" class="post-title-link" itemprop="url">海明校验码</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:10" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div class="htmledit_views" id="content_views"><br>            <p><br><br>基本思想：将有效信息位按某种规律分成若干组，每组安排一个校验位进行奇偶测试。在一个数据位组中加入几个校验位，增大数据代码间的码距，当某一位发生变化时会引起校验结果发生变化，不同代码微商的凑无会得到不同的校验结果。</p><br><br><p>校验码的位数：设位数为N位，其中有效信息为k位，校验位为r位，分成r组奇偶校验，能产生r位验错信息，这r位信息就构成了一个二进制数的指误字，能指出2<span style="color:#000000;">∧r-1位错误。所以N=k+r&lt;=2<span style="color:#000000;">∧r-1</span></span></p><br><br><p><span style="color:#000000;">有效信息分组规律：若海明校验码有m位，最高为第m位，最低为第1位，即H[m]、H[m-1]… … H[2]、H[1],其中中括号里面的数为位号数，位号数等于2的次方的那些位（即1（2^0）、2(2^1)、4(2^2)、… …2^(r-1)位），作为奇偶校验位，并记为P1、P2……Pr，余下的位则为有效信息位。校验位与有效信息位之和为m。</span></p><br><br><p><span style="color:#000000;">每一位海明码由某些校验位所校验：即第i位由校验位位号之和等于i的那些校验位所校验。如下表：</span></p><br><br><p> </p><br><br><p><span style="color:#000000;">海明校验 占用校 备注<br><span style="color:#000000;">码位号      <span style="color:#000000;">验位号</span></span></span><br><span style="color:#000000;">1</span><span style="color:#000000;">         </span><span style="color:#000000;">1</span><span style="color:#000000;">         </span><span style="color:#000000;">1=1</span><br><span style="color:#000000;">2</span><span style="color:#000000;">         </span><span style="color:#000000;">2</span><span style="color:#000000;">         </span><span style="color:#000000;">2=2</span><br><span style="color:#000000;">3</span><span style="color:#000000;">         </span><span style="color:#000000;">1，2        </span><span style="color:#000000;"> </span><span style="color:#000000;">3=1+2</span><br><span style="color:#000000;">4</span><span style="color:#000000;">         </span><span style="color:#000000;">4</span><span style="color:#000000;">         </span><span style="color:#000000;">4=4</span><br><span style="color:#000000;">5</span><span style="color:#000000;">         </span><span style="color:#000000;">1，4</span><span style="color:#000000;">         </span><span style="color:#000000;">5=1+4</span><br><span style="color:#000000;">6</span><span style="color:#000000;">         </span><span style="color:#000000;">2，4</span><span style="color:#000000;">         </span><span style="color:#000000;">6=2+4</span><br><span style="color:#000000;">7</span><span style="color:#000000;">         </span><span style="color:#000000;">1，2，4</span><span style="color:#000000;"> </span><span style="color:#000000;">7=1+2+4</span></p><br><br><p> </p><br><br><p><span style="color:#000000;">海明码的编码、查找、纠错原理：</span></p><br><br><p> </p><br><br><p><span style="color:#000000;">设有4位有效信息b1、b2、b3、b4和3位校验码<span style="color:#000000;">P1、P2、P3</span><br><br>海明校验<br><br>码序号<span style="color:#000000;">    1</span><span style="color:#000000;">    2</span><span style="color:#000000;">    3</span><span style="color:#000000;">    4</span><span style="color:#000000;">    5</span><span style="color:#000000;">    6</span><span style="color:#000000;">     7                                        出错位<br><br>含义       P1  P2  b1  P2  b2  b3  b4  指误字  无错误 1    2    3    4    5    6    7<br><br>第一组    <em>           </em>           <em>          </em>        G1        0     1    0    1    0    1    0    1<br><br>第二组           <em>    </em>                 <em>    </em>        G2        0     0    1    1    0    0    1    1</span></span></p><br><br><p> </p><br><br><p><span style="color:#000000;"><span style="color:#000000;">第三组                       <em>     </em>    <em>    </em>        G3        0     0    0    0    1    1    1    1</span></span></p><br><br><p><span style="color:#000000;">编码原理 ：   若有效信息b1、b2、b3、b4=1011，则先将它分别填入第3、5、6、7位，再分组进行奇偶统计，分别将值填入校验位P1、P2、P3。这里分组采用偶校验，因此要确保三组校验位的取值都满足偶校验规则。例如第一组有P1b1b2b4，已含有偶数个1，因此P1应为0，以确保第一组为偶性。由此可得</span><span style="color:#000000;">P1</span><span style="color:#000000;">  P2  b1  P2  b2  b3  b4=0110011。</span></p><br><br><p><span style="color:#000000;">差错和纠错原理 ：计算G1=P1⊕b1⊕b2⊕b4;G2=P2⊕b1⊕b3⊕b4;G3=P2⊕b2⊕b3⊕b4;得到的G1G2G3的值就是出错位的二进制码序号，如G1G2G2=001，说明出错位的码序号是1。</span></p>          </div>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80759494/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ke_yi_">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/ke_yi_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KE_YI_">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/16/80759494/" class="post-title-link" itemprop="url">stl学习总结</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:11" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div class="htmledit_views" id="content_views"><br>            <p><span style="color:#000000;">文档下载路径（内含源码）<a href="http://t.cn/RrMS0Tv" rel="noopener" target="_blank">点击打开链接</a></span></p><br><br><p><span style="color:#000000;">目录</span></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229938" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>stl总结</u></span>… 2</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229939" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>迭代器</u></span>… 2</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229940" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>输出迭代器：</u></span>… 2</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229941" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>输入迭代器</u></span>… 2</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229942" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>向前迭代器</u></span>… 2</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229943" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>双向迭代器</u></span>… 2</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229944" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>随机访问迭代器</u></span>… 2</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229945" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>插入迭代器</u></span>… 2</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229946" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>流迭代器</u></span>… 2</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229947" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>常量迭代器和可变迭代器</u></span>… 2</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229948" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>迭代器的分类</u></span>… 2</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229949" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>类属算法</u></span>… 3</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229950" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>STL基本算法组织</u></span>… 3</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229951" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>非可变序列算法：</u></span>… 3</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229952" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>可变序列算法</u></span>… 3</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229953" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>排序相关的算法</u></span>… 5</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229954" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>通用数值算法</u></span>… 6</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229955" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>序列容器</u></span>… 7</a></p><br><br><p><a href="https://mp.csdn.net/postedit/80759494#_Toc504229956" rel="noopener" target="_blank"><span style="color:#0563c1;"><u>向量</u></span>… 7</a></p><br><br><p><strong><span style="color:#000000;"> </span></strong></p><br><br><p> </p><br><br><p><span style="color:#000000;"> </span></p><br><br><p> </p><br><br><h1><span style="color:#000000;"><a>stl</a>总结</span></h1><br><br><h2><a><span style="color:#000000;">迭代器</span></a></h2><br><br><p><span style="color:#000000;"><a>输出迭代器：</a>！=，++，<em>first（只实现输出）操作。OutputIterator</em></span></p><br><br><p><span style="color:#000000;"><a>输入迭代器</a>：first（实现输入），++。InputIterator</span></p><br><br><p><span style="color:#000000;"><a>向前迭代器</a>：包括输出、输出迭代器的所有操作，有类似指针的++操作。ForwardIterator</span></p><br><br><p><span style="color:#000000;"><a>双向迭代器</a>：包括前向迭代器的操作，有类似指针的—操作。</span></p><br><br><p><span style="color:#000000;"><a>随机访问迭代器</a>：包括双向迭代器的操作，然后还满足下列操作</span></p><br><br><p><span style="color:#000000;">对整数的加减法，以r+n，n+r和r-n表示。</span></p><br><br><p><span style="color:#000000;">使用表达式r[n]访问第n个元素，其含义为<em>(r+n)。</em></span></p><br><br><p><span style="color:#000000;">双向“跳转”，以r+=n和r-=n表示。</span></p><br><br><p><span style="color:#000000;">迭代器减法，以r-s表示，其结果为整数值。</span></p><br><br><p><span style="color:#000000;">比较，以r&lt;s、r&gt;s、r&lt;=s、r&gt;=s表示，其结果为布尔值。</span></p><br><br><p><span style="color:#000000;"><a>插入迭代器</a>：插入迭代器可将类书算法转入到“插入模式”，意味着表达式i=…的意义将不在是将i处的对象改写，而是在该位置执行插入操作，这种操作是通过容器的某个插入成员数实现的。STL提供了3种类型的插入迭代器：</span></p><br><br><p><span style="color:#000000;">back_insert_iterator&lt;Container&gt; 使用了Container的push_back成员函数。</span></p><br><br><p><span style="color:#000000;">Front_insert_iterator&lt;Container&gt; 使用了Container的push_front成员函数。</span></p><br><br><p><span style="color:#000000;">Insert_iterator&lt;Container&gt; 使用了Container的insert成员函数。</span></p><br><br><p><span style="color:#000000;">copy(deque1.begin(),deque1.end(),vector1.begin());//ERROR</span></p><br><br><p><span style="color:#000000;"><em>(vector1())=</em>(deque1.begin())//会产生运行错误</span></p><br><br><p><span style="color:#000000;">copy(deque1.begin(),deque1.end(),back_insert_iteraror&lt;vector&lt;int&gt;&gt;(vector1))//AC</span></p><br><br><p><span style="color:#000000;">附：</span></p><br><br><p><span style="color:#000000;">template&lt;typename Container&gt;</span></p><br><br><p><span style="color:#000000;">inline back_insert_iterator&lt;Container&gt;back_inserter(Container&amp;x){</span></p><br><br><p><span style="color:#000000;">return back_insert_iterator&lt;Container&gt;(x);}</span></p><br><br><p><span style="color:#000000;">这样就可以：copy(deque1.begin(),deque1.end(),back_inserter(vector1));</span></p><br><br><p><span style="color:#000000;"><a>流迭代器</a>：istream_iterator类提供输入迭代去，ostream_iterator类提供输出迭代器。</span></p><br><br><p><span style="color:#000000;"><a>常量迭代器和可变迭代器</a>：根据运算符<em>返回的结果是指针还是常量指针分别。如果是指针就可以对</em>vector1执行<em>vector=…操作，如果是常量就不能。例：vector&lt;int&gt;：：const_iterator;</em></span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><span style="color:#000000;"><a>迭代器的分类</a>：</span></p><br><br><table border="1" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align:top;"><br>            <p><span style="color:#000000;">容器</span></p><br>            </td><br>            <td style="vertical-align:top;"><br>            <p><span style="color:#000000;">迭代器</span></p><br>            </td><br>            <td style="vertical-align:top;"><br>            <p><span style="color:#000000;">迭代器分类</span></p><br>            </td><br>        </tr><tr><td style="vertical-align:top;"><br>            <p><span style="color:#000000;">dT a[n]</span></p><br><br>            <p><span style="color:#000000;">Vector&lt;T&gt;</span></p><br><br>            <p><span style="color:#000000;">deque&lt;T&gt;</span></p><br><br>            <p><span style="color:#000000;">list&lt;T&gt;</span></p><br><br>            <p><span style="color:#000000;">set&lt;T&gt;</span></p><br><br>            <p><span style="color:#000000;">multiset&lt;T&gt;</span></p><br><br>            <p><span style="color:#000000;">map&lt;Key,T&gt;</span></p><br><br>            <p><span style="color:#000000;">multimap&lt;Key,T&gt;</span></p><br>            </td><br>            <td style="vertical-align:top;"><br>            <p><span style="color:#000000;">T</span></p><br><br>            <p><span style="color:#000000;">vector&lt;T&gt;::iterator</span></p><br><br>            <p><span style="color:#000000;">deque&lt;T&gt;::iterator</span></p><br><br>            <p><span style="color:#000000;">list&lt;T&gt;::iterator</span></p><br><br>            <p><span style="color:#000000;">set&lt;T&gt;::iterator</span></p><br><br>            <p><span style="color:#000000;">multiset&lt;T&gt;::iterator</span></p><br><br>            <p><span style="color:#000000;">map&lt;Key,T&gt;::iterator</span></p><br><br>            <p><span style="color:#000000;">multimap&lt;Key,T&gt;::iterator</span></p><br>            </td><br>            <td style="vertical-align:top;"><br>            <p><span style="color:#000000;">随机访问</span></p><br><br>            <p><span style="color:#000000;">随机访问</span></p><br><br>            <p><span style="color:#000000;">随机访问</span></p><br><br>            <p><span style="color:#000000;">双向访问</span></p><br><br>            <p><span style="color:#000000;">双向访问</span></p><br><br>            <p><span style="color:#000000;">双向访问</span></p><br><br>            <p><span style="color:#000000;">双向访问</span></p><br><br>            <p><span style="color:#000000;">双向访问</span></p><br>            </td><br>        </tr><tr><td colspan="3" style="vertical-align:top;"><br>            <p><span style="color:#000000;">附：const_iterator就成为常量某某访问。</span></p><br>            </td><br>        </tr></tbody></table><h2><a><span style="color:#000000;">类属算法</span></a></h2><br><br><p><span style="color:#000000;"><a>STL</a>基本算法组织</span></p><br><br><p><span style="color:#000000;">原地形式和复制形式：</span></p><br><br><p><span style="color:#000000;">原地形式：sort(&amp;a[0],a[1000]);</span></p><br><br><p><span style="color:#000000;">复制形式：reverse_sort(&amp;a[0],&amp;a[1000],&amp;b[0]);</span></p><br><br><p><span style="color:#000000;"><strong>具有函数参数的算法：</strong>sort(&amp;a[0],&amp;a[1000],greater&lt;int&gt;());</span></p><br><br><p><span style="color:#000000;">利用了模板参数greater的默认构造函数创建一个函数对象greater&lt;int&gt;(),并把它作为二元判断函数传给类属算法sort，一边对数组按升序排序</span></p><br><br><p><span style="color:#000000;">find(InputIterator first,InputIterator last,constT&amp;value);</span></p><br><br><p><span style="color:#000000;">find_if(InputIterator first,InputIterator last,Predicatepred);</span></p><br><br><p><a><span style="color:#000000;">非可变序列算法：</span></a></p><br><br><p><span style="color:#000000;"><strong>find:</strong>线性时间复杂度</span></p><br><br><p><span style="color:#000000;">class GreaterThan50{public:bool operator()(intx)const{return x&gt;50;}};</span></p><br><br><p><span style="color:#000000;">vector&lt;int&gt;::iterator wherefind_if(vector1.begin(),vector1.end(),GreaterThan50());</span></p><br><br><p><span style="color:#000000;"><strong>adjacent_find:</strong>线性时间复杂度</span></p><br><br><p><span style="color:#000000;">在序列中查找相邻且相等的两个元素，找到时返回只想两个元素中第一个迭代器。</span></p><br><br><p><span style="color:#000000;">deque&lt;string&gt; play[5];…deque&lt;string&gt;::iteratori;</span></p><br><br><p><span style="color:#000000;">i=adjacent_find(play.begin(),play.end());</span></p><br><br><p><span style="color:#000000;"><strong>count:</strong>线性时间复杂度</span></p><br><br><p><span style="color:#000000;">在序列中查找等于某个给定值的元素的个数。</span></p><br><br><p><span style="color:#000000;">int final_count=count(&amp;a[0],&amp;a[9],1);</span></p><br><br><p><span style="color:#000000;">final_count=count_if(&amp;a[0],&amp;a[9],bind2nd(not_equal_to&lt;int&gt;(),1);</span></p><br><br><p><span style="color:#000000;">通过二元判断函数not_equal_to&lt;int&gt;和1作为参数传递给函数适配器band2nd,创建count_if一元判断函数。not_…和ban…定义在functional中。</span></p><br><br><p><span style="color:#000000;"><strong>for_each:</strong>线性时间复杂度</span></p><br><br><p><span style="color:#000000;">对序列中的每一个元素施加由函数f指定的操作。</span></p><br><br><p><span style="color:#000000;">void print_list(string s){cout&lt;&lt;s&lt;&lt;endl;}</span></p><br><br><p><span style="color:#000000;">list&lt;string&gt; dlist;….</span></p><br><br><p><span style="color:#000000;">for_each(dlist.begin(),dlise.end(),print_list);</span></p><br><br><p><span style="color:#000000;"><strong>mismatch&amp;equal</strong>:线性时间复杂度</span></p><br><br><p><span style="color:#000000;">比较容器中两个区间内元素。equal如果相等返回true，反之返回false。mismatch的返回值是两个迭代器first1+i和first2+i组成的一个pair，表示第一个不想等元素的位置。如果相等返回last1和first2+(last1-first1).</span></p><br><br><p><span style="color:#000000;">equal(deq.begin(),deq.end(),list1.begin());</span></p><br><br><p><span style="color:#000000;">pair&lt;deque&lt;string&gt;::iterator,list&lt;string&gt;::iterator&gt;</span></p><br><br><p><span style="color:#000000;">pair=mismatch(deq.begin(),deq.end(),list1.begin());</span></p><br><br><p><span style="color:#000000;"><strong>search:</strong>时间复杂度O(n+m)</span></p><br><br><p><span style="color:#000000;">给定两个迭代器区间，将后一个迭代器区间内的对象作为子序列，并在前一个区间内查找出现该子序列的第1个位置。</span></p><br><br><p><span style="color:#000000;">Vector&lt;int&gt;::iterator K=</span></p><br><br><p><span style="color:#000000;">search(vector1.begin(),vector1.end(),deque1.begin(),deque1.end());</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><a><span style="color:#000000;">可变序列算法</span></a></p><br><br><p><span style="color:#000000;"><strong>copy&amp;copy_backward</strong>:</span></p><br><br><p><span style="color:#000000;">作用是将容器中的内容从一个区间复制到另一个区间。</span></p><br><br><p><span style="color:#000000;">copy(first1,last1,first2);将[first1,last1-1]中的内容复制到[first2,last2]中，并返回last2。该算法是向前处理即不改变原来的顺序，copy_backward算法则相反。</span></p><br><br><p><span style="color:#000000;"><strong>fill&amp;fill_n</strong>:具有线性时间复杂度。</span></p><br><br><p><span style="color:#000000;">fill将某个值复制到某一区间的所有位置中,fill_n则是将某个值复制到某一区间的前n个位置中。</span></p><br><br><p><span style="color:#000000;">fill(first,last,value);fill_n(first,n,value);</span></p><br><br><p><span style="color:#000000;"><strong>generate</strong>：具有线性时间复杂度。</span></p><br><br><p><span style="color:#000000;">连续调用gen函数last-first次，并用该函数的返回值来填充[first,last]。</span></p><br><br><p><span style="color:#000000;">Template&lt;typename T&gt; class calc_square{TI;public:calc_square():i(0){} </span></p><br><br><p><span style="color:#000000;">T operator()(){++I;return i<em>i;}};</em></span></p><br><br><p><span style="color:#000000;">generate(vector1.begin(),vector1.end(),calc_square&lt;int&gt;());</span></p><br><br><p><span style="color:#000000;"><strong>partition&amp;stable_partition</strong>:具有时间复杂度。</span></p><br><br><p><span style="color:#000000;">partition对于给定区间[first,last]和一个一元判断函数pred，它可以对该区间重新排序，以使所有满足判断函数pred的元素排在所有不满足pred的元素前面。</span></p><br><br><p><span style="color:#000000;">stable_partition类似partition功能，并且可以使分类后的两部分保持原来的相对位置。</span></p><br><br><p><span style="color:#000000;">Bool above40(int n){return(n&gt;40);}</span></p><br><br><p><span style="color:#000000;">intsplit=partition(&amp;array1[0],&amp;array1[N],above40);</span></p><br><br><p><span style="color:#000000;">split=stable_partition(&amp;array1[0],&amp;array1[N],above40);</span></p><br><br><p><span style="color:#000000;"><strong>random_shuffle</strong>:具有线性时间复杂度。</span></p><br><br><p><span style="color:#000000;">利用能够产生伪随机数的函数，对区间[first,last]中的元素混洗顺序后重新排列。</span></p><br><br><p><span style="color:#000000;">random_shuffle(vector1.begin(),vector1.end());</span></p><br><br><p><span style="color:#000000;">另外还有一种形式有三个参数，第三个参数是一个函数，这个函数提供不同的随机数发生器。</span></p><br><br><p><span style="color:#000000;"><strong>remove</strong>:具有线性时间复杂度。</span></p><br><br><p><span style="color:#000000;">从一个区间中删除所有等于某个特定值的元素，并且删除后其它元素的相对位置保持不变。</span></p><br><br><p><span style="color:#000000;">vector&lt;int&gt;::iterator new_end=move(vector.begin(),vector.end(),0);</span></p><br><br><p><span style="color:#000000;"><strong>replace</strong>:具有线性时间复杂度。</span></p><br><br><p><span style="color:#000000;">把一个区间中所有等于某一特定值的元素用另一个值替换。</span></p><br><br><p><span style="color:#000000;">replace(vector1.begin(),vector1.end(),’R’,’S’);</span></p><br><br><p><span style="color:#000000;"><strong>reverse</strong>:具有线性时间复杂度。倒转区间元素的排列顺序。</span></p><br><br><p><span style="color:#000000;"><strong>rotate</strong>:具有线性时间复杂度。</span></p><br><br><p><span style="color:#000000;">对区间内的元素进行循环移动操作。</span></p><br><br><p><span style="color:#000000;">rotate(first,middle,last);作用是将[first,last]区间内的元素循环左移middle-first个位置。函数返回后，原来[middle,last]中的元素将出现在区间[first,first+k]中，k=last-middle;而原来在[first,middle]中的元素将出现在区间[first+k,last]中，rotate算法的参数必须是双向迭代器。</span></p><br><br><p><span style="color:#000000;"><strong>swap:</strong>具有常量时间复杂度。</span></p><br><br><p><span style="color:#000000;">对两个值进行交换。swap(vector1,vector2);</span></p><br><br><p><span style="color:#000000;"><strong>swap_ranges</strong>:具有线性时间复杂度。</span></p><br><br><p><span style="color:#000000;">交换两个区间中的值，两个区间可以在不同的容器中。</span></p><br><br><p><span style="color:#000000;">swap_ranges(first1,last1,first2);表示将[first1,last1]与[first2,first2-(last1-first1)]替换，规定两个区间不可以重叠。</span></p><br><br><p><span style="color:#000000;"><strong>transform</strong>:具有线性时间复杂度。</span></p><br><br><p><span style="color:#000000;">将某个函数作用到某一区间内的每一个元素上，并将该函数返回的结果保存到另一个区间中。该算法有两种形式：一种采用的是一元函数，作用到区间中的每个元素上；另一种是二元函数，同时作用到两个区间中相互对应的元素上。</span></p><br><br><p><span style="color:#000000;">int sum(int val1,int val2){return val2+val1;}</span></p><br><br><p><span style="color:#000000;">ostream_iterator&lt;int&gt; out(cout,” “);</span></p><br><br><p><span style="color:#000000;">transform(&amp;array1[0],&amp;array[5],&amp;array2[0],out,sum);</span></p><br><br><p><span style="color:#000000;"><strong>unique</strong>:具有线性时间复杂度。</span></p><br><br><p><span style="color:#000000;">从输入序列中去掉所有有相邻的重复元素，对序列受那个的若干个相邻且相等的元素中只保留第一个元素。并且不改变容器内原来的元素相对位置和大小，变小后的区间将返回该区间的末尾迭代器。</span></p><br><br><p><span style="color:#000000;">vector&lt;int&gt;::iteratornew_end=unique(vector1.begin(),vector1.end());</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><a><span style="color:#000000;">排序相关的算法</span></a></p><br><br><p><strong><span style="color:#000000;">sort&amp;stable_sort&amp;partial_sort</span></strong></p><br><br><p><span style="color:#000000;">三种算法都是对随机访问序列排序，排序后的结果仍然保存在他们操作的容器中。</span></p><br><br><p><span style="color:#000000;">sort需要对数的额外储存空间，partial_sort需要常量额外储存空间，stable需要线性额外储存空间。</span></p><br><br><p><span style="color:#000000;">sort对长度为N的序列排序所用的平均比较次数为O(NlogN),但允许最坏O(N<em>N)。</em></span></p><br><br><p><span style="color:#000000;">partial_sort可以确保时间复杂度为O(NlogN).</span></p><br><br><p><span style="color:#000000;">stable_sort时间复杂度也为O(NlogN)，最坏的情况下O(N(logN)(logN))。</span></p><br><br><p><span style="color:#000000;">sort和partial_sort都不要求保持相等元素的相对位置。stable_sort则可以保持。</span></p><br><br><p><span style="color:#000000;"><strong>nth_element</strong>:时间复杂度是线性的，最坏的情况下将减少到二次。</span></p><br><br><p><span style="color:#000000;">实现分割，使分割后左边的元素小于或等于右边的元素。</span></p><br><br><p><span style="color:#000000;">nth_element(v.begin(),v.begin()+N,v.end());</span></p><br><br><p><span style="color:#000000;"><strong>binary_search&amp;lower_bound&amp;upper_bound&amp;equal_range</strong>:</span></p><br><br><p><span style="color:#000000;">对于给定的区间[first,last]和元素x,如果存在x，对于binary_search返回真，lower_bound,upper_bound则返回一个迭代器i,分别指向x的第一个位置和最后一个位置的后一个位置。equal_range则是结合了lower_bound和upper_bound返回两个迭代器。</span></p><br><br><p><span style="color:#000000;">Pair&lt;vector&lt;int&gt;::iterator,vector&lt;int&gt;::iterator&gt;pi=equal_range(v.begin(),v.end(),7);</span></p><br><br><p><span style="color:#000000;"><strong>merge</strong>:具有线性四件复杂度</span></p><br><br><p><span style="color:#000000;">合并两个有序区间，并把结果保存到另一个和两个输入区间均不重叠的区间。Inplace_merge则是将合并后的序列代替两个区间原来的序列，它的时间复杂度依赖可用的额外存储空间，如果没有额外的储存空间则时间复杂度是O(NlogN)。</span></p><br><br><p><span style="color:#000000;">merge(vector1.begin(),vector1.end(),vector2.begin(),vector2.end(),vector3.begin());</span></p><br><br><p><span style="color:#000000;">集合操作和有序结构</span></p><br><br><p><span style="color:#000000;"><strong>Includes&amp;set_union&amp;set_intersection&amp;set_difference&amp;set_symmetric_difference</strong>:</span></p><br><br><p><span style="color:#000000;">Includes检测区间[first1,last1]中的元素是否全部包含在另一个区间中[first2,last2]并返回一个真值。</span></p><br><br><p><span style="color:#000000;">boolresult=includes(vector1.begin(),vector1.end(),vector2.begin(),vector2.end());</span></p><br><br><p><span style="color:#000000;">set_union对两个区间的并集保存在区间[result,last]中，并返回last。</span></p><br><br><p><span style="color:#000000;">Vector&lt;char&gt; setUnion;</span></p><br><br><p><span style="color:#000000;">set_union(vector1.begin(),vector1.end(),vector2.begin(),vector2.end(),back_inserter(setUnion));</span></p><br><br><p><span style="color:#000000;">set_difference得到一个集合这个集合中的元素属于第一个区间但是不属于第二个区间。</span></p><br><br><p><span style="color:#000000;">set_intersection得到两个输入序列的交集。</span></p><br><br><p><span style="color:#000000;">set_symmetric_difference该集合仅属于两个集合中的一个，而不包含交集。</span></p><br><br><p><span style="color:#000000;">和set_union算法一样将结果保存在result集合中。</span></p><br><br><p><span style="color:#000000;">堆操作</span></p><br><br><p><span style="color:#000000;">堆：first所指向的元素是区间中的最大元素。可以通过pop操作删除first指向的元素，push操作向序列中插入元素，两种操作时间复杂度是对数，返回值仍然是一个堆。</span></p><br><br><p><span style="color:#000000;"><strong>make_heap&amp;pop_heap&amp;push_heap&amp;sort_heap</strong>:</span></p><br><br><p><span style="color:#000000;">make_heap利用[first,last]中的元素构造一个堆，并保存在原区间中。算法的时间复杂度是线性的，最多需要3N次比较。</span></p><br><br><p><span style="color:#000000;">push_heap假定[first,last-1]中已经包含了一个堆，该算法是把[first,last]重新整理为一个堆（从而把last-1位置上的元素压入堆中）。</span></p><br><br><p><span style="color:#000000;">pop_heap假定[first,last]中已经包含了一个堆，该算法作用就是将first位置上的值和last-1位置上的值交换，然后把[first,last-1]整理为一个堆。pop和push时间复杂度都是O(NlogN)。</span></p><br><br><p><span style="color:#000000;">sort_heap作用是堆储存在堆中的元素进行排序。算法的时间复杂度是O(NlogN)。</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><span style="color:#000000;">最小值和最大值</span></p><br><br><p><strong><span style="color:#000000;">min&amp;max&amp;min_element&amp;max_element</span></strong></p><br><br><p><span style="color:#000000;">min和max分别以两个元素作为参数，返回相应的值。min_element和max_element返回指向输入序列中最小和最大的迭代器。</span></p><br><br><p><span style="color:#000000;">vectord&lt;int&gt;::iterator k=max_element(vector1.begin(),vector1.end());</span></p><br><br><p><strong><span style="color:#000000;">词典序比较</span></strong></p><br><br><p><span style="color:#000000;">如果e1&lt;e1返回true,否则返回false.</span></p><br><br><p><span style="color:#000000;">bool result=</span></p><br><br><p><span style="color:#000000;">lexicographical_compare(vector1.begin(),vector1.end(),vector2.begin(),vector2.end());</span></p><br><br><p><span style="color:#000000;"><strong>排列生成器</strong>：</span></p><br><br><p><span style="color:#000000;">next_permutation按字典序将序列变换为下一个排列；</span></p><br><br><p><span style="color:#000000;">prev_permutation变换为前一个排序。</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><a><span style="color:#000000;">通用数值算法</span></a></p><br><br><p><span style="color:#000000;"><strong>accumulate</strong>计算给定区间中值的累加和。</span></p><br><br><p><span style="color:#000000;">累加：int result=accumulate(&amp;x[0],&amp;x[20],0);</span></p><br><br><p><span style="color:#000000;">累积：result=accumulate(&amp;x[0],&amp;x[5],1,multiplies&lt;int&gt;());</span></p><br><br><p><span style="color:#000000;"><strong>partial_sum</strong>计算和前t项和的序列保存在原序列中，也可以保存在另一序列中。</span></p><br><br><p><span style="color:#000000;">partial_sum(&amp;x1[0],&amp;x1[N],&amp;x1[0]);partial_sum(&amp;x1[0],&amp;x1[N],&amp;x2[0]);</span></p><br><br><p><span style="color:#000000;"><strong>adjacent_differencej</strong>计算n项与n-1项只差。</span></p><br><br><p><span style="color:#000000;"><strong>inner_produc</strong>t计算输入序列的内积。</span></p><br><br><p><span style="color:#000000;">1<em>2+2</em>3+3<em>4…</em></span></p><br><br><p><span style="color:#000000;">int result=inner_product(&amp;x1[0],&amp;x1[N],&amp;x2[0],0);</span></p><br><br><p><span style="color:#000000;">(1+2)(2+3)<em>…</em></span></p><br><br><p><span style="color:#000000;">intresult=inner_product(&amp;x1[0],&amp;x1[N],&amp;x2[0],1,multiplies&lt;int&gt;(),plus&lt;int&gt;());</span><br><br> </p><br><br><h2><a><span style="color:#000000;">序列容器</span></a></h2><br><br><h3><a><span style="color:#000000;">向量</span></a></h3><br><br><p><span style="color:#000000;">构造序列</span></p><br><br><p><span style="color:#000000;">vector&lt;T&gt; ();//vector&lt;T&gt; vector1;</span></p><br><br><p><span style="color:#000000;">vector&lt;T&gt;(n,value);//vector&lt;T&gt;vector1(n,value);</span></p><br><br><p><span style="color:#000000;">vector&lt;T&gt;(n);//vector&lt;T&gt; vector1(n);</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><span style="color:#000000;">拷贝构造函数</span></p><br><br><p><span style="color:#000000;">vector&lt;T&gt; vector1(3);//其实是调用拷贝构造函数三次。</span></p><br><br><p><span style="color:#000000;">char name[]=”abc”;vector&lt;char&gt;George(name,name+2);</span></p><br><br><p><span style="color:#000000;">//使用拷贝构造函数，向其它向量中的任意区间拷贝数据。</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><span style="color:#000000;">插入</span></p><br><br><p><span style="color:#000000;">vector&lt;char&gt;::iteratori=vector1.begin();</span></p><br><br><p><span style="color:#000000;">vector2.push_back(i);//使用push_back成员在序列尾端插入元素。</span></p><br><br><p><span style="color:#000000;">vector2.insert(vector2.begin();*i);//在vectoe2.begin()位置插入。</span></p><br><br><p><span style="color:#000000;">两者都具有常数时间复杂度。</span></p><br><br><p><span style="color:#000000;">Insert成员函数还可以向序列中插入元素的n个拷贝，或者另外一个序列的某个区间</span></p><br><br><p><span style="color:#000000;">vector1.insert(position,n,x);</span></p><br><br><p><span style="color:#000000;">vector1.insert(position,first,last);</span></p><br><br><p><span style="color:#000000;">insert成员函数的时间复杂度是线性的。</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><span style="color:#000000;">插入操作在内存重新分配的操作</span></p><br><br><p><span style="color:#000000;">vector1.capaciry();//返回当前所分配的内存快的大小。</span></p><br><br><p><span style="color:#000000;">vector1.reserve(n)//重新为vector1分配大于n的内存块。</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><span style="color:#000000;">删除</span></p><br><br><p><span style="color:#000000;">cout&lt;&lt;vectotor1.back();vector1.pop_back();//执行的操作先显示最后元素然后删除。</span></p><br><br><p><span style="color:#000000;">vector1.erase(vector1.begin());</span></p><br><br><p><span style="color:#000000;">vector&lt;char&gt;::iteratorj;vector1.erase(j–);vector1.erase(j,j+2);</span></p><br><br><p><span style="color:#000000;">//erase成员函数的几种形式。</span></p><br><br><p><span style="color:#000000;">//erase函数将使所有删除点之后的迭代去失效，但是删除点上和删除点之前的迭代去则没有影响。</span></p><br><br><p><span style="color:#000000;">//vector1.erase(j++);将无法工作。</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><span style="color:#000000;">访问器</span></p><br><br><p><span style="color:#000000;">iterator begin()    返回指向向量起始点的迭代器。</span></p><br><br><p><span style="color:#000000;">iteratorend()      返回指向向量末尾的迭代器。</span></p><br><br><p><span style="color:#000000;">iteratorrebgin()   返回指向向量起始点的反向迭代器，用来对向量进行反响遍历。</span></p><br><br><p><span style="color:#000000;">Iteratorrend()     返回指向向量末尾的反向迭代器，用来对向量进行反向遍历。</span></p><br><br><p><span style="color:#000000;">size_typesize()const       返回向量中的元素个数。</span></p><br><br><p><span style="color:#000000;">size_typemax_size()const   返回向量最多可以保存的元素的个数。</span></p><br><br><p><span style="color:#000000;">size_typecapacity()const   返回向量中可以保存的元素的个数。</span></p><br><br><p><span style="color:#000000;">boolempty()const           如果向量中没有元素，则返回真，否则返回假。</span></p><br><br><p><span style="color:#000000;">referencefront()           返回向量中的第一个元素的引用。</span></p><br><br><p><span style="color:#000000;">referenceback()            返回向量中的最后一个元素的引用。</span></p><br><br><p><span style="color:#000000;">referenceoperator<a href="size_type n"> </a>返回向量中第n个元素的引用。</span></p><br><br><p><span style="color:#000000;">referenceat(size_type n)       如果n在向量区间之内，则返回第n个元素的引用。</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><span style="color:#000000;">相等和小于的关系</span></p><br><br><p><span style="color:#000000;">等于==：两个容器中的序列必须大小相等。根据定义在元素类型上的==操作，对应位置上的元素必须相等。</span></p><br><br><p><span style="color:#000000;">//a==b的定义为：a.size()=b.size()&amp;&amp;equal(a.begin(),a.end(),b.begin());</span></p><br><br><p><span style="color:#000000;">小于&lt;:对于任意两个相等类型的容器a和b，如果其元素类型是T，而且&lt;是定义在T上的严格弱序关系，则定义a&lt;b为：</span></p><br><br><p><span style="color:#000000;">lexicographical_cimpaare(a.begin(),a.end(),b.begin(),b.end());</span></p><br><br><p><span style="color:#000000;">其它的关系操作(&gt;,&lt;=,&gt;=)都是根据&lt;定义的。</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><span style="color:#000000;">赋值</span></p><br><br><p><span style="color:#000000;">STL对所有容器都定义了赋值运算符=。赋值后x==y成立。操作的时间复杂度是O(N),N=max(x.size(),y.size())。</span></p><br><br><p><span style="color:#000000;">模板成员函数assign: </span></p><br><br><p><span style="color:#000000;">template&lt;typenameInputIterator&gt;</span></p><br><br><p><span style="color:#000000;">voidassign(InputIterator first,InputIterator last);</span></p><br><br><p><span style="color:#000000;">功能上，该函数和下面的语句是等价的：</span></p><br><br><p><span style="color:#000000;">erase(begin(),end());</span></p><br><br><p><span style="color:#000000;">insert(begin(),first,last);</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><span style="color:#000000;">swap成员函数用来交换两个容器的内容。</span></p><br><br><p><span style="color:#000000;">vector1.swap(vector2)的作用是互换vector1和vector2中的值。</span></p><br><br><p><span style="color:#000000;">具有常数的时间复杂度。</span></p><br><br><h3><span style="color:#000000;">双端队列</span></h3><br><br><p><span style="color:#000000;">双端队列的操作和向量的操作大部分是类似的。区别主要体现在一下两点：</span></p><br><br><p><span style="color:#000000;">第一点是性能在非末端的删除插入操作都优于向量，insert操作的时间复杂度是哈如点到最近的序列断点的距离成正比。还有还提供了push_front和pop_front成员，时间复杂度是常数。</span></p><br><br><p><span style="color:#000000;">第二点是插入操作没有reserve，capacity成员函数，插入操作可能使迭代器永久失效。</span></p><br><br><p><span style="color:#000000;">第三点是没有访问器capacity。</span></p><br><br><h3><span style="color:#000000;">链表</span></h3><br><br><p><span style="color:#000000;">链表和前面两个容器有一定的区别：其任意位置插入删除操作时间复杂度都是常数。插入操作不会使任何迭代器失效，删除操作只会使被删除元素的迭代器失效。</span></p><br><br><p><span style="color:#000000;">倒转操作：reverse类属算法仍然可以用，但是时间开销就比较大。因此它提供了反向链接链表操作list1.reverse();</span></p><br><br><p><span style="color:#000000;">插入操作：push_back和push_front和insert。</span></p><br><br><p><span style="color:#000000;">删除操作：erase并且erase(j++)是成立的。</span></p><br><br><p><span style="color:#000000;">拼接操作：spllice无论涉及多少元素它的时间复杂度都是常数。</span></p><br><br><p><span style="color:#000000;">list1.splice(i1,list2),其中i1是list1的一个有效迭代器。该函数的作用是把list2的内容插入到i1前面，在插入完成后list2为空链表。list1和list2不可以是相同的链表。</span></p><br><br><p><span style="color:#000000;">list1.splice(i1,list2,i2)，其中i1是list1的一个有效迭代器，i2是list2的一个可引用的有效迭代器。该函数的作用是删除i2所引用的元素，并把该元素插入到list1中的i1前面。list1和list2可以是相同的链表。</span></p><br><br><p><span style="color:#000000;">list1.splic（i1，list2，i2，j2），其中i1是list1的一个有效迭代器，[i2,j2]是list2中的一个有效区间。该函数的作用是删除i2和i1中间的元素，并把这些元素插入到list1中的i1前面。list1和list2可以是相同的链表。</span></p><br><br><p><span style="color:#000000;">其中前面两种形式的splice函数的时间复杂度是常数。如果list1和list2是相同的链表，则第三种形式的时间复杂度是常数，否则其时间复杂度为线性。</span></p><br><br><p><span style="color:#000000;">排序相关的算法：</span></p><br><br><p><span style="color:#000000;">类属算法sort需要随机访问迭代器，因此该算法不能用于链表。但是我们可以利用链表的sort成员函数来对链表进行排序。</span></p><br><br><p><span style="color:#000000;">list1.sort();</span></p><br><br><p><span style="color:#000000;">另外还有一种删除链表中相邻重复元素的成员函数。</span></p><br><br><p><span style="color:#000000;">list.unique();</span></p><br><br><p><span style="color:#000000;">sort成员函数还有一种形式，可以使用给定的比较函数进行排序：</span></p><br><br><p><span style="color:#000000;">template&lt;typenameCompare&gt;</span></p><br><br><p><span style="color:#000000;">voidsort(Compare comp);</span></p><br><br><p><span style="color:#000000;">unique成员函数也有一种形式，可以用给定的二元判决函数对相邻元素进行比较。这些成员函数与类属算法的不同之处在于采用了重新链接的方式而不是赋值的方式进行</span></p><br><br><p><span style="color:#000000;">template&lt;typenameBinaryPredicate&gt;</span></p><br><br><p><span style="color:#000000;">voidunique(BinaryPredicate comp);</span></p><br><br><p><span style="color:#000000;"> </span></p><br><br><p><span style="color:#000000;">merge:将当前链表与另一个链表合并，其中假定两个链表都是有序的。</span></p><br><br><p><span style="color:#000000;">void merge(constlist&lt;T&gt;&amp;otherList);</span></p><br><br><p><span style="color:#000000;">template&lt;typenameCompare&gt;</span></p><br><br><p><span style="color:#000000;">void merge(constlist&lt;T&gt;&amp;otherList,Compare comp);</span></p><br><br><p><span style="color:#000000;">清除：</span></p><br><br><p><span style="color:#000000;">remove：作用是删除链表中等于某个给定值或满足某个判决函数的所有元素。</span></p><br><br><p><span style="color:#000000;">voidremove(const T&amp;value);</span></p><br><br><p><span style="color:#000000;">template&lt;typenamePredicate&gt;</span></p><br><br><p><span style="color:#000000;">voidremove_if(Predicate pred);</span></p><br><br><p><span style="color:#000000;">与其它序列类属算法不同，链表的remove成员函数会减小链表的大小，其减小的数量等于删除元素的个数。</span></p><br><br><p><span style="color:#000000;">访问器：除了capacity、operator[]和at，链表类提供了所有向量类所提供的容器访问器。</span></p><br><br><p><span style="color:#000000;">相等和小于关系：和向量一样。</span></p><br><br><p><span style="color:#000000;">赋值：也有相同的定义，复杂度也相同。</span></p>          </div>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80759403/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ke_yi_">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/ke_yi_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KE_YI_">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/16/80759403/" class="post-title-link" itemprop="url">word纠错设置</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:13" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div class="htmledit_views" id="content_views"><br>            <p><img src="https://img-blog.csdn.net/20180621135651837?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p><p></p><p><img src="https://img-blog.csdn.net/2018062113570859?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p><p></p><p><img src="https://img-blog.csdn.net/20180621135718568?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p><p></p><p><img src="https://img-blog.csdn.net/20180621135728515?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p><p></p><p><img src="https://img-blog.csdn.net/20180621135738326?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p><p><img src="https://img-blog.csdn.net/20180621135746677?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt><br></p>          </div>
 
           
         
@@ -1230,7 +1768,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1274,50 +1812,14 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">85</span>
+                    <span class="site-state-item-count">103</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">0</span>
-                    <span class="site-state-item-name">分类</span>
-                  
-                </div>
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
               
             </nav>
           

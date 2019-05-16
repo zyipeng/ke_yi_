@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/07/networkx笔记1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/90080807/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -369,7 +369,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/07/networkx笔记1/" class="post-title-link" itemprop="url">networkx笔记1</a>
+                <a href="/2019/05/16/90080807/" class="post-title-link" itemprop="url">平衡查找树</a>
               
             
           </h1>
@@ -394,24 +394,12 @@
                 
               
 
-              <time title="创建时间：2019-05-07 10:07:02" itemprop="dateCreated datePublished" datetime="2019-05-07T10:07:02+08:00">2019-05-07</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:52:51" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:04" itemprop="dateModified" datetime="2019-05-09T15:38:04+08:00">2019-05-09</time>
               
             
           </span>
@@ -447,14 +435,7 @@
       
         
           
-            <h1 id="edges通过设置不同的边显示不同的效果"><a href="#edges通过设置不同的边显示不同的效果" class="headerlink" title="edges通过设置不同的边显示不同的效果"></a>edges通过设置不同的边显示不同的效果</h1><p> nx.draw_networkx_edges(G, pos, width=1.0, alpha=0.5)#首先将所有边全部设置<br> nx.draw_networkx_edges(G, pos,<br> edgelist=[(0, 1), (1, 2), (2, 3), (3, 0)],<br> width=8, alpha=0.5, edge_color=’r’)#再设置一部分边<br> nx.draw_networkx_edges(G, pos,<br> edgelist=[(4, 5), (5, 6), (6, 7), (7, 4)],<br> width=8, alpha=0.5, edge_color=’b’)#再设置另一部分边</p>
-<p> #设置边颜色的深浅<br> nodes = nx.draw_networkx_nodes(G, pos, node_size=node_sizes, node_color=’blue’)  </p>
-<p> #获得边的对象列表<br> edges = nx.draw_networkx_edges(G, pos, node_size=node_sizes, arrowstyle=’-&gt;’,<br> arrowsize=10, edge_color=edge_colors,<br> edge_cmap=plt.cm.Blues, width=2)  </p>
-<h1 id="set-alpha-value-for-each-edge设置每一条边的状态"><a href="#set-alpha-value-for-each-edge设置每一条边的状态" class="headerlink" title="set alpha value for each edge设置每一条边的状态"></a>set alpha value for each edge设置每一条边的状态</h1><p> for i in range(M):<br> edges[i].set_alpha(edge_alphas[i])</p>
-<p> pc = mpl.collections.PatchCollection(edges, cmap=plt.cm.Blues)#设置旁边比较条<br> pc.set_array(edge_colors)<br> plt.colorbar(pc)</p>
-<p> #找到需设置边列表的技巧<br> elarge=[(u,v) for (u,v,d) in G.edges(data=True) if d[‘weight’] &gt;0.5]<br> esmall=[(u,v) for (u,v,d) in G.edges(data=True) if d[‘weight’] &lt;=0.5]</p>
-<h1 id="edges"><a href="#edges" class="headerlink" title="edges"></a>edges</h1><p> nx.draw_networkx_edges(G,pos,edgelist=elarge,width=6)<br> nx.draw_networkx_edges(G,pos,edgelist=esmall,width=6,alpha=0.5,edge_color=’b’,style=’dashed’)</p>
-<h1 id="labels"><a href="#labels" class="headerlink" title="labels"></a>labels</h1><p> nx.draw_networkx_labels(G,pos,font_size=20,font_family=’sans-serif’)  </p>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>概念：</strong>是二叉查找树的一种优化，它规定<a href="https://blog.csdn.net/ke_yi_/article/details/90079605" rel="noopener" target="_blank">查找树</a>一直平衡，因此查找的时间会更加优化。</p><br><br><p><strong>基本操作：</strong>查找、插入、删除、遍历。其操作基本和查找树一样。但是有一些不同。</p><br><br><p>因为需要保持查找树的平衡，所以每一次对元素的的添加和删除都需要对查找树进行维护，使其处于平衡状态。（平衡：每一个叶子节点的深度相差不能超过1）。维护的方式有单旋转和双旋转，单旋转分为左、右旋转，双旋转分为左右、右左旋转。旋转的目的是为了保持查找树的平衡。</p><br><br><p><strong>单旋转</strong> </p><br><br><p>左旋转：如果节点插入在N的左孩子的左子树<br><img alt class="has" height="286" src="20190511110737387.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="492"></p><br><br><p>左旋转：如果节点插入在N的右孩子的右子树中<br><img alt class="has" height="286" src="20190511111323401.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="487"></p><br><br><p><strong>双旋转：</strong>由两次单旋转来实现，先是对节点N的孙子节点的旋转，然后是对节点N的新孩子的旋转。 </p><br><br><p> 右-左旋转：如果插入发生在N的有孩子的左子树中<br><img alt class="has" height="335" src="20190511114500433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="821"></p><br><br><p>左-右旋转：如果插入发生在N左孩子的右子树中<br><img alt class="has" height="335" src="20190511115503667.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="850"></p><br><br><p>参考文献：《数据结构与算法分析java语言描述》（第二版）Frank M.Carrano著   金名 等译 清华大学出版社出版 </p><br>          </div>
 
           
         
@@ -511,7 +492,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/07/Python基础和networkx笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/90079605/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -531,7 +512,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/07/Python基础和networkx笔记/" class="post-title-link" itemprop="url">Python基础和networkx笔记</a>
+                <a href="/2019/05/16/90079605/" class="post-title-link" itemprop="url">二叉查找树</a>
               
             
           </h1>
@@ -556,24 +537,12 @@
                 
               
 
-              <time title="创建时间：2019-05-07 10:02:35" itemprop="dateCreated datePublished" datetime="2019-05-07T10:02:35+08:00">2019-05-07</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:52:52" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:05" itemprop="dateModified" datetime="2019-05-09T15:38:05+08:00">2019-05-09</time>
               
             
           </span>
@@ -609,41 +578,7 @@
       
         
           
-            <p>   <strong>pip</strong> freeze #查看已经安装的模块<br> pip install *** #如果为已安装模块就会显示安装目录</p>
-<p> 数学操作符<br> *<em>[指数]、%、//[整除]、/、</em>、-、+</p>
-<p> <strong>漂亮打印字典</strong><br> pprint.pprint()<br> pprint.pfromat()</p>
-<p> 字符串里面的<strong>isX</strong>函数<br> islower()、isupper（）、isalpha（）[只包含字母]、isalnum（）[只包含字母和数字]、isdecimal（）[只包含数字]、isspace（）[只包含空格、制表符、换行]、istitle（）[里面每一个单词都是大写字母开头其他都是小写字母] [所有这些都是非空]</p>
-<p> ‘a’.join([‘cats’,’rats’,’bats’])<br> ‘cats,rats,bats’.split(‘,’)<br> pyperclip.paste()、pyperclip.copy()#剪贴板操作<br> ‘ hello word ‘.strip()、.lstrip()、.rstrip()<br> ‘hello’.rjust(10)、.ljust(10)、.center(10)<br> ‘hello world!’.startswith(‘hello’)、endswith(‘world!’)</p>
-<p> <strong>正则表达式</strong><br> 匹配<br> 1.用improt re导入正则表达式模块<br> 2.用re.complie()函数创建一个Regex对象（记得使用原始字符串）<br> 3.向Regex对象的search()方法传入想查找的字符串。返回Match对象<br> 4.调用Match对象的group()方法，返回实际匹配文本的字符串<br> 5.调用Match对象的findall()方法，返回所用实际匹配文本的字符串<br> 6.re.complie()函数第二个参数re.IGNORECASE[忽略大小写]、re.DOTALL [让句点包含换行]、re.VERBOSE[编写注释]<br> 符号  </p>
-<ol>
-<li>?匹配零次或一次前面的分组  </li>
-<li>*匹配零次或多次前面的分组  </li>
-<li>+匹配一次或多次前面的分组  </li>
-<li>{n}匹配n次前面的分组  </li>
-<li>{n,}匹配n次或更多前面的分组  </li>
-<li>{,m}匹配零次到m次前面的分组  </li>
-<li>{n,m}匹配至少n次、至多m次前面的分组  </li>
-<li>{n,m}?或*？或+？对前面的分组进行非贪心匹配  </li>
-<li>^spam意味着字符串必须以spam开始  </li>
-<li>spam$意味着字符串必须以spam结尾  </li>
-<li>. 匹配所有字符，除换行符外  </li>
-<li>\d、\w、\s 分别匹配 数字、单词、空格  </li>
-<li>\D、\W、\S 分别匹配 除数字、单词、空格外的所有字符  </li>
-<li>[abc] 匹配方括号内的任意字符  </li>
-<li><p>[^abc] 匹配不在方括号内的任意字符</p>
-<p><strong>文件操作</strong><br>基本操作<br>os.path.join(‘usr’,’bin’,’spam’)<br>os.getcwd()、os.chdir(‘C:\Windows\System32’)<br>os.makedirs(‘C:\delicious\walnut\waffles’)<br>os.path.abspath(‘.’)、os.path.isabs(‘.’)、os.path.relpath(porpusepath,startpath)<br>os.path.dirname(path)、os.path.basename(path)、os.path.split(path)<br>‘C:\Windows\System32\calc.exe’.split(os.path.sep)<br>os.path.getsize(‘.\calc.exe’)、os.listdir(‘.’)<br>os.path.exists(‘C:\Windows’)、os.path.isdir(‘C:\Windows’)、os.path.isfile(‘C:\Windows’)<br>hellofile=open(‘C:\User\filename.txt’)#第二个参数w、a、r，返回一个File对象<br>hellocontext=hellofile.read()<br>hellocontext=hellofile.readlines()<br>hellofile.write(‘hello world!\n’)</p>
-<p>shelve模块<br>import shelve<br>shelfFile=shelve.open(‘mydata’)<br>cats=[‘Zophie’,’Pooka’]<br>shelfFile[‘cats’]=cats<br>shelfFile.close()<br>shelfFile=shelve.open(‘mydata’)<br>type(shelfFile)#检查数据是否正确存储<br>shelfFile[‘cats’]<br>list(shelfFile.keys())<br>list(shelfFile.values())<br>shelfFile.close()</p>
-<p>用pprint.pformat()函数保存变量<br>import pprint<br>cats=[{‘name’:’Zophie’,’desc’:’chubby’}]<br>fileObj=open(‘myCats.py’,’w’)<br>fileObj.write(‘cats=’+pprint.pformat(cats)+’\n’)<br>fileObj.close()</p>
-<p><strong>Networkx</strong><br>无向图<br>import networkx an nx #导入包重名为nx<br>import matplotlib.pyplot as plt<br>G=nx.Graph() #建立空的无向图<br>G.add_node(1) #添加节点1<br>G.add_edge(2,3) #添加边2-3（隐含添加2、3节点）<br>print(G.nodes()) #输入全部节点<br>print(G.edges()) #输出全部边<br>print(G.number_of_edges()) #输出边数</p>
-<p>pos=nx.spectral_layout(G) #定义一个布局<br>nx.draw(G,pos,with_labels=False,node_size=30)#绘制<br>#with_labels决定节点带不带标签，node_size决定节点直径<br>plt.show() #显示图形</p>
-<p><strong>操作excel文件</strong><br>improt openpyxl #导入openpyxl模块<br>wb=openpyxl.load_workbook(‘example.xlsx’)#打开一个excel文件<br>wb.get_sheet_names() #获得工作簿中所有的表名的列表<br>sheet=wb.get_sheet_by_name(‘Sheet3’)#获得工作表Sheet3的Worksheet对象<br>sheet.title #返回工作表的名字<br>anotherSheet=wb.get_active_sheet() #获得打开工作簿出现的工作表<br>a1=sheet[‘A1’] #表示该工作表的一个单元格<br>a1.value #单元格内保存的值<br>print(‘Cell ‘+str(a.coordinate)+’, Row ‘+str(a1.row)+’,Column ‘+a1.lumn+’ is ‘+a1.value)<br>#’Cell A1, Row 1, Column A is Apples’<br>for i in range(1,8,2):<br>print(i,sheet.cell(row=i,column=2).value)<br>sheet.max_row #获取最大行<br>sheet.max_colum #获取最大列<br>from openpyxl.utils import get_column_letter,column_index_from_string#引入函数<br>get_column_letter(1) #将数字装还成excel列的形式<br>column_index_from_string(‘AA’) #将列的形式转换成数字（不区分大小写）</p>
-<p>#从列表中取得行和列</p>
-<p>#一行一行显示<br>for rowOfCellObjects in sheet[‘A1’:’C3’]:<br>for cellobj in rowOfCellObjects:<br>print(cellObj.coordinate,cellObj.value)<br>#输出一行<br>for cellObj in sheet.row[1]:<br>print(cellObj.value)<br>#输出一列<br>for cellObj in sheet.columns[1]:<br>print(cellObj.value)</p>
-<p><strong>NumPy</strong><br>ndarray数组<br>数组创建函数：<br>array： array([数据、列表、元组、数组和其他序列类型])#数据类型指定或自动、默认直接复制输入数据<br>asarray: #如果输入不是ndarray就复制<br>arange： #类似内置range<br>ones、ones_like: #创建一个全1adarray数组，ones(2,3)、ones_like([[1,2,3],[2,3,4]])<br>zeros、zeros_like:#创建全0数组<br>empty、empty_like:#创建空值数组<br>eye、identity： #创建N x N单位矩阵（对角线全1，其它为0）</p>
-<p>NumPy的数据类型：<br>intN、floatN、complexN、bool、object[Python对象类型]、string_[例如要创建一个长度为10的字符串、应使用S10]、unicode_<br>例：<br>arr=np.array([1,2,3]),dtype=np.float64)<br>arr.dtype #显示类型<br>arr1=arr.astype(np.int64) #显式类型转换</p>
-<p>未完成。。。</p>
-</li>
-</ol>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>概念：</strong>一棵二叉树，其节点可以比较（含有Comparable对象），并按一下方式组织节点：<br><br>1.节点中的数据大于节点左子树中的数据<br><br>2.节点中的数据小于节点右子树中的数据</p><br><br><p><strong>主要操作：</strong>查找、插入、删除、遍历</p><br><br><p>插入操作：首先寻找符合树的组织方式的父节点，然后插入其合适的位置。</p><br><br><p>查找操作：为查找而设计，由于节点按照一定顺序，查找的时候比较节点大小，接着查找相应的子树。</p><br><br><p>遍历操作：和一般的树的遍历操作一样，先、中、后序遍历。</p><br><br><p>删除操作：删除容易破坏其组织方式，需分情况讨论。</p><br><br><ol><li>若是叶子节点的话，可以直接删除。</li><br>    <li>若是含有一个子树的节点的话，可以将自己删除，然后将其父节点指向字节的应用指向子树节点。</li><br>    <li>若是含有两个子树的节点的话，解决方案分为两种：</li><br>    <li><br>    <p style="text-indent:0;">3.1在其左子树中找一个最大的节点并删除，然后用该节点的内容替换自己。<br><br>    3.2在其右子树中找一个最小的节点并删除，然后用该节点的内容替换自己。<br><br>    （由于，左子树中最大节点肯定没有右子树、右子树中最小节点肯定没有左子树，可以用前面的方法删除）</p><br>    </li><br></ol><p style="text-align:center;"><img alt class="has" height="287" src="20190510172129387.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="598"></p><br><br><p>参考文献：《数据结构与算法分析java语言描述》（第二版）Frank M.Carrano著   金名 等译 清华大学出版社出版</p><br>          </div>
 
           
         
@@ -700,7 +635,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/07/R语言基础语法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89915383/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -720,7 +655,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/07/R语言基础语法/" class="post-title-link" itemprop="url">R语言基础语法</a>
+                <a href="/2019/05/16/89915383/" class="post-title-link" itemprop="url">networkx笔记1</a>
               
             
           </h1>
@@ -745,24 +680,12 @@
                 
               
 
-              <time title="创建时间：2019-05-07 09:57:31" itemprop="dateCreated datePublished" datetime="2019-05-07T09:57:31+08:00">2019-05-07</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:52:53" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:05" itemprop="dateModified" datetime="2019-05-09T15:38:05+08:00">2019-05-09</time>
               
             
           </span>
@@ -798,36 +721,7 @@
       
         
           
-            <p>   <strong>一、基础操作函数</strong></p>
-<p> source(‘~/.active-rstudio-document’)</p>
-<p> #列出workspace中所有对象</p>
-<p> ls()</p>
-<p> #删除某个变量</p>
-<p> rm（）</p>
-<p> #查看R保存文件的目录</p>
-<p> getwd()</p>
-<p> #保存文件</p>
-<p> save（yourname，file=’yourname.rda’）</p>
-<p> #提取保存的工作结果</p>
-<p> load（’yourname.rda’)</p>
-<p> #安装扩展包</p>
-<p> install.packages(‘fortunes’)</p>
-<p> #载入扩展包</p>
-<p> library(fortunes)</p>
-<p> #卸载扩展包</p>
-<p> detach(package:fortunes)</p>
-<p> #查看帮助</p>
-<p> ？……</p>
-<p> <strong>二、基本数学函数</strong></p>
-<p> 1、基本算符</p>
-<p> +、-、*、/、^、%%[取模]、%/%[取整]、complex()[复数]、1.33e4[科学计算]</p>
-<p> 2、基本数学函数</p>
-<p> abs（）、log(x,base=y)[y为底，x的对数，y默认为e]、exp(x)[x的自然指数]、sqrt(x)、factorial(x)[x的阶乘]、choose(x,y)[x个数选y个数的组合数]；</p>
-<p> <strong>近似函数</strong>：round(123.123,digits=4)、round(4.5)、signif(123.123,4)[保留有效数]、floor(x)[最近整数]、trunc(x)[截取整数]；</p>
-<p> <strong>三角函数</strong>：sin()、cos()、tan()</p>
-<p> Inf[无穷大]、NaN[无定义]、NA[缺失值]</p>
-<p> <strong>值检测</strong>：is.finite()[是否有限]、is.infinite()、is.nan()、is.na()；</p>
-<p> 未完成。。。</p>
+            <div class="htmledit_views" id="content_views"><br>            <p># edges通过设置不同的边显示不同的效果<br><br>nx.draw_networkx_edges(G, pos, width=1.0, alpha=0.5)#首先将所有边全部设置<br><br>nx.draw_networkx_edges(G, pos,<br><br>                       edgelist=[(0, 1), (1, 2), (2, 3), (3, 0)],<br><br>                       width=8, alpha=0.5, edge_color=’r’)#再设置一部分边<br><br>nx.draw_networkx_edges(G, pos,<br><br>                       edgelist=[(4, 5), (5, 6), (6, 7), (7, 4)],<br><br>                       width=8, alpha=0.5, edge_color=’b’)#再设置另一部分边</p><br><br><p>#设置边颜色的深浅<br><br>nodes = nx.draw_networkx_nodes(G, pos, node_size=node_sizes, node_color=’blue’)<br><br>#获得边的对象列表<br><br>edges = nx.draw_networkx_edges(G, pos, node_size=node_sizes, arrowstyle=’-&gt;’,<br><br>                               arrowsize=10, edge_color=edge_colors,<br><br>                               edge_cmap=plt.cm.Blues, width=2)<br><br># set alpha value for each edge设置每一条边的状态<br><br>for i in range(M):<br><br>    edges[i].set_alpha(edge_alphas[i])</p><br><br><p>pc = mpl.collections.PatchCollection(edges, cmap=plt.cm.Blues)#设置旁边比较条<br><br>pc.set_array(edge_colors)<br><br>plt.colorbar(pc)</p><br><br><p>#找到需设置边列表的技巧<br><br>elarge=[(u,v) for (u,v,d) in G.edges(data=True) if d[‘weight’] &gt;0.5]<br><br>esmall=[(u,v) for (u,v,d) in G.edges(data=True) if d[‘weight’] &lt;=0.5]</p><br><br><p># edges<br><br>nx.draw_networkx_edges(G,pos,edgelist=elarge,width=6)<br><br>nx.draw_networkx_edges(G,pos,edgelist=esmall,width=6,alpha=0.5,edge_color=’b’,style=’dashed’)</p><br><br><p># labels<br><br>nx.draw_networkx_labels(G,pos,font_size=20,font_family=’sans-serif’)<br><br> </p><br>          </div>
 
           
         
@@ -884,7 +778,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/01/基数排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89915232/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -904,7 +798,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/01/基数排序/" class="post-title-link" itemprop="url">基数排序</a>
+                <a href="/2019/05/16/89915232/" class="post-title-link" itemprop="url">Python基础和networkx笔记</a>
               
             
           </h1>
@@ -929,24 +823,12 @@
                 
               
 
-              <time title="创建时间：2019-05-01 22:16:55" itemprop="dateCreated datePublished" datetime="2019-05-01T22:16:55+08:00">2019-05-01</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:52:54" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:11" itemprop="dateModified" datetime="2019-05-09T15:38:11+08:00">2019-05-09</time>
               
             
           </span>
@@ -982,12 +864,8 @@
       
         
           
-            <p>   <strong>基数排序思想：</strong>先将序列按照个位装入十个组，然后从0到9将各组内数拿出来，按照十位装入是个组，最后以同样的方式按照百位装入，完成操作之后就已经排好序了。</p>
-<p> <strong>排序图解：</strong></p>
-<p> <img src="https://img-blog.csdnimg.cn/20190501214611134.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt><img src="https://img-blog.csdnimg.cn/20190501220214205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> <strong>排序代码：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> 代码设计：</span><br><span class="line"></span><br><span class="line">首先将判断所有数字都是多少位，必须将高位为空补零，存为字符串，或者直接通过整数位数求余取整获得数据。</span><br><span class="line"></span><br><span class="line">然后使用循环从个位到最高位遍历所有数，分组。</span><br><span class="line"></span><br><span class="line">设置分组，每一个分组必须是一个动态数组。</span><br><span class="line"></span><br><span class="line">每一次取数，需要按照上一次装入的组从0组开始，取出一个数就装到对应的本次分组的组。</span><br><span class="line"></span><br><span class="line">取出的时候，每取空一个组就需要到下一个组取数，因此取数的时候要判断边界。</span><br><span class="line"></span><br><span class="line">如果减少代码的复杂度可以每次将组里面的数取出装入原来的数组，再做和第一次取数一样的循环。</span><br></pre></td></tr></table></figure>
-<p> <strong>时间复杂度：O(d*n)</strong>可以简单的看成是<strong>O(n)</strong><br><strong>空间复杂度：动态数组的话空间会少一点，需要2n，如果是十个数组的话，就需要11*n。</strong></p>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>pip</strong> freeze    #查看已经安装的模块<br><br>pip install <strong>*    #如果为已安装模块就会显示安装目录</strong></p><br><br><p>数学操作符<br>
+[指数]、%、//[整除]、/、<em>、-、+</em></p><br><br><p><strong>漂亮打印字典</strong><br><br>pprint.pprint()<br><br>pprint.pfromat()</p><br><br><p>字符串里面的<strong>isX</strong>函数<br><br>islower()、isupper（）、isalpha（）[只包含字母]、isalnum（）[只包含字母和数字]、isdecimal（）[只包含数字]、isspace（）[只包含空格、制表符、换行]、istitle（）[里面每一个单词都是大写字母开头其他都是小写字母]  [所有这些都是非空]</p><br><br><p>‘a’.join([‘cats’,’rats’,’bats’])<br><br>‘cats,rats,bats’.split(‘,’)<br><br>pyperclip.paste()、pyperclip.copy()#剪贴板操作<br><br>‘  hello word  ‘.strip()、.lstrip()、.rstrip()<br><br>‘hello’.rjust(10)、.ljust(10)、.center(10)<br><br>‘hello world!’.startswith(‘hello’)、endswith(‘world!’)</p><br><br><p><strong>正则表达式</strong><br><br>匹配<br><br>1.用improt re导入正则表达式模块<br><br>2.用re.complie()函数创建一个Regex对象（记得使用原始字符串）<br><br>3.向Regex对象的search()方法传入想查找的字符串。返回Match对象<br><br>4.调用Match对象的group()方法，返回实际匹配文本的字符串<br><br>5.调用Match对象的findall()方法，返回所用实际匹配文本的字符串<br><br>6.re.complie()函数第二个参数re.IGNORECASE[忽略大小写]、re.DOTALL [让句点包含换行]、re.VERBOSE[编写注释]<br><br>符号<br><br>1.  ?匹配零次或一次前面的分组<br><br>2.  匹配零次或多次前面的分组<br><br>3. +匹配一次或多次前面的分组<br><br>4. {n}匹配n次前面的分组<br><br>5. {n,}匹配n次或更多前面的分组<br><br>6. {,m}匹配零次到m次前面的分组<br><br>7. {n,m}匹配至少n次、至多m次前面的分组<br><br>8. {n,m}?或*？或+？对前面的分组进行非贪心匹配<br><br>9. ^spam意味着字符串必须以spam开始<br><br>10. spam$意味着字符串必须以spam结尾<br><br>11. . 匹配所有字符，除换行符外<br><br>12. \d、\w、\s 分别匹配 数字、单词、空格<br><br>13. \D、\W、\S 分别匹配 除数字、单词、空格外的所有字符<br><br>14. [abc] 匹配方括号内的任意字符<br><br>15. [^abc] 匹配不在方括号内的任意字符</p><br><br><p><strong>文件操作</strong><br><br>基本操作<br><br>os.path.join(‘usr’,’bin’,’spam’)<br><br>os.getcwd()、os.chdir(‘C:\Windows\System32’)<br><br>os.makedirs(‘C:\delicious\walnut\waffles’)<br><br>os.path.abspath(‘.’)、os.path.isabs(‘.’)、os.path.relpath(porpusepath,startpath)<br><br>os.path.dirname(path)、os.path.basename(path)、os.path.split(path)<br><br>‘C:\Windows\System32\calc.exe’.split(os.path.sep)<br><br>os.path.getsize(‘.\calc.exe’)、os.listdir(‘.’)<br><br>os.path.exists(‘C:\Windows’)、os.path.isdir(‘C:\Windows’)、os.path.isfile(‘C:\Windows’)<br><br>hellofile=open(‘C:\User\filename.txt’)#第二个参数w、a、r，返回一个File对象<br><br>hellocontext=hellofile.read()<br><br>hellocontext=hellofile.readlines()<br><br>hellofile.write(‘hello world!\n’)</p><br><br><p>shelve模块<br><br>import shelve<br><br>shelfFile=shelve.open(‘mydata’)<br><br>cats=[‘Zophie’,’Pooka’]<br><br>shelfFile[‘cats’]=cats<br><br>shelfFile.close()<br><br>shelfFile=shelve.open(‘mydata’)<br><br>type(shelfFile)#检查数据是否正确存储<br><br>shelfFile[‘cats’]<br><br>list(shelfFile.keys())<br><br>list(shelfFile.values())<br><br>shelfFile.close()</p><br><br><p>用pprint.pformat()函数保存变量<br><br>import pprint<br><br>cats=[{‘name’:’Zophie’,’desc’:’chubby’}]<br><br>fileObj=open(‘myCats.py’,’w’)<br><br>fileObj.write(‘cats=’+pprint.pformat(cats)+’\n’)<br><br>fileObj.close()</p><br><br><p><br><strong>Networkx</strong><br><br>无向图<br><br>import networkx an nx    #导入包重名为nx<br><br>import matplotlib.pyplot as plt    <br><br>G=nx.Graph()        #建立空的无向图<br><br>G.add_node(1)        #添加节点1<br><br>G.add_edge(2,3)        #添加边2-3（隐含添加2、3节点）<br><br>print(G.nodes())        #输入全部节点<br><br>print(G.edges())        #输出全部边<br><br>print(G.number_of_edges())    #输出边数</p><br><br><p>pos=nx.spectral_layout(G)    #定义一个布局<br><br>nx.draw(G,pos,with_labels=False,node_size=30)#绘制<br><br>#with_labels决定节点带不带标签，node_size决定节点直径<br><br>plt.show()        #显示图形</p><br><br><p><br><strong>操作excel文件</strong><br><br>improt openpyxl            #导入openpyxl模块<br><br>wb=openpyxl.load_workbook(‘example.xlsx’)#打开一个excel文件<br><br>wb.get_sheet_names()        #获得工作簿中所有的表名的列表<br><br>sheet=wb.get_sheet_by_name(‘Sheet3’)#获得工作表Sheet3的Worksheet对象<br><br>sheet.title            #返回工作表的名字<br><br>anotherSheet=wb.get_active_sheet()    #获得打开工作簿出现的工作表<br><br>a1=sheet[‘A1’]            #表示该工作表的一个单元格<br><br>a1.value                #单元格内保存的值<br><br>print(‘Cell ‘+str(a.coordinate)+’, Row ‘+str(a1.row)+’,Column ‘+a1.lumn+’ is ‘+a1.value)<br><br>#’Cell A1, Row 1, Column A is Apples’<br><br>for i in range(1,8,2):<br><br>    print(i,sheet.cell(row=i,column=2).value)<br><br>sheet.max_row            #获取最大行<br><br>sheet.max_colum            #获取最大列<br><br>from openpyxl.utils import get_column_letter,column_index_from_string#引入函数<br><br>get_column_letter(1)        #将数字装还成excel列的形式<br><br>column_index_from_string(‘AA’)    #将列的形式转换成数字（不区分大小写）</p><br><br><p>#从列表中取得行和列</p><br><br><p>#一行一行显示<br><br>for rowOfCellObjects in sheet[‘A1’:’C3’]:<br><br>    for cellobj in rowOfCellObjects:<br><br>        print(cellObj.coordinate,cellObj.value)<br><br>#输出一行<br><br>for cellObj in sheet.row[1]:<br><br>    print(cellObj.value)<br><br>#输出一列<br><br>for cellObj in sheet.columns[1]:<br><br>    print(cellObj.value)</p><br><br><p><strong>NumPy</strong><br><br>ndarray数组<br><br>数组创建函数：<br><br>array：    array([数据、列表、元组、数组和其他序列类型])#数据类型指定或自动、默认直接复制输入数据<br><br>asarray:    #如果输入不是ndarray就复制<br><br>arange：    #类似内置range<br><br>ones、ones_like: #创建一个全1adarray数组，ones(2,3)、ones_like([[1,2,3],[2,3,4]])<br><br>zeros、zeros_like:#创建全0数组<br><br>empty、empty_like:#创建空值数组<br><br>eye、identity：    #创建N x N单位矩阵（对角线全1，其它为0）</p><br><br><p>NumPy的数据类型：<br><br>intN、floatN、complexN、bool、object[Python对象类型]、string_[例如要创建一个长度为10的字符串、应使用S10]、unicode_<br><br>例：<br><br>arr=np.array([1,2,3]),dtype=np.float64)<br><br>arr.dtype                    #显示类型<br><br>arr1=arr.astype(np.int64)            #显式类型转换</p><br><br><p>未完成。。。</p><br>          </div>
 
           
         
@@ -1044,7 +922,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/01/快速排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89915128/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1064,7 +942,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/01/快速排序/" class="post-title-link" itemprop="url">快速排序</a>
+                <a href="/2019/05/16/89915128/" class="post-title-link" itemprop="url">R语言基础语法</a>
               
             
           </h1>
@@ -1089,24 +967,12 @@
                 
               
 
-              <time title="创建时间：2019-05-01 15:46:43" itemprop="dateCreated datePublished" datetime="2019-05-01T15:46:43+08:00">2019-05-01</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:52:55" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:13" itemprop="dateModified" datetime="2019-05-09T15:38:13+08:00">2019-05-09</time>
               
             
           </span>
@@ -1142,23 +1008,7 @@
       
         
           
-            <blockquote>
-<p>与前面归并排序不同的另一种分治策略—-<strong>快速排序</strong><br> 与归并排序不同的是：快排不要求分成相等的两半、归并主要是合并，快排主要是划分、归并有一个辅助数组，快排不要。<br> java类库中的快排：java.until中的Arrays使用快排对基本类型的数组按升序排序。方法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;  public static void sort(type[] a);</span><br><span class="line">public static void sort(type[] a,int first,int last);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p> <strong>快速排序的思想：</strong>先在序列中找到一个支点，使支点左边元素小于等于支点元素，右边元素大于等于支点元素（称为划分）。然后再对左右两部分执行同样的划分。</p>
-</blockquote>
-<p> <strong>创建划分步骤：</strong>在选定支点之后，将它与最后一个元素相交换，使得再创建划分时支点不成为障碍。从第一个元素开始向后寻找第一个大于或等于支点的节点1，再从倒数第二个元素开始向前寻找第一个小于或等于支点的节点2，如果节点1小于节点2则交换节点1、2。继续做这样的寻找交换，直到最后一次完成，将最后一次不小于支点的元素与支点交换，划分完成。</p>
-<p> <strong>快速排序图解：</strong>（图解1，使用的是选取第一个元素为支点）</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190501140347582.gif" alt></p>
-<p> <img src="https://img-blog.csdnimg.cn/20190501143703889.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> <strong>支点的选择：</strong>最好的情况，支点就是序列的中值，致使划分后两部分近似相等。完全达到这种情况时浪费时间的，近似达到的方法是三者取中值支点法将数组中第一个元素和中间一个元素以及最后一个元素的中值作为支点（先排序三个元素，取第二个就是）。</p>
-<p> <strong>调整划分算法：</strong>三者取中值法处理之后，第一个元素和最后一个元素，分别小于大于支点元素，因此不要对其执行划分，划分算法中先将中间元素与last-1处元素交换，从左右开始查找的步骤只需要分别从first+1、last-2处进行。因为有第一个元素小于支点，最后一个元素大于支点的限制，再寻找的过程中没有必要考虑数组越界的界限。</p>
-<p> <strong>快速排序源代码：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"> public class Quick_Sort &#123;</span><br><span class="line">	static int MIN_SIZE=3;//由于快排判断考虑的是多余三个元素的序列，必须大于等于3</span><br><span class="line">	private static&lt;T extends Comparable&lt;?super T&gt;&gt;</span><br><span class="line">	void sortFirstMiddleLast(T[] a,int first,int mid,int last)&#123;</span><br><span class="line">		order(a,first,mid);</span><br><span class="line">		order(a,mid,last);</span><br><span class="line">		order(a,first,mid);</span><br><span class="line">	&#125;</span><br><span class="line">	private static&lt;T extends Comparable&lt;?super T&gt;&gt;</span><br><span class="line">	void order(T[] a,int i,int j)&#123;</span><br><span class="line">		if(a[i].compareTo(a[j])&gt;0)&#123;</span><br><span class="line">			swap(a,i,j);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	private static void swap(Object[] array,int i,int j)&#123;</span><br><span class="line">		Object temp=array[i];</span><br><span class="line">		array[i]=array[j];</span><br><span class="line">		array[j]=temp;</span><br><span class="line">	&#125;</span><br><span class="line">	private static&lt;T extends Comparable&lt;?super T&gt;&gt;</span><br><span class="line">	int partition(T[] a,int first,int last)&#123;</span><br><span class="line">		int mid=(first+last)/2;</span><br><span class="line">		sortFirstMiddleLast(a,first,mid,last);</span><br><span class="line">		swap(a,mid,last-1);</span><br><span class="line">		int pivotIndex=last-1;</span><br><span class="line">		T pivot=a[pivotIndex];</span><br><span class="line">		int indexFromLeft=first+1;</span><br><span class="line">		int indexFromRight=last-2;</span><br><span class="line">		boolean done=false;</span><br><span class="line">		while(!done)&#123;</span><br><span class="line">			while(a[indexFromLeft].compareTo(pivot)&lt;0)&#123;</span><br><span class="line">				indexFromLeft++;</span><br><span class="line">			&#125;</span><br><span class="line">			while(a[indexFromRight].compareTo(pivot)&gt;0)&#123;</span><br><span class="line">				indexFromRight--;</span><br><span class="line">			&#125;</span><br><span class="line">			assert a[indexFromLeft].compareTo(pivot)&gt;=0&amp;&amp;a[indexFromRight].compareTo(pivot)&lt;=0;</span><br><span class="line">			if(indexFromLeft&lt;indexFromRight)&#123;</span><br><span class="line">				swap(a,indexFromLeft,indexFromRight);</span><br><span class="line">				indexFromLeft++;</span><br><span class="line">				indexFromRight--;</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				done=true;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		swap(a,pivotIndex,indexFromLeft);</span><br><span class="line">		pivotIndex=indexFromLeft;</span><br><span class="line">		return pivotIndex;</span><br><span class="line">	&#125;</span><br><span class="line">	public static&lt;T extends Comparable&lt;?super T&gt;&gt;</span><br><span class="line">	void quickSort(T[] a,int first,int last)&#123;</span><br><span class="line">		if(last-first+1&lt;MIN_SIZE)&#123;//此时执行插入排序</span><br><span class="line">			Insert_Sort.insertionSort(a,first,last);</span><br><span class="line">		&#125;else&#123;//此时执行快速排序</span><br><span class="line">			int pivotIndex=partition(a,first,last);</span><br><span class="line">			quickSort(a,first,pivotIndex-1);</span><br><span class="line">			quickSort(a,pivotIndex+1,last);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> <strong>时间复杂度：O(n*lgn)</strong>最坏是n^2</p>
-<p> <strong>空间复杂度：O(n)</strong></p>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>一、基础操作函数</strong></p><br><br><p style="margin-left:0cm;">source(‘~/.active-rstudio-document’)</p><br><br><p style="margin-left:0cm;">#列出workspace中所有对象</p><br><br><p style="margin-left:0cm;">ls()</p><br><br><p style="margin-left:0cm;">#删除某个变量</p><br><br><p style="margin-left:0cm;">rm（）</p><br><br><p style="margin-left:0cm;">#查看R保存文件的目录</p><br><br><p style="margin-left:0cm;">getwd()</p><br><br><p style="margin-left:0cm;">#保存文件</p><br><br><p style="margin-left:0cm;">save（yourname，file=’yourname.rda’）</p><br><br><p style="margin-left:0cm;">#提取保存的工作结果</p><br><br><p style="margin-left:0cm;">load（’yourname.rda’)</p><br><br><p style="margin-left:0cm;">#安装扩展包</p><br><br><p style="margin-left:0cm;">install.packages(‘fortunes’)</p><br><br><p style="margin-left:0cm;">#载入扩展包</p><br><br><p style="margin-left:0cm;">library(fortunes)</p><br><br><p style="margin-left:0cm;">#卸载扩展包</p><br><br><p style="margin-left:0cm;">detach(package:fortunes)</p><br><br><p style="margin-left:0cm;">#查看帮助</p><br><br><p style="margin-left:0cm;">？……</p><br><br><p><strong>二、基本数学函数</strong></p><br><br><p>1、基本算符</p><br><br><p style="margin-left:0cm;">+、-、*、/、^、%%[取模]、%/%[取整]、complex()[复数]、1.33e4[科学计算]</p><br><br><p>2、基本数学函数</p><br><br><p style="margin-left:0cm;">abs（）、log(x,base=y)[y为底，x的对数，y默认为e]、exp(x)[x的自然指数]、sqrt(x)、factorial(x)[x的阶乘]、choose(x,y)[x个数选y个数的组合数]；</p><br><br><p style="margin-left:0cm;"><strong>近似函数</strong>：round(123.123,digits=4)、round(4.5)、signif(123.123,4)[保留有效数]、floor(x)[最近整数]、trunc(x)[截取整数]；</p><br><br><p style="margin-left:0cm;"><strong>三角函数</strong>：sin()、cos()、tan()</p><br><br><p style="margin-left:0cm;">Inf[无穷大]、NaN[无定义]、NA[缺失值]</p><br><br><p style="margin-left:0cm;"><strong>值检测</strong>：is.finite()[是否有限]、is.infinite()、is.nan()、is.na()；</p><br><br><p style="margin-left:0cm;">未完成。。。</p><br>          </div>
 
           
         
@@ -1215,7 +1065,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/30/归并排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89741142/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1235,7 +1085,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/30/归并排序/" class="post-title-link" itemprop="url">归并排序</a>
+                <a href="/2019/05/16/89741142/" class="post-title-link" itemprop="url">基数排序</a>
               
             
           </h1>
@@ -1260,24 +1110,12 @@
                 
               
 
-              <time title="创建时间：2019-04-30 21:56:28" itemprop="dateCreated datePublished" datetime="2019-04-30T21:56:28+08:00">2019-04-30</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:52:57" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:14" itemprop="dateModified" datetime="2019-05-09T15:38:14+08:00">2019-05-09</time>
               
             
           </span>
@@ -1313,12 +1151,7 @@
       
         
           
-            <p>   <strong>归并排序思想：</strong>将一个序列分成两半然后对两半分别排序，再将他们归并为一个有序序列。</p>
-<p> <strong>归并排序图解：</strong><br><img src="http://img2.imgtn.bdimg.com/it/u=2247905491,3063440747&amp;fm=26&amp;gp=0.jpg" alt> <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556629636232&amp;di=9ce83cb9a22a2fcff2ae1c37234a759c&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.mp.itc.cn%2Fq_70%2Cc_zoom%2Cw_640%2Fupload%2F20160918%2Fe5ea6b39c1de455aba579e7742128752_th.gif" alt></p>
-<p> <strong>归并排序的代码：</strong>(迭代版本代码由于写的急，没来的急优化，所以可读性不是很好）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"> //递归版本归并排序</span><br><span class="line">public class Recursion_MergeSort &#123;</span><br><span class="line">	public static &lt;T extends Comparable&lt;? super T&gt;&gt;</span><br><span class="line">	void merge_Sort(T[] a,int first,int last)&#123;</span><br><span class="line">		T[] tempArray=(T[])new Comparable&lt;?&gt;[a.length];</span><br><span class="line">		mergeSort(a,tempArray,first,last);</span><br><span class="line">	&#125;</span><br><span class="line">	public static &lt;T extends Comparable&lt;? super T&gt;&gt;</span><br><span class="line">	void mergeSort(T[] a,T[] tempArray,int first,int last)&#123;</span><br><span class="line">		if(first&lt;last)&#123;</span><br><span class="line">			int mid=(first+last)/2;</span><br><span class="line">			mergeSort(a,tempArray,first,mid);</span><br><span class="line">			mergeSort(a,tempArray,mid+1,last);</span><br><span class="line">			int i=first,j=first,k=mid+1;</span><br><span class="line">			while(j&lt;=mid&amp;&amp;k&lt;=last)&#123;</span><br><span class="line">				if(a[j].compareTo(a[k])&gt;0)&#123;</span><br><span class="line">					tempArray[i++]=a[k++];</span><br><span class="line">				&#125;else&#123;</span><br><span class="line">					tempArray[i++]=a[j++];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			while(i&lt;=last&amp;&amp;j&lt;=mid)&#123;</span><br><span class="line">				tempArray[i++]=a[j++];</span><br><span class="line">			&#125;</span><br><span class="line">			while(i&lt;=last&amp;&amp;k&lt;=last)&#123;</span><br><span class="line">				tempArray[i++]=a[k++];</span><br><span class="line">			&#125;</span><br><span class="line">			for(i=0;i&lt;=last;i++)&#123;</span><br><span class="line">				a[i]=tempArray[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"> //迭代版本递归排序</span><br><span class="line">public class Interation_MergeSort &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * By ke_yi_</span><br><span class="line">	 * @param a</span><br><span class="line">	 */</span><br><span class="line">	public static &lt;T extends Comparable&lt;? super T&gt;&gt;</span><br><span class="line">	void merge_Sort(T[] a)&#123;</span><br><span class="line">		int i,j;</span><br><span class="line">		T[] tempArray=(T[]) new Comparable&lt;?&gt;[a.length];</span><br><span class="line">		for(i=2;i&lt;a.length;i=i&lt;&lt;1)&#123;</span><br><span class="line">			for(j=0;j*i&lt;a.length;j++)&#123;</span><br><span class="line">				mergeSort(a,tempArray,i*j,i*(j+1));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		mergeSort(a,tempArray,0,i);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static &lt;T extends Comparable&lt;? super T&gt;&gt;</span><br><span class="line">	void mergeSort(T[] a, T[] tempArray, int first, int last) &#123;</span><br><span class="line">		int i=first,j=first,mid=(first+last)/2;</span><br><span class="line">		int k=mid;</span><br><span class="line">		mid=mid&gt;a.length?a.length:mid;</span><br><span class="line">		last=last&gt;a.length?a.length:last;</span><br><span class="line">		while(j&lt;mid&amp;&amp;k&lt;last)&#123;</span><br><span class="line">			if(a[j].compareTo(a[k])&gt;0)&#123;</span><br><span class="line">				tempArray[i++]=a[k++];</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				tempArray[i++]=a[j++];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		while(j&lt;mid)&#123;</span><br><span class="line">			tempArray[i++]=a[j++];</span><br><span class="line">		&#125;</span><br><span class="line">		while(k&lt;last)&#123;</span><br><span class="line">			tempArray[i++]=a[k++];</span><br><span class="line">		&#125;</span><br><span class="line">		for(i=first;i&lt;last;i++)&#123;</span><br><span class="line">			a[i]=tempArray[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> <strong>时间复杂度：O(n*lgn)</strong>最好、最坏、平均都是<br><strong>空间复杂度：O(n)</strong>需要使用2n的空间 </p>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>基数排序思想：</strong>先将序列按照个位装入十个组，然后从0到9将各组内数拿出来，按照十位装入是个组，最后以同样的方式按照百位装入，完成操作之后就已经排好序了。</p><br><br><p><strong>排序图解：</strong></p><br><br><p><img alt class="has" height="301" src="20190501214611134.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="374"><img alt class="has" height="322" src="20190501220214205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="340"></p><br><br><p><strong>排序代码：</strong></p><br><br><pre class="has"><br><code class="language-java">代码设计：<br><br>首先将判断所有数字都是多少位，必须将高位为空补零，存为字符串，或者直接通过整数位数求余取整获得数据。<br><br>然后使用循环从个位到最高位遍历所有数，分组。<br><br>设置分组，每一个分组必须是一个动态数组。<br><br>每一次取数，需要按照上一次装入的组从0组开始，取出一个数就装到对应的本次分组的组。<br><br>取出的时候，每取空一个组就需要到下一个组取数，因此取数的时候要判断边界。<br><br>如果减少代码的复杂度可以每次将组里面的数取出装入原来的数组，再做和第一次取数一样的循环。</code></pre><br><br><p><strong>时间复杂度：O(d<em>n)</em></strong>可以简单的看成是<strong>O(n)</strong><br><strong>空间复杂度：动态数组的话空间会少一点，需要2n，如果是十个数组的话，就需要11n。</strong></p><br>          </div>
 
           
         
@@ -1375,7 +1208,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/查找算法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89737217/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1395,7 +1228,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/28/查找算法/" class="post-title-link" itemprop="url">查找算法</a>
+                <a href="/2019/05/16/89737217/" class="post-title-link" itemprop="url">快速排序</a>
               
             
           </h1>
@@ -1420,24 +1253,12 @@
                 
               
 
-              <time title="创建时间：2019-04-28 15:42:31" itemprop="dateCreated datePublished" datetime="2019-04-28T15:42:31+08:00">2019-04-28</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:52:59" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:15" itemprop="dateModified" datetime="2019-05-09T15:38:15+08:00">2019-05-09</time>
               
             
           </span>
@@ -1473,25 +1294,7 @@
       
         
           
-            <p>   静态查找表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> //顺序表查找的数据类型</span><br><span class="line">#define MAXL 100</span><br><span class="line">typedef int KeyType</span><br><span class="line">typedef struct</span><br><span class="line">&#123;</span><br><span class="line">  KeyType key;</span><br><span class="line">  InfoType data;</span><br><span class="line">&#125;NodeType;</span><br><span class="line">typedef NodeType SeqList[MAXL];</span><br></pre></td></tr></table></figure>
-<p> 顺序查找：它是一种最简单的查找方法。基本思路是：从表的一段开始顺序扫描现行表，依次将扫描到的关键字和给定k相比较。</p>
-<p> 有序表查找之折半查找：折半查找是一种效率较高的查找方法。它要求线性表是有序的。它的时间复杂度是O(n log2n).</p>
-<p> 设R[low…high]是当前查找的区间，首先确定该区间的中点位置mid=(low+high)/2,然后待查找的k值与R[mid].key比较，若相等查找成功，若&gt;将区间确定为R[mid…high]继续查找，若&lt;将区间确定为R[low…mid]继续查找。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> int Binsearch(SeqList R,int n,KeyType k)</span><br><span class="line">&#123;</span><br><span class="line">  int low=0,high=n-1,mid;</span><br><span class="line">  while(low&lt;=high)</span><br><span class="line">  &#123;</span><br><span class="line">    mid=(low+high)/2;</span><br><span class="line">    if(R[mid].key==k)return mid+1;</span><br><span class="line">    if(R[mid].key&gt;k)high=mid-1;</span><br><span class="line">    else low=mid+1;</span><br><span class="line">  &#125;</span><br><span class="line">  ruturn 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 三分查找算法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> int BinSearch(SeqList R,int n,KeyType k)</span><br><span class="line">&#123;</span><br><span class="line">    int low=0,high=n-1,mid,mid1;</span><br><span class="line">    while(low&lt;=high)</span><br><span class="line">    &#123;</span><br><span class="line">        mid=(high-low)/3+low;</span><br><span class="line">        mid1=(high-low)*2/3+low;</span><br><span class="line">        if(R[mid].key==k)</span><br><span class="line">            return mid+1;</span><br><span class="line">        if(R[mid].key&gt;k)</span><br><span class="line">            high=mid-1;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            low=mid+1;</span><br><span class="line">            if(R[mid1].key==k)</span><br><span class="line">                return mid1+1;</span><br><span class="line">            if(R[mid1].key&gt;k)</span><br><span class="line">                high=mid1-1;</span><br><span class="line">            else</span><br><span class="line">                low=mid1+1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 索引顺序表的查找</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> //索引表的数据类型如下</span><br><span class="line">#define MAXI&lt;索引表的最大长度&gt;</span><br><span class="line">typedef struct</span><br><span class="line">&#123;</span><br><span class="line">  KeyType key;</span><br><span class="line">  int link;</span><br><span class="line">&#125;IdxType;</span><br><span class="line">typedef IdxType IDX[MAXI];</span><br></pre></td></tr></table></figure>
-<p> 采用折半查找索引表的平均查找长度为：</p>
-<p> ASLb=ASLbn+ASLs=log2(b+1)-1+(s+1)/2</p>
-<p> 静态树表的查找</p>
-<p> 动态查找表</p>
-<p> 二叉排序树</p>
-<p> 二叉平衡树</p>
-<p> B-树和B+树</p>
-<p> 键树</p>
-<p> 哈希表</p>
+            <div class="htmledit_views" id="content_views"><br>            <blockquote><br><p>与前面归并排序不同的另一种分治策略—-<strong>快速排序</strong><br><br>与归并排序不同的是：快排不要求分成相等的两半、归并主要是合并，快排主要是划分、归并有一个辅助数组，快排不要。<br><br>java类库中的快排：java.until中的Arrays使用快排对基本类型的数组按升序排序。方法:</p><br><br><pre class="has"><br><code class="language-java">public static void sort(type[] a);<br>public static void sort(type[] a,int first,int last);</code></pre><br><br><p> </p><br></blockquote><br><br><p> <strong>快速排序的思想：</strong>先在序列中找到一个支点，使支点左边元素小于等于支点元素，右边元素大于等于支点元素（称为划分）。然后再对左右两部分执行同样的划分。</p><br><br><p><strong>创建划分步骤：</strong>在选定支点之后，将它与最后一个元素相交换，使得再创建划分时支点不成为障碍。从第一个元素开始向后寻找第一个大于或等于支点的节点1，再从倒数第二个元素开始向前寻找第一个小于或等于支点的节点2，如果节点1小于节点2则交换节点1、2。继续做这样的寻找交换，直到最后一次完成，将最后一次不小于支点的元素与支点交换，划分完成。</p><br><br><p><strong>快速排序图解：</strong>（图解1，使用的是选取第一个元素为支点）</p><br><br><p style="text-align:center;"><img alt class="has" height="219" src="20190501140347582.png" width="573"></p><br><br><p> </p><br><br><p style="text-align:center;"><img alt class="has" height="317" src="20190501143703889.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="885"></p><br><br><p><strong>支点的选择：</strong>最好的情况，支点就是序列的中值，致使划分后两部分近似相等。完全达到这种情况时浪费时间的，近似达到的方法是<u>三者取中值支点法</u>将数组中第一个元素和中间一个元素以及最后一个元素的中值作为支点（先排序三个元素，取第二个就是）。</p><br><br><p><strong>调整划分算法：</strong>三者取中值法处理之后，第一个元素和最后一个元素，分别小于大于支点元素，因此不要对其执行划分，划分算法中先将中间元素与last-1处元素交换，从左右开始查找的步骤只需要分别从first+1、last-2处进行。因为有第一个元素小于支点，最后一个元素大于支点的限制，再寻找的过程中没有必要考虑数组越界的界限。</p><br><br><p><strong>快速排序源代码：</strong></p><br><br><pre class="has"><br><code class="language-java">public class Quick_Sort {<br>    static int MIN_SIZE=3;//由于快排判断考虑的是多余三个元素的序列，必须大于等于3<br>    private static&lt;T extends Comparable&lt;?super T&gt;&gt;<br>    void sortFirstMiddleLast(T[] a,int first,int mid,int last){<br>        order(a,first,mid);<br>        order(a,mid,last);<br>        order(a,first,mid);<br>    }<br>    private static&lt;T extends Comparable&lt;?super T&gt;&gt;<br>    void order(T[] a,int i,int j){<br>        if(a[i].compareTo(a[j])&gt;0){<br>            swap(a,i,j);<br>        }<br>    }<br>    private static void swap(Object[] array,int i,int j){<br>        Object temp=array[i];<br>        array[i]=array[j];<br>        array[j]=temp;<br>    }<br>    private static&lt;T extends Comparable&lt;?super T&gt;&gt;<br>    int partition(T[] a,int first,int last){<br>        int mid=(first+last)/2;<br>        sortFirstMiddleLast(a,first,mid,last);<br>        swap(a,mid,last-1);<br>        int pivotIndex=last-1;<br>        T pivot=a[pivotIndex];<br>        int indexFromLeft=first+1;<br>        int indexFromRight=last-2;<br>        boolean done=false;<br>        while(!done){<br>            while(a[indexFromLeft].compareTo(pivot)&lt;0){<br>                indexFromLeft++;<br>            }<br>            while(a[indexFromRight].compareTo(pivot)&gt;0){<br>                indexFromRight–;<br>            }<br>            assert a[indexFromLeft].compareTo(pivot)&gt;=0&amp;&amp;a[indexFromRight].compareTo(pivot)&lt;=0;<br>            if(indexFromLeft&lt;indexFromRight){<br>                swap(a,indexFromLeft,indexFromRight);<br>                indexFromLeft++;<br>                indexFromRight–;<br>            }else{<br>                done=true;<br>            }<br>        }<br>        swap(a,pivotIndex,indexFromLeft);<br>        pivotIndex=indexFromLeft;<br>        return pivotIndex;<br>    }<br>    public static&lt;T extends Comparable&lt;?super T&gt;&gt;<br>    void quickSort(T[] a,int first,int last){<br>        if(last-first+1&lt;MIN_SIZE){//此时执行插入排序<br>            Insert_Sort.insertionSort(a,first,last);<br>        }else{//此时执行快速排序<br>            int pivotIndex=partition(a,first,last);<br>            quickSort(a,first,pivotIndex-1);<br>            quickSort(a,pivotIndex+1,last);<br>        }<br>    }<br>}</code></pre><br><br><p><strong>时间复杂度：O(n*lgn)</strong>最坏是n^2</p><br><br><p><strong>空间复杂度：O(n)</strong></p><br>          </div>
 
           
         
@@ -1548,7 +1351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/注册表函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89716142/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1568,7 +1371,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/28/注册表函数/" class="post-title-link" itemprop="url">注册表函数</a>
+                <a href="/2019/05/16/89716142/" class="post-title-link" itemprop="url">归并排序</a>
               
             
           </h1>
@@ -1593,24 +1396,12 @@
                 
               
 
-              <time title="创建时间：2019-04-28 15:41:04" itemprop="dateCreated datePublished" datetime="2019-04-28T15:41:04+08:00">2019-04-28</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:00" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:15" itemprop="dateModified" datetime="2019-05-09T15:38:15+08:00">2019-05-09</time>
               
             
           </span>
@@ -1646,31 +1437,9 @@
       
         
           
-            <p>   <strong><a href>RegCloseKey</a>：释放对指定注册表项的句柄。<a href="https://blog.csdn.net/ke_yi_/article/details/80928198" target="_blank" rel="noopener">点击跳转到函数</a></strong></p>
-<p> <strong><strong><a href>RegConnectRegistry</a>：在另一台计算机上建立到预定义注册表句柄的连接。<a href="https://blog.csdn.net/ke_yi_/article/details/80928426" target="_blank" rel="noopener">点击跳转到函数</a></strong></strong></p>
-<p> <strong><a href>RegCreateKeyEx</a>：创建指定的注册表项。<a href="https://blog.csdn.net/ke_yi_/article/details/80928693" target="_blank" rel="noopener">点击跳转到函数</a></strong></p>
-<p> <a href><strong>RegDeleteKey</strong></a>：<strong>删除注册表子项。</strong></p>
-<p> <strong><a href>RegDeleteValue</a>：从指定的注册表项中删除键值。</strong></p>
-<p> <strong><a href>RegDisablePredefinedCache</a>：为指定的进程禁用HKEY_CURRENT_USER的预定义注册表句柄表。</strong></p>
-<p> <strong><a href>RegEnumKeyEx</a>：枚举指定的打开注册表项的子键。</strong></p>
-<p> <strong><a href>RegEnumValue</a>：枚举指定的打开注册表项的键值。</strong></p>
-<p> <strong><a href>RegFlushKey</a>：将指定的打开注册表键的所有属性写入注册表。</strong></p>
-<p> <a href><strong>RegGetKeySecurity：检索保护指定开放注册表项的安全描述符的副本。</strong></a></p>
-<p> <strong><a href>RegLoadKey</a>：在HKEY_USERS或HKEY_LOCAL_MACHINE下创建一个子键，并将指定文件中的注册信息存储到该子键中。</strong></p>
-<p> <strong><a href>RegNotifyChangeKeyValue</a>：通知调用方对指定注册表项的属性或内容的更改。</strong></p>
-<p> <strong><a href>RegOpenCurrentUser</a>：检索当前线程模拟的用户的HKEY_CURRENT_USER密钥的句柄。</strong></p>
-<p> <strong><a href>RegOpenKeyEx</a>：打开指定的注册表键。<a href="https://blog.csdn.net/ke_yi_/article/details/80930685" target="_blank" rel="noopener">点击跳转到函数</a></strong></p>
-<p> <strong><a href>RegOpenUserClassesRoot</a>：检索指定用户的HKEY_CLASSES_ROOT密钥的句柄。</strong></p>
-<p> <strong><a href>RegOverridePredefKey</a>：检索与开放注册表键关联的指定值名称的类型和数据。</strong></p>
-<p> <strong><a href>RegQueryInfoKey</a>：检索有关指定注册表项的信息。</strong></p>
-<p> <strong><a href>RegQueryMultipleValues</a>：检索与开放注册表项相关联的值名称列表的类型和数据。</strong></p>
-<p> <strong><a href>RegQueryValueEx</a>：检索与开放注册表键关联的指定值名称的类型和数据。<a href="https://blog.csdn.net/ke_yi_/article/details/80930883" target="_blank" rel="noopener">点击跳转到函数</a></strong></p>
-<p> <strong><a href>RegReplaceKey</a>：用另一个文件替换支持注册表键及其所有子键的文件。</strong></p>
-<p> <strong><a href>RegRestoreKey</a>：**</strong>读取指定文件中的注册表信息，并将其复制到指定的键上。**</p>
-<p> <strong><a href>RegSaveKey</a>：将指定的键及其所有子键和值保存到新文件中。</strong></p>
-<p> <a href><strong>RegSetKeySecurity：设置开放注册表项的安全性。</strong></a></p>
-<p> <strong><a href>RegSetValueEx</a>：在注册表项下设置指定值的数据和类型。<a href="https://blog.csdn.net/ke_yi_/article/details/80930423" target="_blank" rel="noopener">点击跳转到函数</a></strong></p>
-<p> <strong><a href>RegUnLoadKey</a>：从注册表中卸载指定的注册表项及其子键。</strong></p>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>归并排序思想：</strong>将一个序列分成两半然后对两半分别排序，再将他们归并为一个有序序列。</p><br><br><p><strong>归并排序图解：</strong><br><img alt class="has" height="297" src="http://img2.imgtn.bdimg.com/it/u=2247905491,3063440747&amp;fm=26&amp;gp=0.jpg" width="349"> <img alt class="has" height="274" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556629636232&amp;di=9ce83cb9a22a2fcff2ae1c37234a759c&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.mp.itc.cn%2Fq_70%2Cc_zoom%2Cw_640%2Fupload%2F20160918%2Fe5ea6b39c1de455aba579e7742128752_th.gif" width="441"></p><br><br><p><strong>归并排序的代码：</strong>(迭代版本代码由于写的急，没来的急优化，所以可读性不是很好）</p><br><br><pre class="has"><br><code class="language-java">//递归版本归并排序<br>public class Recursion_MergeSort {<br>    public static &lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void merge_Sort(T[] a,int first,int last){<br>        T[] tempArray=(T[])new Comparable&lt;?&gt;[a.length];<br>        mergeSort(a,tempArray,first,last);<br>    }<br>    public static &lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void mergeSort(T[] a,T[] tempArray,int first,int last){<br>        if(first&lt;last){<br>            int mid=(first+last)/2;<br>            mergeSort(a,tempArray,first,mid);<br>            mergeSort(a,tempArray,mid+1,last);<br>            int i=first,j=first,k=mid+1;<br>            while(j&lt;=mid&amp;&amp;k&lt;=last){<br>                if(a[j].compareTo(a[k])&gt;0){<br>                    tempArray[i++]=a[k++];<br>                }else{<br>                    tempArray[i++]=a[j++];<br>                }<br>            }<br>            while(i&lt;=last&amp;&amp;j&lt;=mid){<br>                tempArray[i++]=a[j++];<br>            }<br>            while(i&lt;=last&amp;&amp;k&lt;=last){<br>                tempArray[i++]=a[k++];<br>            }<br>            for(i=0;i&lt;=last;i++){<br>                a[i]=tempArray[i];<br>            }<br>        }<br>    }<br>}</code></pre><br><br><pre class="has"><br><code class="language-java">//迭代版本递归排序<br>public class Interation_MergeSort {<br>    /*<em>
+     </em> By ke_yi_<br>     <em> @param a
+     </em>/<br>    public static &lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void merge_Sort(T[] a){<br>        int i,j;<br>        T[] tempArray=(T[]) new Comparable&lt;?&gt;[a.length];<br>        for(i=2;i&lt;a.length;i=i&lt;&lt;1){<br>            for(j=0;j<em>i&lt;a.length;j++){<br>                mergeSort(a,tempArray,i</em>j,i<em>(j+1));<br>            }<br>        }<br>        mergeSort(a,tempArray,0,i);<br>    }<br><br>    public static &lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void mergeSort(T[] a, T[] tempArray, int first, int last) {<br>        int i=first,j=first,mid=(first+last)/2;<br>        int k=mid;<br>        mid=mid&gt;a.length?a.length:mid;<br>        last=last&gt;a.length?a.length:last;<br>        while(j&lt;mid&amp;&amp;k&lt;last){<br>            if(a[j].compareTo(a[k])&gt;0){<br>                tempArray[i++]=a[k++];<br>            }else{<br>                tempArray[i++]=a[j++];<br>            }<br>        }<br>        while(j&lt;mid){<br>            tempArray[i++]=a[j++];<br>        }<br>        while(k&lt;last){<br>            tempArray[i++]=a[k++];<br>        }<br>        for(i=first;i&lt;last;i++){<br>            a[i]=tempArray[i];<br>        }<br>    }<br>}</em></code></pre><br><br><p><strong>时间复杂度：O(nlgn)</strong>最好、最坏、平均都是<br><strong>空间复杂度：O(n)</strong>需要使用2n的空间 </p><br>          </div>
 
           
         
@@ -1727,7 +1496,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/mysql的like模糊查找常用标识符/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89637815/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1747,7 +1516,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/28/mysql的like模糊查找常用标识符/" class="post-title-link" itemprop="url">mysql的like模糊查找常用标识符</a>
+                <a href="/2019/05/16/89637815/" class="post-title-link" itemprop="url">软考中级之软件设计师心得</a>
               
             
           </h1>
@@ -1772,24 +1541,12 @@
                 
               
 
-              <time title="创建时间：2019-04-28 15:38:12" itemprop="dateCreated datePublished" datetime="2019-04-28T15:38:12+08:00">2019-04-28</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:07" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:16" itemprop="dateModified" datetime="2019-05-09T15:38:16+08:00">2019-05-09</time>
               
             
           </span>
@@ -1825,40 +1582,7 @@
       
         
           
-            <p>   下面列举常用的几种标识含义；</p>
-<p> 1:% 表示零个或多个字符的任意字符串： </p>
-<ol>
-<li><p>LIKE’Mi%’ 将搜索以字母 Mi开头的所有字符串（如 Michael）。</p>
-</li>
-<li><p>LIKE’%er’ 将搜索以字母 er 结尾的所有字符串（如 Worker、Reader）。</p>
-</li>
-<li><p>LIKE’%en%’ 将搜索在任何位置包含字母 en 的所有字符串（如 When、Green）。</p>
-<p>2:_（下划线）表示任何单个字符：</p>
-</li>
-<li><p>LIKE’_heryl’ 将搜索以字母 heryl 结尾的所有六个字母的名称（如 Cheryl、Sheryl）。</p>
-<p>3：[ ] 表示指定范围 ([a-f]) 或集合 ([abcdef]) 中的任何单个字符： </p>
-<p>LIKE’[CK]ars[eo]n’ 将搜索下列字符串：Carsen、Karsen、Carson 和 Karson（如 Carson）。<br>LIKE’[M-Z]inger’ 将搜索以字符串 inger 结尾、以从 M 到 Z 的任何单个字母开头的所有名称（如 Ringer）。<br>D：[^] 不属于指定范围 ([a-f]) 或集合 ([abcdef]) 的任何单个字符：</p>
-</li>
-<li><p>LIKE’M[^c]%’ 将搜索以字母 M 开头，并且第二个字母不是 c 的所有名称（如MacFeather）。</p>
-<p>4：* 它同于DOS命令中的通配符，代表多个字符：</p>
-</li>
-<li><p>c*c代表cc,cBc,cbc,cabdfec等多个字符。</p>
-<p>5：？同于DOS命令中的？通配符，代表单个字符 :</p>
-</li>
-<li><p>b?b代表brb,bFb等。</p>
-<p>6：# 大致同上，不同的是代只能代表单个数字。</p>
-</li>
-<li><p>k#k代表k1k,k8k,k0k 。</p>
-<p>7：[!] 排除 它只代表单个字符。<br>举例：<br>例1，查询name字段中包含有“明”字的。<br>select * from table1 where name like ‘%明%’</p>
-<p>例2，查询name字段中以“李”字开头。<br>select <em> from table1 where name like ‘李</em>‘</p>
-<p>例3，查询name字段中含有数字的。<br>select * from table1 where name like ‘%[0-9]%’</p>
-<p>例4，查询name字段中含有小写字母的。<br>select * from table1 where name like ‘%[a-z]%’</p>
-<p>例5，查询name字段中不含有数字的。<br>select * from table1 where name like ‘%[!0-9]%’</p>
-<p>以上例子能列出什么值来显而易见。但在这里，我们着重要说明的是通配符“*”与“%”的区别。</p>
-<p>很多朋友会问，为什么我在以上查询时有个别的表示所有字符的时候用”%”而不用“<em>”？先看看下面的例子能分别出现什么结果：<br>select </em> from table1 where name like ‘<em>明</em>‘<br>select * from table1 where name like ‘%明%’</p>
-<p>大家会看到，前一条语句列出来的是所有的记录，而后一条记录列出来的是name字段中含有“明”的记录，所以说，当我们作字符型字段包含一个子串的查询时最好采用“%”而不用“<em>”,用“</em>”的时候只在开头或者只在结尾时，而不能两端全由“*”代替任意字符的情况下。</p>
-</li>
-</ol>
+            <div class="htmledit_views" id="content_views"><br>            <p style="text-indent:50px;">软件设计师考试差不多过去半年了，证书是前不久下来的，记录一下心得，讲讲我当时的一些疑惑。</p><br><br><p style="text-indent:50px;">首先说说为什么报吧，和大多人一样，我报软考纯粹抱着试一试的态度，因为看到有几个认识的学长报了，然后感觉自己大学什么东西也没有就去考个证来证明一下自己大学是没有和其他人一样在寝室打游戏。</p><br><br><p style="text-align:center;"><img alt class="has" height="210" src="20190428143540812.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="187"></p><br><br><p style="text-indent:50px;">然后当时报之前 我是对软考的性质进行了一下了解，比如软考是怎样考啊，软考有什么科目，软考有用吗等等。这些资料是需要在报考前搜集好的，我是这么做的。主要途径就是百度，还有软考官网，如果有学长可以指导那就更好咯。软考，分为低级、中级、高级。低级和中级是只有上午和下午两场笔试，高级还加一个论文，具体可以去软考官网了解。软考官网还可以查到报考点和考点。对于软考有用吗？其实当时我也是查了，但是所有类似这样的问题，有用吗，难吗等都是没有标准答案的，只有靠自己去了解。我当时就是在百度文库下了一些真题了解了它的难度，然后还找了考纲，了解它大概考什么。</p><br><br><p style="text-indent:50px;">报名之后，我基本上是用空余时间看教程，视频，真题。视频我是在逼站上找的，直接搜索软件设计师就有很多。真题我是在百度文库和希赛，然后还有一个专门做题的软件，也是在网上找的，但是好像软件商城没有。</p><br><br><p style="text-indent:50px;">说说考试内容的一些心得吧！其实考试的题目涵盖的范围是有点多的，但是题目百分之八九十都是挺简单的，上午的选择题基本上都不难，但是会考一些你可能没有见过的题目，不过也没事因为占比不大，我当时是有六七个题目是自己没有见过的，然后后面的英文题目我也是没有把握的，但是考试75分，题目1分一个，减去20个题目题目都还有55分。下午的题目也是不难的，但是需要一些做题的技巧。前面两个题目是软件工程和数据库那一块的题目，开始我做的时候也确实摸不着头脑。但是我想了一下，这么大的一个项目怎么可能要你一场考试就给思考清楚，肯定是不要弄懂也能做出来的不。虽然这么说，但是也不能完全依靠技巧，因为毕竟是考证书，学也是挺重要的不。后面的程序题，也是有技巧的，但是我当时没有去网上找这方面的技巧，因为毕竟自己也是一个acmer。然而我当时考试的时候有一个算法我确实是没有看懂，但是我感觉我是做出来了的。因为上下文确实能看出一些规律技巧，只要自己仔细。</p><br><br><p style="text-align:center;"><img alt class="has" height="209" src="20190428143537508.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="270"></p><br><br><p style="text-indent:50px;">考完之后，一直到成绩出来那段时间都还是没底的，因为上午那几个没有见过的题目确实给我下了一跳，然后下午那个程序题着实给了我一记重锤。开始那几天我是这样想的：唉！时间还是应该多花点在上午点选择题的知识点上。唉！还是应该多花点时间做题目的。唉！还是应该多学点英语的。；到成绩出来我们学校去报的有70%拿到了证书，其实我有点不太理解，可能我底子确实要好一点。所以之后别人问我难吗？我基本上是说，内容确实有点广，但是难不难我确实没法告诉你，你可以去做一套真题试试。</p><br><br><p style="text-indent:50px;">现在已经过去有一点时间了，对于软考吧，确实学到了很多，思维也是上升了很多。并且现在大三（计算机科学与技术专业）上的一些课基本上讲也只讲到我掌握的那个程度。软件设计师，主要还是在于软件如何设计？软件设计要注意哪些内容？软件设计需要哪些？；从上面三个问题来看，其实隐约的锻炼了个人的设计能力，虽然我现在主要还是一个人写代码，但是我写代码的时候看到了不一样的东西。</p><br><br><p style="text-indent:50px;"><a href="https://download.csdn.net/download/ke_yi_/11149608" rel="noopener" target="_blank">这个</a>是我当时学习过程中搜集的资料</p><br><br><p style="text-align:center;"><img alt class="has" height="213" src="201904281434521.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="285"></p><br>          </div>
 
           
         
@@ -1915,7 +1639,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/软考中级之软件设计师心得/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89636370/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1935,7 +1659,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/28/软考中级之软件设计师心得/" class="post-title-link" itemprop="url">软考中级之软件设计师心得</a>
+                <a href="/2019/05/16/89636370/" class="post-title-link" itemprop="url">希尔排序</a>
               
             
           </h1>
@@ -1960,24 +1684,12 @@
                 
               
 
-              <time title="创建时间：2019-04-28 15:22:31" itemprop="dateCreated datePublished" datetime="2019-04-28T15:22:31+08:00">2019-04-28</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:08" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:17" itemprop="dateModified" datetime="2019-05-09T15:38:17+08:00">2019-05-09</time>
               
             
           </span>
@@ -2013,17 +1725,7 @@
       
         
           
-            <p>   软件设计师考试差不多过去半年了，证书是前不久下来的，记录一下心得，讲讲我当时的一些疑惑。</p>
-<p> 首先说说为什么报吧，和大多人一样，我报软考纯粹抱着试一试的态度，因为看到有几个认识的学长报了，然后感觉自己大学什么东西也没有就去考个证来证明一下自己大学是没有和其他人一样在寝室打游戏。</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190428143540812.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> 然后当时报之前 我是对软考的性质进行了一下了解，比如软考是怎样考啊，软考有什么科目，软考有用吗等等。这些资料是需要在报考前搜集好的，我是这么做的。主要途径就是百度，还有软考官网，如果有学长可以指导那就更好咯。软考，分为低级、中级、高级。低级和中级是只有上午和下午两场笔试，高级还加一个论文，具体可以去软考官网了解。软考官网还可以查到报考点和考点。对于软考有用吗？其实当时我也是查了，但是所有类似这样的问题，有用吗，难吗等都是没有标准答案的，只有靠自己去了解。我当时就是在百度文库下了一些真题了解了它的难度，然后还找了考纲，了解它大概考什么。</p>
-<p> 报名之后，我基本上是用空余时间看教程，视频，真题。视频我是在逼站上找的，直接搜索软件设计师就有很多。真题我是在百度文库和希赛，然后还有一个专门做题的软件，也是在网上找的，但是好像软件商城没有。</p>
-<p> 说说考试内容的一些心得吧！其实考试的题目涵盖的范围是有点多的，但是题目百分之八九十都是挺简单的，上午的选择题基本上都不难，但是会考一些你可能没有见过的题目，不过也没事因为占比不大，我当时是有六七个题目是自己没有见过的，然后后面的英文题目我也是没有把握的，但是考试75分，题目1分一个，减去20个题目题目都还有55分。下午的题目也是不难的，但是需要一些做题的技巧。前面两个题目是软件工程和数据库那一块的题目，开始我做的时候也确实摸不着头脑。但是我想了一下，这么大的一个项目怎么可能要你一场考试就给思考清楚，肯定是不要弄懂也能做出来的不。虽然这么说，但是也不能完全依靠技巧，因为毕竟是考证书，学也是挺重要的不。后面的程序题，也是有技巧的，但是我当时没有去网上找这方面的技巧，因为毕竟自己也是一个acmer。然而我当时考试的时候有一个算法我确实是没有看懂，但是我感觉我是做出来了的。因为上下文确实能看出一些规律技巧，只要自己仔细。</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190428143537508.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> 考完之后，一直到成绩出来那段时间都还是没底的，因为上午那几个没有见过的题目确实给我下了一跳，然后下午那个程序题着实给了我一记重锤。开始那几天我是这样想的：唉！时间还是应该多花点在上午点选择题的知识点上。唉！还是应该多花点时间做题目的。唉！还是应该多学点英语的。；到成绩出来我们学校去报的有70%拿到了证书，其实我有点不太理解，可能我底子确实要好一点。所以之后别人问我难吗？我基本上是说，内容确实有点广，但是难不难我确实没法告诉你，你可以去做一套真题试试。</p>
-<p> 现在已经过去有一点时间了，对于软考吧，确实学到了很多，思维也是上升了很多。并且现在大三（计算机科学与技术专业）上的一些课基本上讲也只讲到我掌握的那个程度。软件设计师，主要还是在于软件如何设计？软件设计要注意哪些内容？软件设计需要哪些？；从上面三个问题来看，其实隐约的锻炼了个人的设计能力，虽然我现在主要还是一个人写代码，但是我写代码的时候看到了不一样的东西。</p>
-<p> <a href="https://download.csdn.net/download/ke_yi_/11149608" target="_blank" rel="noopener">这个</a>是我当时学习过程中搜集的资料</p>
-<p> <img src="https://img-blog.csdnimg.cn/201904281434521.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>希尔排序思想：</strong>插入排序的一种变体。由于插入排序对于特别乱的序列排序会很糟。而它就是先将序列变成接近有序的序列。</p><br><br><p><strong>排序步骤：</strong><br><br>举例：10、16、11、4、15、3、9、6、1、17、8、12、7</p><br><br><p>（1）分组：将上面序列分为6组，按照每一组按照相隔多少取一个数，比如第一组取0号、6号、12号。如下：</p><br><br><p style="text-align:center;"><img alt class="has" height="121" src="20190428134138587.png" width="404"></p><br><br><p> （2）分组排序：对每一组进行插入排序，得到数组的状态为7、1、4、8、3、9、16、11、17、15、12、10；如下：</p><br><br><p style="text-align:center;"><img alt class="has" height="128" src="20190428134756858.png" width="277"></p><br><br><p>（3）缩小分格距离（一般缩小为上一次分组的一般），继续分组，排序，知道分组距离为1。 </p><br><br><p><strong>排序图解：</strong></p><br><br><p><img alt class="has" height="208" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556440904482&amp;di=1fd941d457b11a8a5f004ddbde41fa9a&amp;imgtype=0&amp;src=http%3A%2F%2Fimg2018.cnblogs.com%2Fblog%2F1332969%2F201812%2F1332969-20181205235841818-800963141.gif" width="477"> <img alt class="has" src="https://gss0.bdstatic.com/7LsWdDW5_xN3otebn9fN2DJv/doc/pic/item/d1a20cf431adcbef3f0b6a8ca5af2edda3cc9f78.jpg"></p><br><br><p><strong>希尔排序代码：</strong> </p><br><br><pre class="has"><br><code class="language-java">public class Sheel_Sort {<br>    //对a序列中的第first组进行排序，<br>    //这个组是从first元素开始间距为<br>    //space的位置的所有元素<br>    private static &lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void incrementalInsertionSort(T[] a,int first,int last,int space){<br>        int unsorted,i;<br>        for(unsorted=first+space;unsorted&lt;=last;unsorted=unsorted+space){<br>            T firstUnsorted=a[unsorted];<br>            for(i=unsorted-space;(i&gt;=first)&amp;&amp;(firstUnsorted.compareTo(a[i])&lt;0);i=i-space){<br>                a[i+space]=a[i];<br>            }<br>            a[i+space]=firstUnsorted;<br>        }<br>    }<br>    public static&lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void shellSort(T[] a,int first,int last){<br>        int n=last-first+1;<br>        for(int space=n/2;space&gt;0;space=space/2){<br>            for(int begin=first;begin&lt;first+space;begin++){<br>                incrementalInsertionSort(a, begin, last, space);<br>            }<br>        }<br>    }<br>    public static void main(String[] args) {<br>        Integer[] a={9,8,7,6,5,4,3,2,1};<br>        Sheel_Sort.shellSort(a, 0, 8);<br>        for(Integer i:a){<br>            System.out.println(i);<br>        }<br>    }<br>}<br></code></pre><br><br><p><strong>时间复杂度：O(n^1.5) </strong>平均情况是这样，最坏情况还是n^2，如果当space为偶数时进行优化的话，可以实现搜友都是n^2<br><strong>空间复杂度：O(n)</strong></p><br>          </div>
 
           
         
@@ -2069,7 +1771,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2113,50 +1815,14 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">85</span>
+                    <span class="site-state-item-count">103</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">0</span>
-                    <span class="site-state-item-name">分类</span>
-                  
-                </div>
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
               
             </nav>
           

@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/希尔排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89567277/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -369,7 +369,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/28/希尔排序/" class="post-title-link" itemprop="url">希尔排序</a>
+                <a href="/2019/05/16/89567277/" class="post-title-link" itemprop="url">Maven war解读</a>
               
             
           </h1>
@@ -394,24 +394,12 @@
                 
               
 
-              <time title="创建时间：2019-04-28 14:20:10" itemprop="dateCreated datePublished" datetime="2019-04-28T14:20:10+08:00">2019-04-28</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:10" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:18" itemprop="dateModified" datetime="2019-05-09T15:38:18+08:00">2019-05-09</time>
               
             
           </span>
@@ -447,18 +435,7 @@
       
         
           
-            <p>   <strong>希尔排序思想：</strong>插入排序的一种变体。由于插入排序对于特别乱的序列排序会很糟。而它就是先将序列变成接近有序的序列。</p>
-<p> <strong>排序步骤：</strong><br> 举例：10、16、11、4、15、3、9、6、1、17、8、12、7</p>
-<p> （1）分组：将上面序列分为6组，按照每一组按照相隔多少取一个数，比如第一组取0号、6号、12号。如下：</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190428134138587.png" alt></p>
-<p> （2）分组排序：对每一组进行插入排序，得到数组的状态为7、1、4、8、3、9、16、11、17、15、12、10；如下：</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190428134756858.png" alt></p>
-<p> （3）缩小分格距离（一般缩小为上一次分组的一般），继续分组，排序，知道分组距离为1。 </p>
-<p> <strong>排序图解：</strong></p>
-<p> <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556440904482&amp;di=1fd941d457b11a8a5f004ddbde41fa9a&amp;imgtype=0&amp;src=http%3A%2F%2Fimg2018.cnblogs.com%2Fblog%2F1332969%2F201812%2F1332969-20181205235841818-800963141.gif" alt> <img src="https://gss0.bdstatic.com/7LsWdDW5_xN3otebn9fN2DJv/doc/pic/item/d1a20cf431adcbef3f0b6a8ca5af2edda3cc9f78.jpg" alt></p>
-<p> <strong>希尔排序代码：</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"> public class Sheel_Sort &#123;</span><br><span class="line">	//对a序列中的第first组进行排序，</span><br><span class="line">	//这个组是从first元素开始间距为</span><br><span class="line">	//space的位置的所有元素</span><br><span class="line">	private static &lt;T extends Comparable&lt;? super T&gt;&gt; </span><br><span class="line">	void incrementalInsertionSort(T[] a,int first,int last,int space)&#123;</span><br><span class="line">		int unsorted,i;</span><br><span class="line">		for(unsorted=first+space;unsorted&lt;=last;unsorted=unsorted+space)&#123;</span><br><span class="line">			T firstUnsorted=a[unsorted];</span><br><span class="line">			for(i=unsorted-space;(i&gt;=first)&amp;&amp;(firstUnsorted.compareTo(a[i])&lt;0);i=i-space)&#123;</span><br><span class="line">				a[i+space]=a[i];</span><br><span class="line">			&#125;</span><br><span class="line">			a[i+space]=firstUnsorted;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	public static&lt;T extends Comparable&lt;? super T&gt;&gt;</span><br><span class="line">	void shellSort(T[] a,int first,int last)&#123;</span><br><span class="line">		int n=last-first+1;</span><br><span class="line">		for(int space=n/2;space&gt;0;space=space/2)&#123;</span><br><span class="line">			for(int begin=first;begin&lt;first+space;begin++)&#123;</span><br><span class="line">				incrementalInsertionSort(a, begin, last, space);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Integer[] a=&#123;9,8,7,6,5,4,3,2,1&#125;;</span><br><span class="line">		Sheel_Sort.shellSort(a, 0, 8);</span><br><span class="line">		for(Integer i:a)&#123;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> <strong>时间复杂度：O(n^1.5) </strong>平均情况是这样，最坏情况还是n^2，如果当space为偶数时进行优化的话，可以实现搜友都是n^2<br><strong>空间复杂度：O(n)</strong></p>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>maven是干嘛的：</strong>maven其实是一个项目构建和管理的工具，主要就是提供了帮助管理 构建、文档、报告、依赖、scms、发布、分发的方法。是可以方便的编译代码、进行依赖管理、管理二进制库等的。</p><br><br><hr><p><strong>maven war项目中的pom.xml文件：</strong>描述了maven项目的基本信息，比如groupId，artifactId，version等。也可以对maven项目的远程仓库，打包形式，资源依赖关系等进行配置。一个最简单的pom.xml文件至少需要包含四个元素：modelVersion, groupId, artiffactId和version。</p><br><br><p style="text-align:center;"><img alt class="has" height="241" src="20190426174619845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="436"></p><br><br><hr><p><strong>创建Maven war项目：</strong>new-&gt;project-&gt;maven project-&gt;(勾选create a simple project)-&gt;</p><br><br><p style="text-align:center;"><img alt class="has" height="227" src="20190428125914501.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="289"></p><br><br><p>Group Id和Artifact Id是为了保证项目唯一性而提出的；<br><br>Group Id：可以简单理解为项目开发团队的统一标识，一般分为多个段；实际开发中一般使用两段，第一段代表域，类似org，com，cn等；第二段代表公司名称或者团队名称；<br><br>ArtifactId：可以简单理解为实际的项目名称；在实际的开发过程中，创建包时包名最好以Group Id+Artifact Id开头；例如，在一个项目中设置了Group Id为com.zyipeng，Artifact Id为test，则Service层的包，完整的包名应该为com.zyipeng.test.service。</p><br><br><hr><p><strong>Maven war项目的web.xml文件中servlet标签内容：</strong><br><br>重定向类：表示根据servlet-name定向到具体的java servlet类调用service方法，实现请求的操作和响应<br><br>重定向路径：表示访问相应的路径就可以调用配置的重定向类。</p><br><br><p style="text-align:center;"><img alt class="has" height="168" src="20190428131037602.png" width="477"></p><br><br><p> <strong>Maven war项目文件的架构简单简绍：</strong></p><br><br><p style="text-align:center;"><img alt class="has" height="460" src="20190428132401589.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="340"></p><br>          </div>
 
           
         
@@ -515,7 +492,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/Maven war解读/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89511579/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -535,7 +512,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/28/Maven war解读/" class="post-title-link" itemprop="url">Maven war解读</a>
+                <a href="/2019/05/16/89511579/" class="post-title-link" itemprop="url">插入排序</a>
               
             
           </h1>
@@ -560,24 +537,12 @@
                 
               
 
-              <time title="创建时间：2019-04-28 13:25:01" itemprop="dateCreated datePublished" datetime="2019-04-28T13:25:01+08:00">2019-04-28</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:12" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:19" itemprop="dateModified" datetime="2019-05-09T15:38:19+08:00">2019-05-09</time>
               
             
           </span>
@@ -613,19 +578,7 @@
       
         
           
-            <p>   <strong>maven是干嘛的：</strong>maven其实是一个项目构建和管理的工具，主要就是提供了帮助管理 构建、文档、报告、依赖、scms、发布、分发的方法。是可以方便的编译代码、进行依赖管理、管理二进制库等的。</p>
-<hr>
-<p><strong>maven war项目中的pom.xml文件：</strong>描述了maven项目的基本信息，比如groupId，artifactId，version等。也可以对maven项目的远程仓库，打包形式，资源依赖关系等进行配置。一个最简单的pom.xml文件至少需要包含四个元素：modelVersion, groupId, artiffactId和version。</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190426174619845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<hr>
-<p><strong>创建Maven war项目：</strong>new-&gt;project-&gt;maven project-&gt;(勾选create a simple project)-&gt;</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190428125914501.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> Group Id和Artifact Id是为了保证项目唯一性而提出的；<br> Group Id：可以简单理解为项目开发团队的统一标识，一般分为多个段；实际开发中一般使用两段，第一段代表域，类似org，com，cn等；第二段代表公司名称或者团队名称；<br> ArtifactId：可以简单理解为实际的项目名称；在实际的开发过程中，创建包时包名最好以Group Id+Artifact Id开头；例如，在一个项目中设置了Group Id为com.zyipeng，Artifact Id为test，则Service层的包，完整的包名应该为com.zyipeng.test.service。</p>
-<hr>
-<p><strong>Maven war项目的web.xml文件中servlet标签内容：</strong><br> 重定向类：表示根据servlet-name定向到具体的java servlet类调用service方法，实现请求的操作和响应<br> 重定向路径：表示访问相应的路径就可以调用配置的重定向类。</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190428131037602.png" alt></p>
-<p> <strong>Maven war项目文件的架构简单简绍：</strong></p>
-<p> <img src="https://img-blog.csdnimg.cn/20190428132401589.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>插入排序思想：</strong>插入排序的基本操作就是将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据；</p><br><br><p><strong>插入排序图解：</strong></p><br><br><p><img alt class="has" height="224" src="http://img.mp.sohu.com/upload/20170801/b51e65f1df544c7cb9663512c1deeefe_th.png" width="325"><img alt class="has" height="223" src="20190425103126803.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="518"></p><br><br><p><strong>插入排序代码：</strong></p><br><br><pre class="has"><br><code class="language-java">//迭代版本<br>public class Interation_InsertSort {<br>    public static&lt;T extends Comparable&lt;? super T&gt;&gt; void I_insertionSort(T[] a,int first,int last){<br>        T firstUnsorted=null;<br>        for(int unsorted=first+1;unsorted&lt;last;unsorted++){<br>            firstUnsorted=a[unsorted];<br>            insertInOrder(firstUnsorted,a,first,unsorted-1);<br>        }<br>    }<br>    private static&lt;T extends Comparable&lt;? super T&gt;&gt; void insertInOrder(T element,T[] a,int begin,int end){<br>        int index=end;<br>        while((index&gt;=begin)&amp;&amp;(element.compareTo(a[index])&lt;0)){<br>            a[index+1]=a[index];<br>            index–;<br>        }<br>        a[index+1]=element;<br>    }<br>}<br><br><br></code></pre><br><br><p> </p><br><br><pre class="has"><br><code class="language-java">//递归版本<br>public class Recursion_InsertSort {<br>    private static&lt;T extends Comparable&lt;? super T&gt;&gt; void R_insertionSort(T[] a,int first,int last){<br>        if(first&lt;last){<br>            R_insertionSort(a,first,last-1);<br>            insertInOrder(a[last],a,first,last-1);<br>        }<br>    }<br>    private static&lt;T extends Comparable&lt;? super T&gt;&gt; void insertInOrder(T element,T[] a,int begin,int end){<br>        if(!(element.compareTo(a[end])&lt;0)){<br>            a[end+1]=element;<br>        }else if(begin&lt;end){<br>            a[end+1]=a[end];<br>            insertInOrder(element, a, begin, end-1);<br>        }else{<br>            a[end+1]=a[end];<br>            a[end]=element;<br>        }<br>    }<br>}</code></pre><br><br><p><strong>时间复杂度：O(n^2)</strong></p><br><br><p><strong>空间复杂度：n</strong></p><br>          </div>
 
           
         
@@ -682,7 +635,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/25/插入排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89480670/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -702,7 +655,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/25/插入排序/" class="post-title-link" itemprop="url">插入排序</a>
+                <a href="/2019/05/16/89480670/" class="post-title-link" itemprop="url">选择排序</a>
               
             
           </h1>
@@ -727,24 +680,12 @@
                 
               
 
-              <time title="创建时间：2019-04-25 10:57:40" itemprop="dateCreated datePublished" datetime="2019-04-25T10:57:40+08:00">2019-04-25</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:13" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:21" itemprop="dateModified" datetime="2019-05-09T15:38:21+08:00">2019-05-09</time>
               
             
           </span>
@@ -780,14 +721,7 @@
       
         
           
-            <p>   <strong>插入排序思想：</strong>插入排序的基本操作就是将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据；</p>
-<p> <strong>插入排序图解：</strong></p>
-<p> <img src="http://img.mp.sohu.com/upload/20170801/b51e65f1df544c7cb9663512c1deeefe_th.png" alt><img src="https://img-blog.csdnimg.cn/20190425103126803.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> <strong>插入排序代码：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> //迭代版本</span><br><span class="line">public class Interation_InsertSort &#123;</span><br><span class="line">	public static&lt;T extends Comparable&lt;? super T&gt;&gt; void I_insertionSort(T[] a,int first,int last)&#123;</span><br><span class="line">		T firstUnsorted=null;</span><br><span class="line">		for(int unsorted=first+1;unsorted&lt;last;unsorted++)&#123;</span><br><span class="line">			firstUnsorted=a[unsorted];</span><br><span class="line">			insertInOrder(firstUnsorted,a,first,unsorted-1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	private static&lt;T extends Comparable&lt;? super T&gt;&gt; void insertInOrder(T element,T[] a,int begin,int end)&#123;</span><br><span class="line">		int index=end;</span><br><span class="line">		while((index&gt;=begin)&amp;&amp;(element.compareTo(a[index])&lt;0))&#123;</span><br><span class="line">			a[index+1]=a[index];</span><br><span class="line">			index--;</span><br><span class="line">		&#125;</span><br><span class="line">		a[index+1]=element;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> //递归版本</span><br><span class="line">public class Recursion_InsertSort &#123;</span><br><span class="line">	private static&lt;T extends Comparable&lt;? super T&gt;&gt; void R_insertionSort(T[] a,int first,int last)&#123;</span><br><span class="line">		if(first&lt;last)&#123;</span><br><span class="line">			R_insertionSort(a,first,last-1);</span><br><span class="line">			insertInOrder(a[last],a,first,last-1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	private static&lt;T extends Comparable&lt;? super T&gt;&gt; void insertInOrder(T element,T[] a,int begin,int end)&#123;</span><br><span class="line">		if(!(element.compareTo(a[end])&lt;0))&#123;</span><br><span class="line">			a[end+1]=element;</span><br><span class="line">		&#125;else if(begin&lt;end)&#123;</span><br><span class="line">			a[end+1]=a[end];</span><br><span class="line">			insertInOrder(element, a, begin, end-1);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			a[end+1]=a[end];</span><br><span class="line">			a[end]=element;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> <strong>时间复杂度：O(n^2)</strong></p>
-<p> <strong>空间复杂度：n</strong></p>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>选择排序思想</strong>：每一趟在n-i+1（i=1，2，…n-1）个记录中选取关键字最小的记录作为有序序列中第i个记录。基于此思想的算法主要有简单选择排序、树型选择排序和堆排序。</p><br><br><p><strong>选择排序图解：</strong></p><br><br><p><img alt class="has" height="123" src="http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20181009/0d74357a85fb419da3fc60219b2172ac.gif" width="405"></p><br><br><p><img alt class="has" height="374" src="http://images.cnblogs.com/cnblogs_com/xiaosuo/DataStructure/17.jpg" width="426"></p><br><br><p><strong>选择排序代码（java）：</strong></p><br><br><pre class="has"><br><code class="hljs language-java">package sort;<br><br>public class SelectSort {<br>    public static&lt;T extends Comparable&lt;? super T&gt;&gt; void sort(T[] a,int n){<br>        for(int i=0;i&lt;n-1;i++){<br>            int indexOfSmall=getIndexOfSmallest(a,i,n-1);<br>            swap(a,i,indexOfSmall);<br>        }<br>    }<br>    private static&lt;T extends Comparable&lt;? super T&gt;&gt; int getIndexOfSmallest(T[] a,int left,int right){<br>        T min=a[left];<br>        int MinIndex=left;<br>        for(int i=left+1;i&lt;=right;i++){<br>            if(a[i].compareTo(min)&lt;0){<br>                min=a[i];<br>                MinIndex=i;<br>            }<br>        }<br>        return MinIndex;<br>    }<br>    private static void swap(Object[] a,int i,int j){<br>        Object temp=a[i];<br>        a[i]=a[j];<br>        a[j]=temp;<br>    }<br>}</code></pre><br><br><p><strong>时间复杂度：O(n^2)</strong></p><br><br><p><strong>空间复杂度：O(n)</strong></p><br>          </div>
 
           
         
@@ -844,7 +778,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/23/选择排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/88696980/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -864,7 +798,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/23/选择排序/" class="post-title-link" itemprop="url">选择排序</a>
+                <a href="/2019/05/16/88696980/" class="post-title-link" itemprop="url">蓝桥杯-审美课（二进制，加打表时间优化）</a>
               
             
           </h1>
@@ -889,24 +823,12 @@
                 
               
 
-              <time title="创建时间：2019-04-23 21:03:42" itemprop="dateCreated datePublished" datetime="2019-04-23T21:03:42+08:00">2019-04-23</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:13" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:21" itemprop="dateModified" datetime="2019-05-09T15:38:21+08:00">2019-05-09</time>
               
             
           </span>
@@ -942,14 +864,7 @@
       
         
           
-            <p>   <strong>选择排序思想</strong>：每一趟在n-i+1（i=1，2，…n-1）个记录中选取关键字最小的记录作为有序序列中第i个记录。基于此思想的算法主要有简单选择排序、树型选择排序和堆排序。</p>
-<p> <strong>选择排序图解：</strong></p>
-<p> <img src="http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20181009/0d74357a85fb419da3fc60219b2172ac.gif" alt></p>
-<p> <img src="http://images.cnblogs.com/cnblogs_com/xiaosuo/DataStructure/17.jpg" alt></p>
-<p> <strong>选择排序代码（java）：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> package sort;</span><br><span class="line"></span><br><span class="line">public class SelectSort &#123;</span><br><span class="line">	public static&lt;T extends Comparable&lt;? super T&gt;&gt; void sort(T[] a,int n)&#123;</span><br><span class="line">		for(int i=0;i&lt;n-1;i++)&#123;</span><br><span class="line">			int indexOfSmall=getIndexOfSmallest(a,i,n-1);</span><br><span class="line">			swap(a,i,indexOfSmall);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	private static&lt;T extends Comparable&lt;? super T&gt;&gt; int getIndexOfSmallest(T[] a,int left,int right)&#123;</span><br><span class="line">		T min=a[left];</span><br><span class="line">		int MinIndex=left;</span><br><span class="line">		for(int i=left+1;i&lt;=right;i++)&#123;</span><br><span class="line">			if(a[i].compareTo(min)&lt;0)&#123;</span><br><span class="line">				min=a[i];</span><br><span class="line">				MinIndex=i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return MinIndex;</span><br><span class="line">	&#125;</span><br><span class="line">	private static void swap(Object[] a,int i,int j)&#123;</span><br><span class="line">		Object temp=a[i];</span><br><span class="line">		a[i]=a[j];</span><br><span class="line">		a[j]=temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> <strong>时间复杂度：O(n^2)</strong></p>
-<p> <strong>空间复杂度：O(n)</strong></p>
+            <div class="htmledit_views" id="content_views"><br>            <p>  此题使用二进制取反简化判断，使用打表方法达到时间复杂度的优化，然后计算所有反下标标记的元素值的和就得到了答案的两倍。</p><br><br><p> </p><br><br><p>算法训练 审美课  </p><br><br><p>时间限制：1.0s   内存限制：256.0MB</p><br><br><p>问题描述<br><br>　　《审美的历程》课上有n位学生，帅老师展示了m幅画，其中有些是梵高的作品，另外的都出自五岁小朋友之手。老师请同学们分辨哪些画的作者是梵高，但是老师自己并没有答案，因为这些画看上去都像是小朋友画的……老师只想知道，有多少对同学给出的答案完全相反，这样他就可以用这个数据去揭穿披着皇帝新衣的抽象艺术了（支持帅老师^_^）。<br><br>　　答案完全相反是指对每一幅画的判断都相反。<br><br>输入格式<br><br>　　第一行两个数n和m，表示学生数和图画数；<br><br>　　接下来是一个n*m的01矩阵A：<br><br>　　如果aij=0，表示学生i觉得第j幅画是小朋友画的；<br><br>　　如果aij=1，表示学生i觉得第j幅画是梵高画的。<br><br>输出格式<br><br>　　输出一个数ans：表示有多少对同学的答案完全相反。<br><br>样例输入<br><br>3 2<br><br>1 0<br><br>0 1<br><br>1 0<br><br>样例输出<br><br>2<br><br>样例说明<br><br>　　同学1和同学2的答案完全相反；<br><br>　　同学2和同学3的答案完全相反；<br><br>　　所以答案是2。<br><br>数据规模和约定<br><br>　　对于50%的数据：n&lt;=1000；<br><br>　　对于80%的数据：n&lt;=10000；<br><br>　　对于100%的数据：n&lt;=50000，m&lt;=20。<br><br> </p><br><br><p> 时间是1s，数据规模也不小，空间256。眼瞎，明显是一道空间换时间的题目了。</p><br><br><p>首先暴力做法（没过）直接两个循环输入，三个循环判断。</p><br><br><p>然后加入二进制抑或运算，一直想加入先计算相同元素的个数然后再计算相反对数，但是没有。两个循环输入，两个循环计算结果，时间复杂度似乎要少很多，但是没过。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>#include&lt;math.h&gt;<br>using namespace std;<br>int d[50000];<br>int main()<br>{<br>    int n,m,t;<br>    while(cin&gt;&gt;n&gt;&gt;m){<br>        for(int i=0;i&lt;n;i++){<br>            cin&gt;&gt;t;<br>            d[i]=t;<br>            for(int j=1;j&lt;m;j++){<br>                cin&gt;&gt;t;<br>                d[i]&lt;&lt;=1;<br>                d[i]+=t;<br>            }<br>        }<br>        int res=0;<br>        for(int i=0;i&lt;n;i++){<br>            for(int j=i+1;j&lt;n;j++){<br>                if((d[i]^d[j])==((1&lt;&lt;m)-1)){<br>                    res++;<br>                }<br>            }<br>        }<br>        cout&lt;&lt;res&lt;&lt;endl;<br>    }<br>    return 0;<br><br>}</code></pre><br><br><p>最后，正确答案，用大表法将相同元素放一块，然后通过与(1&lt;&lt;m)-1相抑或取反得到想法的打表数组下标。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>#include&lt;string.h&gt;<br>using namespace std;<br>int d[50000];<br>int su[1048578];<br>int main()<br>{<br>    int n,m,t;<br>    while(cin&gt;&gt;n&gt;&gt;m){<br>        memset(su,0,sizeof(su));<br>        for(int i=0;i&lt;n;i++){<br>            cin&gt;&gt;t;<br>            d[i]=t;<br>            for(int j=1;j&lt;m;j++){<br>                cin&gt;&gt;t;<br>                d[i]&lt;&lt;=1;<br>                d[i]+=t;<br>            }<br>            su[d[i]]++;<br>        }<br>        int res=0;<br>        int temp=(1&lt;&lt;m)-1;<br>        for(int i=0;i&lt;n;i++){<br>            int tem=d[i]^temp;<br>            res+=su[tem];<br>        }<br>        cout&lt;&lt;res/2&lt;&lt;endl;<br>    }<br>    return 0;<br><br>}<br></code></pre><br><br><p> </p><br>          </div>
 
           
         
@@ -1006,7 +921,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/蓝桥杯-审美课（二进制，加打表时间优化）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/88557420/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1026,7 +941,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/20/蓝桥杯-审美课（二进制，加打表时间优化）/" class="post-title-link" itemprop="url">蓝桥杯-审美课（二进制，加打表时间优化）</a>
+                <a href="/2019/05/16/88557420/" class="post-title-link" itemprop="url">mysql的like模糊查找常用标识符</a>
               
             
           </h1>
@@ -1051,24 +966,12 @@
                 
               
 
-              <time title="创建时间：2019-03-20 19:26:31" itemprop="dateCreated datePublished" datetime="2019-03-20T19:26:31+08:00">2019-03-20</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:03" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:22" itemprop="dateModified" datetime="2019-05-09T15:38:22+08:00">2019-05-09</time>
               
             
           </span>
@@ -1104,16 +1007,7 @@
       
         
           
-            <p>   此题使用二进制取反简化判断，使用打表方法达到时间复杂度的优化，然后计算所有反下标标记的元素值的和就得到了答案的两倍。</p>
-<p> 算法训练 审美课 </p>
-<p> 时间限制：1.0s 内存限制：256.0MB</p>
-<p> 问题描述<br> 《审美的历程》课上有n位学生，帅老师展示了m幅画，其中有些是梵高的作品，另外的都出自五岁小朋友之手。老师请同学们分辨哪些画的作者是梵高，但是老师自己并没有答案，因为这些画看上去都像是小朋友画的……老师只想知道，有多少对同学给出的答案完全相反，这样他就可以用这个数据去揭穿披着皇帝新衣的抽象艺术了（支持帅老师^_^）。<br> 答案完全相反是指对每一幅画的判断都相反。<br> 输入格式<br> 第一行两个数n和m，表示学生数和图画数；<br> 接下来是一个n*m的01矩阵A：<br> 如果aij=0，表示学生i觉得第j幅画是小朋友画的；<br> 如果aij=1，表示学生i觉得第j幅画是梵高画的。<br> 输出格式<br> 输出一个数ans：表示有多少对同学的答案完全相反。<br> 样例输入<br> 3 2<br> 1 0<br> 0 1<br> 1 0<br> 样例输出<br> 2<br> 样例说明<br> 同学1和同学2的答案完全相反；<br> 同学2和同学3的答案完全相反；<br> 所以答案是2。<br> 数据规模和约定<br> 对于50%的数据：n&lt;=1000；<br> 对于80%的数据：n&lt;=10000；<br> 对于100%的数据：n&lt;=50000，m&lt;=20。  </p>
-<p> 时间是1s，数据规模也不小，空间256。眼瞎，明显是一道空间换时间的题目了。</p>
-<p> 首先暴力做法（没过）直接两个循环输入，三个循环判断。</p>
-<p> 然后加入二进制抑或运算，一直想加入先计算相同元素的个数然后再计算相反对数，但是没有。两个循环输入，两个循环计算结果，时间复杂度似乎要少很多，但是没过。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"> #include&lt;iostream&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int d[50000];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m,t;</span><br><span class="line">    while(cin&gt;&gt;n&gt;&gt;m)&#123;</span><br><span class="line">        for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">            cin&gt;&gt;t;</span><br><span class="line">            d[i]=t;</span><br><span class="line">            for(int j=1;j&lt;m;j++)&#123;</span><br><span class="line">                cin&gt;&gt;t;</span><br><span class="line">                d[i]&lt;&lt;=1;</span><br><span class="line">                d[i]+=t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        int res=0;</span><br><span class="line">        for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">            for(int j=i+1;j&lt;n;j++)&#123;</span><br><span class="line">                if((d[i]^d[j])==((1&lt;&lt;m)-1))&#123;</span><br><span class="line">                    res++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;res&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 最后，正确答案，用大表法将相同元素放一块，然后通过与(1&lt;&lt;m)-1相抑或取反得到想法的打表数组下标。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"> #include&lt;iostream&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int d[50000];</span><br><span class="line">int su[1048578];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m,t;</span><br><span class="line">    while(cin&gt;&gt;n&gt;&gt;m)&#123;</span><br><span class="line">        memset(su,0,sizeof(su));</span><br><span class="line">        for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">            cin&gt;&gt;t;</span><br><span class="line">            d[i]=t;</span><br><span class="line">            for(int j=1;j&lt;m;j++)&#123;</span><br><span class="line">                cin&gt;&gt;t;</span><br><span class="line">                d[i]&lt;&lt;=1;</span><br><span class="line">                d[i]+=t;</span><br><span class="line">            &#125;</span><br><span class="line">            su[d[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        int res=0;</span><br><span class="line">        int temp=(1&lt;&lt;m)-1;</span><br><span class="line">        for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">            int tem=d[i]^temp;</span><br><span class="line">            res+=su[tem];</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;res/2&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <div class="htmledit_views" id="content_views"><br>            <p>下面列举常用的几种标识含义；</p><br><br><p>1:% 表示零个或多个字符的任意字符串： </p><br><br><p>    1. LIKE’Mi%’ 将搜索以字母 Mi开头的所有字符串（如 Michael）。</p><br><br><p>    2. LIKE’%er’ 将搜索以字母 er 结尾的所有字符串（如 Worker、Reader）。</p><br><br><p>    3. LIKE’%en%’ 将搜索在任何位置包含字母 en 的所有字符串（如 When、Green）。</p><br><br><p>2:_（下划线）表示任何单个字符：</p><br><br><p>     1. LIKE’_heryl’ 将搜索以字母 heryl 结尾的所有六个字母的名称（如 Cheryl、Sheryl）。</p><br><br><p>3：[ ] 表示指定范围 ([a-f]) 或集合 ([abcdef]) 中的任何单个字符： </p><br><br><p>LIKE’[CK]ars[eo]n’ 将搜索下列字符串：Carsen、Karsen、Carson 和 Karson（如 Carson）。<br><br>LIKE’[M-Z]inger’ 将搜索以字符串 inger 结尾、以从 M 到 Z 的任何单个字母开头的所有名称（如 Ringer）。<br><br>D：[^] 不属于指定范围 ([a-f]) 或集合 ([abcdef]) 的任何单个字符：</p><br><br><p>      1. LIKE’M[^c]%’ 将搜索以字母 M 开头，并且第二个字母不是 c 的所有名称（如MacFeather）。</p><br><br><p>4：<em> 它同于DOS命令中的通配符，代表多个字符：</em></p><br><br><p>       1. cc代表cc,cBc,cbc,cabdfec等多个字符。</p><br><br><p>5：？同于DOS命令中的？通配符，代表单个字符 :</p><br><br><p>       1. b?b代表brb,bFb等。</p><br><br><p>6：# 大致同上，不同的是代只能代表单个数字。</p><br><br><p>       1. k#k代表k1k,k8k,k0k 。</p><br><br><p>7：[!] 排除 它只代表单个字符。<br><br>举例：<br><br>例1，查询name字段中包含有“明”字的。<br><br>select <em> from table1 where name like ‘%明%’</em></p><br><br><p>例2，查询name字段中以“李”字开头。<br><br>select  from table1 where name like ‘李<em>‘</em></p><br><br><p>例3，查询name字段中含有数字的。<br><br>select  from table1 where name like ‘%[0-9]%’</p><br><br><p>例4，查询name字段中含有小写字母的。<br><br>select <em> from table1 where name like ‘%[a-z]%’</em></p><br><br><p>例5，查询name字段中不含有数字的。<br><br>select  from table1 where name like ‘%[!0-9]%’</p><br><br><p>以上例子能列出什么值来显而易见。但在这里，我们着重要说明的是通配符“<em>”与“%”的区别。</em></p><br><br><p>很多朋友会问，为什么我在以上查询时有个别的表示所有字符的时候用”%”而不用“”？先看看下面的例子能分别出现什么结果：<br><br>select <em> from table1 where name like ‘</em>明<em>‘<br><br>select </em> from table1 where name like ‘%明%’</p><br><br><p>大家会看到，前一条语句列出来的是所有的记录，而后一条记录列出来的是name字段中含有“明”的记录，所以说，当我们作字符型字段包含一个子串的查询时最好采用“%”而不用“<em>”,用“</em>”的时候只在开头或者只在结尾时，而不能两端全由“*”代替任意字符的情况下。</p><br>          </div>
 
           
         
@@ -1170,7 +1064,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/mysql引擎/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/88554213/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1190,7 +1084,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/14/mysql引擎/" class="post-title-link" itemprop="url">mysql引擎</a>
+                <a href="/2019/05/16/88554213/" class="post-title-link" itemprop="url">mysql引擎</a>
               
             
           </h1>
@@ -1215,24 +1109,12 @@
                 
               
 
-              <time title="创建时间：2019-03-14 16:15:19" itemprop="dateCreated datePublished" datetime="2019-03-14T16:15:19+08:00">2019-03-14</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:14" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:24" itemprop="dateModified" datetime="2019-05-09T15:38:24+08:00">2019-05-09</time>
               
             
           </span>
@@ -1268,34 +1150,7 @@
       
         
           
-            <p>   <strong>创建表时指定表的引擎和字符集</strong><br> create table t1(id int) engine=myisam/innodb charset=utf8/gbk;</p>
-<p> <strong>引擎：</strong>引擎是用来将查询语句转化为对数据库的操作。比如你输入SQL的数据库查询语句，那它的引擎，就将SQL语句转化为对数据库的操作在数据库中查寻某项，它是实现了对用户的一个接口。不同的语言用不同的引擎 。如：JAVA 的JDBC（Java Database Connectivity），ODBC，JET等… …</p>
-<p> <strong>数据库的引擎：</strong>数据库引擎是用于存储、处理和保护数据的核心服务。利用数据库引擎可控制访问权限并快速处理事务，从而满足企业内大多数需要处理大量数据的应用程序的要求。<br><strong>通俗的解释：</strong>比如web开发一般喜欢用myisam，因为myisam具有快速读取操作。而InnoDB就有灵活的特性，因此可以使用它来早就灵活性技术的MYSQL+API等等。所以数据库的引擎通俗的讲就像我们的发动机，汽车用大的发动机，摩托车用小的各取所长。</p>
-<p> <strong>MyISAM适合：</strong>（1）做很多count 的计算；（2）插入不频繁，查询非常频繁；（3）没有事务。<br><strong>InnoDB适合：</strong>（1）可靠性要求比较高，或者要求事务；（2）表更新和查询都相当的频繁，并且表锁定的机会比较大的情况指定数据引擎的创建</p>
-<p> <strong>数据库的引擎包括：</strong>MySQL数据库引擎取决于MySQL在安装的时候是如何被编译的。要添加一个新的引擎，就必须重新编译MYSQL。在缺省情况下，MYSQL支持三个引擎：ISAM、MYISAM和HEAP。另外两种类型INNODB和BERKLEY（BDB），也常常可以使用。如果技术高超，还可以使用MySQL+API自己做一个引擎。</p>
-<p> <strong>引擎查用sql语句：</strong><br> 1.查看表的引擎：show create table t;<br> 2.修改表的引擎：alter table t engine=innodb;<br> 3.查看可以提供哪些引擎：show engines;<br> 4.查看当前默认的存储引擎：show variables like ‘%storage_engine%’;</p>
-<p> <strong>各个引擎介绍：</strong><br><strong>ISAM</strong>：ISAM是一个定义明确且历经时间考验的数据表格管理方法，它在设计之时就考虑到 数据库被查询的次数要远大于更新的次数。因此，ISAM执行读取操作的速度很快，而且不占用大量的内存和存储资源。ISAM的两个主要不足之处在于，它不 支持事务处理，也不能够容错：如果你的硬盘崩溃了，那么数据文件就无法恢复了。如果你正在把ISAM用在关键任务应用程序里，那就必须经常备份你所有的实 时数据，通过其复制特性，MYSQL能够支持这样的备份应用程序。<br><strong>MyISAM</strong>：MyISAM是MySQL的ISAM扩展格式和缺省的数据库引擎。除了提供ISAM里所没有的索引和字段管理的大量功能，MyISAM还使用一种表格锁定的机制，来优化多个并发的读写操作，其代价是你需要经常运行OPTIMIZE TABLE命令，来恢复被更新机制所浪费的空间。MyISAM还有一些有用的扩展，例如用来修复数据库文件的MyISAMCHK工具和用来恢复浪费空间的 MyISAMPACK工具。MYISAM强调了快速读取操作，这可能就是为什么MySQL受到了WEB开发如此青睐的主要原因：在WEB开发中你所进行的大量数据操作都是读取操作。所以，大多数虚拟主机提供商和INTERNET平台提供商只允许使用MYISAM格式。MyISAM格式的一个重要缺陷就是不能在表损坏后恢复数据。<br><strong>HEAP</strong>：HEAP允许只驻留在内存里的临时表格。驻留在内存里让HEAP要比ISAM和MYISAM都快，但是它所管理的数据是不稳定的，而且如果在关机之前没有进行保存，那么所有的数据都会丢失。在数据行被删除的时候，HEAP也不会浪费大量的空间。HEAP表格在你需要使用SELECT表达式来选择和操控数据的时候非常有用。要记住，在用完表格之后就删除表格。<br><strong>InnoDB</strong>：InnoDB数据库引擎都是造就MySQL灵活性的技术的直接产品，这项技术就是MYSQL+API。在使用MYSQL的时候，你所面对的每一个挑战几乎都源于ISAM和MyISAM数据库引擎不支持事务处理（transaction process）也不支持外来键。尽管要比ISAM和 MyISAM引擎慢很多，但是InnoDB包括了对事务处理和外来键的支持，这两点都是前两个引擎所没有的。如前所述，如果你的设计需要这些特性中的一者 或者两者，那你就要被迫使用后两个引擎中的一个了。</p>
-<p> <strong>*</strong>如果感觉自己的确技术高超，你还能够使用MySQL+API来创建自己的数据库引擎。这个API为你提供了操作字段、记录、表格、数据库、连接、安全帐号的功能，以及建立诸如MySQL这样DBMS所需要的所有其他无数功能。深入讲解API已经超出了本文的范围，但是你需要了解MySQL+API的存在及其可交换引擎背后的技术，这一点是很重要的。估计这个插件式数据库引擎的模型甚至能够被用来为MySQL创建本地的XML提供器（XML provider）。（任何读到本文的MySQL+API开发人员可以把这一点当作是个要求。）</p>
-<h2 id="MyISAM与InnoDB的区别（收集于网上）"><a href="#MyISAM与InnoDB的区别（收集于网上）" class="headerlink" title="MyISAM与InnoDB的区别（收集于网上）"></a><strong>MyISAM与InnoDB的区别（收集于网上）</strong></h2><p> InnoDB和MyISAM是许多人在使用MySQL时最常用的两个表类型，这两个表类型各有优劣，视具体应用而定。基本的差别为：MyISAM类型不支持事务处理等高级处理，而InnoDB类型支持。MyISAM类型的表强调的是性能，其执行数度比InnoDB类型更快，但是不提供事务支持，而InnoDB提供事务支持已经外部键等高级数据库功能。</p>
-<p> <strong>以下是一些细节和具体实现的差别：</strong></p>
-<p> 1.InnoDB不支持FULLTEXT类型的索引。</p>
-<p> 2.InnoDB 中不保存表的具体行数，也就是说，执行select count（<em>） fromtable时，InnoDB要扫描一遍整个表来计算有多少行，但是MyISAM只要简单的读出保存好的行数即可。注意的是，当count（</em>）语句包含where条件时，两种表的操作是一样的。</p>
-<p> 3.对于AUTO_INCREMENT类型的字段，InnoDB中必须包含只有该字段的索引，但是在MyISAM表中，可以和其他字段一起建立联合索引。</p>
-<p> 4.DELETE FROM table时，InnoDB不会重新建立表，而是一行一行的删除。</p>
-<p> 5.LOAD TABLE FROMMASTER操作对InnoDB是不起作用的，解决方法是首先把InnoDB表改成MyISAM表，导入数据后再改成InnoDB表，但是对于使用的额外的InnoDB特性（例如外键）的表不适用。</p>
-<p> 另外，InnoDB表的行锁也不是绝对的，假如在执行一个SQL语句时MySQL不能确定要扫描的范围，InnoDB表同样会锁全表，例如updatetable set num=1 where name like “a%”</p>
-<p> 两种类型最主要的差别就是Innodb支持事务处理与外键和行级锁。而MyISAM不支持。所以MyISAM往往就容易被人认为只适合在小项目中使用。</p>
-<p> 我作为使用MySQL的用户角度出发，Innodb和MyISAM都是比较喜欢的，但是从我目前运维的数据库平台要达到需求：99.9%的稳定性，方便的扩展性和高可用性来说的话，MyISAM绝对是我的首选。</p>
-<p> <strong>原因如下：</strong></p>
-<p> 1、首先我目前平台上承载的大部分项目是读多写少的项目，而MyISAM的读性能是比Innodb强不少的。</p>
-<p> 2、MyISAM的索引和数据是分开的，并且索引是有压缩的，内存使用率就对应提高了不少。能加载更多索引，而Innodb是索引和数据是紧密捆绑的，没有使用压缩从而会造成Innodb比MyISAM体积庞大不小。</p>
-<p> 3、从平台角度来说，经常隔1，2个月就会发生应用开发人员不小心update一个表where写的范围不对，导致这个表没法正常用了，这个时候MyISAM的优越性就体现出来了，随便从当天拷贝的压缩包取出对应表的文件，随便放到一个数据库目录下，然后dump成sql再导回到主库，并把对应的binlog补上。如果是Innodb，恐怕不可能有这么快速度，别和我说让Innodb定期用导出xxx.sql机制备份，因为我平台上最小的一个数据库实例的数据量基本都是几十G大小。</p>
-<p> 4、从我接触的应用逻辑来说，select count（*） 和order by是最频繁的，大概能占了整个sql总语句的60%以上的操作，而这种操作Innodb其实也是会锁表的，很多人以为Innodb是行级锁，那个只是where对它主键是有效，非主键的都会锁全表的。</p>
-<p> 5、还有就是经常有很多应用部门需要我给他们定期某些表的数据，MyISAM的话很方便，只要发给他们对应那表的frm.MYD，MYI的文件，让他们自己在对应版本的数据库启动就行，而Innodb就需要导出xxx.sql了，因为光给别人文件，受字典数据文件的影响，对方是无法使用的。</p>
-<p> 6、如果和MyISAM比insert写操作的话，Innodb还达不到MyISAM的写性能，如果是针对基于索引的update操作，虽然MyISAM可能会逊色Innodb，但是那么高并发的写，从库能否追的上也是一个问题，还不如通过多实例分库分表架构来解决。</p>
-<p> 7、如果是用MyISAM的话，merge引擎可以大大加快应用部门的开发速度，他们只要对这个merge表做一些selectcount（*）操作，非常适合大项目总量约几亿的rows某一类型（如日志，调查统计）的业务表。</p>
-<p> 当然Innodb也不是绝对不用，用事务的项目如模拟炒股项目，我就是用Innodb的，活跃用户20多万时候，也是很轻松应付了，因此我个人也是很喜欢Innodb的，只是如果从数据库平台应用出发，我还是会首MyISAM。</p>
-<p> 另外，可能有人会说你MyISAM无法抗太多写操作，但是我可以通过架构来弥补，说个我现有用的数据库平台容量：主从数据总量在几百T以上，每天十多亿pv的动态页面，还有几个大项目是通过数据接口方式调用未算进pv总数，（其中包括一个大项目因为初期memcached没部署，导致单台数据库每天处理9千万的查询）。而我的整体数据库服务器平均负载都在0.5-1左右。</p>
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>创建表时指定表的引擎和字符集</strong><br><br>create table t1(id int) engine=myisam/innodb charset=utf8/gbk;</p><br><br><p><strong>引擎：</strong>引擎是用来将查询语句转化为对数据库的操作。比如你输入SQL的数据库查询语句，那它的引擎，就将SQL语句转化为对数据库的操作在数据库中查寻某项，它是实现了对用户的一个接口。不同的语言用不同的引擎 。如：JAVA 的JDBC（Java Database Connectivity），ODBC，JET等… …</p><br><br><p><strong>数据库的引擎：</strong>数据库引擎是用于存储、处理和保护数据的核心服务。利用数据库引擎可控制访问权限并快速处理事务，从而满足企业内大多数需要处理大量数据的应用程序的要求。<br><strong>通俗的解释：</strong>比如web开发一般喜欢用myisam，因为myisam具有快速读取操作。而InnoDB就有灵活的特性，因此可以使用它来早就灵活性技术的MYSQL+API等等。所以数据库的引擎通俗的讲就像我们的发动机，汽车用大的发动机，摩托车用小的各取所长。</p><br><br><p><strong>MyISAM适合：</strong>（1）做很多count 的计算；（2）插入不频繁，查询非常频繁；（3）没有事务。<br><strong>InnoDB适合：</strong>（1）可靠性要求比较高，或者要求事务；（2）表更新和查询都相当的频繁，并且表锁定的机会比较大的情况指定数据引擎的创建</p><br><br><p><strong>数据库的引擎包括：</strong>MySQL数据库引擎取决于MySQL在安装的时候是如何被编译的。要添加一个新的引擎，就必须重新编译MYSQL。在缺省情况下，MYSQL支持三个引擎：ISAM、MYISAM和HEAP。另外两种类型INNODB和BERKLEY（BDB），也常常可以使用。如果技术高超，还可以使用MySQL+API自己做一个引擎。</p><br><br><p><strong>引擎查用sql语句：</strong><br><br>1.查看表的引擎：show create table t;<br><br>2.修改表的引擎：alter table t engine=innodb;<br><br>3.查看可以提供哪些引擎：show engines;<br><br>4.查看当前默认的存储引擎：show variables like ‘%storage_engine%’;</p><br><br><p> </p><br><br><p><strong>各个引擎介绍：</strong><br><strong>ISAM</strong>：ISAM是一个定义明确且历经时间考验的数据表格管理方法，它在设计之时就考虑到 数据库被查询的次数要远大于更新的次数。因此，ISAM执行读取操作的速度很快，而且不占用大量的内存和存储资源。ISAM的两个主要不足之处在于，它不 支持事务处理，也不能够容错：如果你的硬盘崩溃了，那么数据文件就无法恢复了。如果你正在把ISAM用在关键任务应用程序里，那就必须经常备份你所有的实 时数据，通过其复制特性，MYSQL能够支持这样的备份应用程序。<br><strong>MyISAM</strong>：MyISAM是MySQL的ISAM扩展格式和缺省的数据库引擎。除了提供ISAM里所没有的索引和字段管理的大量功能，MyISAM还使用一种表格锁定的机制，来优化多个并发的读写操作，其代价是你需要经常运行OPTIMIZE TABLE命令，来恢复被更新机制所浪费的空间。MyISAM还有一些有用的扩展，例如用来修复数据库文件的MyISAMCHK工具和用来恢复浪费空间的 MyISAMPACK工具。MYISAM强调了快速读取操作，这可能就是为什么MySQL受到了WEB开发如此青睐的主要原因：在WEB开发中你所进行的大量数据操作都是读取操作。所以，大多数虚拟主机提供商和INTERNET平台提供商只允许使用MYISAM格式。MyISAM格式的一个重要缺陷就是不能在表损坏后恢复数据。<br><strong>HEAP</strong>：HEAP允许只驻留在内存里的临时表格。驻留在内存里让HEAP要比ISAM和MYISAM都快，但是它所管理的数据是不稳定的，而且如果在关机之前没有进行保存，那么所有的数据都会丢失。在数据行被删除的时候，HEAP也不会浪费大量的空间。HEAP表格在你需要使用SELECT表达式来选择和操控数据的时候非常有用。要记住，在用完表格之后就删除表格。<br><strong>InnoDB</strong>：InnoDB数据库引擎都是造就MySQL灵活性的技术的直接产品，这项技术就是MYSQL+API。在使用MYSQL的时候，你所面对的每一个挑战几乎都源于ISAM和MyISAM数据库引擎不支持事务处理（transaction process）也不支持外来键。尽管要比ISAM和 MyISAM引擎慢很多，但是InnoDB包括了对事务处理和外来键的支持，这两点都是前两个引擎所没有的。如前所述，如果你的设计需要这些特性中的一者 或者两者，那你就要被迫使用后两个引擎中的一个了。</p><br><br><p><strong><em></em></strong>如果感觉自己的确技术高超，你还能够使用MySQL+API来创建自己的数据库引擎。这个API为你提供了操作字段、记录、表格、数据库、连接、安全帐号的功能，以及建立诸如MySQL这样DBMS所需要的所有其他无数功能。深入讲解API已经超出了本文的范围，但是你需要了解MySQL+API的存在及其可交换引擎背后的技术，这一点是很重要的。估计这个插件式数据库引擎的模型甚至能够被用来为MySQL创建本地的XML提供器（XML provider）。（任何读到本文的MySQL+API开发人员可以把这一点当作是个要求。）</p><br><br><h2><strong>MyISAM与InnoDB的区别（收集于网上）</strong></h2><br><br><p>InnoDB和MyISAM是许多人在使用MySQL时最常用的两个表类型，这两个表类型各有优劣，视具体应用而定。基本的差别为：MyISAM类型不支持事务处理等高级处理，而InnoDB类型支持。MyISAM类型的表强调的是性能，其执行数度比InnoDB类型更快，但是不提供事务支持，而InnoDB提供事务支持已经外部键等高级数据库功能。</p><br><br><p><strong>以下是一些细节和具体实现的差别：</strong></p><br><br><p>1.InnoDB不支持FULLTEXT类型的索引。</p><br><br><p>2.InnoDB 中不保存表的具体行数，也就是说，执行select count（） fromtable时，InnoDB要扫描一遍整个表来计算有多少行，但是MyISAM只要简单的读出保存好的行数即可。注意的是，当count（<em>）语句包含where条件时，两种表的操作是一样的。</em></p><br><br><p>3.对于AUTO_INCREMENT类型的字段，InnoDB中必须包含只有该字段的索引，但是在MyISAM表中，可以和其他字段一起建立联合索引。</p><br><br><p>4.DELETE FROM table时，InnoDB不会重新建立表，而是一行一行的删除。</p><br><br><p>5.LOAD TABLE FROMMASTER操作对InnoDB是不起作用的，解决方法是首先把InnoDB表改成MyISAM表，导入数据后再改成InnoDB表，但是对于使用的额外的InnoDB特性（例如外键）的表不适用。</p><br><br><p>另外，InnoDB表的行锁也不是绝对的，假如在执行一个SQL语句时MySQL不能确定要扫描的范围，InnoDB表同样会锁全表，例如updatetable set num=1 where name like “a%”</p><br><br><p>两种类型最主要的差别就是Innodb支持事务处理与外键和行级锁。而MyISAM不支持。所以MyISAM往往就容易被人认为只适合在小项目中使用。</p><br><br><p>我作为使用MySQL的用户角度出发，Innodb和MyISAM都是比较喜欢的，但是从我目前运维的数据库平台要达到需求：99.9%的稳定性，方便的扩展性和高可用性来说的话，MyISAM绝对是我的首选。</p><br><br><p><strong>原因如下：</strong></p><br><br><p>1、首先我目前平台上承载的大部分项目是读多写少的项目，而MyISAM的读性能是比Innodb强不少的。</p><br><br><p>2、MyISAM的索引和数据是分开的，并且索引是有压缩的，内存使用率就对应提高了不少。能加载更多索引，而Innodb是索引和数据是紧密捆绑的，没有使用压缩从而会造成Innodb比MyISAM体积庞大不小。</p><br><br><p>3、从平台角度来说，经常隔1，2个月就会发生应用开发人员不小心update一个表where写的范围不对，导致这个表没法正常用了，这个时候MyISAM的优越性就体现出来了，随便从当天拷贝的压缩包取出对应表的文件，随便放到一个数据库目录下，然后dump成sql再导回到主库，并把对应的binlog补上。如果是Innodb，恐怕不可能有这么快速度，别和我说让Innodb定期用导出xxx.sql机制备份，因为我平台上最小的一个数据库实例的数据量基本都是几十G大小。</p><br><br><p>4、从我接触的应用逻辑来说，select count（） 和order by是最频繁的，大概能占了整个sql总语句的60%以上的操作，而这种操作Innodb其实也是会锁表的，很多人以为Innodb是行级锁，那个只是where对它主键是有效，非主键的都会锁全表的。</p><br><br><p>5、还有就是经常有很多应用部门需要我给他们定期某些表的数据，MyISAM的话很方便，只要发给他们对应那表的frm.MYD，MYI的文件，让他们自己在对应版本的数据库启动就行，而Innodb就需要导出xxx.sql了，因为光给别人文件，受字典数据文件的影响，对方是无法使用的。</p><br><br><p>6、如果和MyISAM比insert写操作的话，Innodb还达不到MyISAM的写性能，如果是针对基于索引的update操作，虽然MyISAM可能会逊色Innodb，但是那么高并发的写，从库能否追的上也是一个问题，还不如通过多实例分库分表架构来解决。</p><br><br><p>7、如果是用MyISAM的话，merge引擎可以大大加快应用部门的开发速度，他们只要对这个merge表做一些selectcount（*）操作，非常适合大项目总量约几亿的rows某一类型（如日志，调查统计）的业务表。</p><br><br><p>当然Innodb也不是绝对不用，用事务的项目如模拟炒股项目，我就是用Innodb的，活跃用户20多万时候，也是很轻松应付了，因此我个人也是很喜欢Innodb的，只是如果从数据库平台应用出发，我还是会首MyISAM。</p><br><br><p>另外，可能有人会说你MyISAM无法抗太多写操作，但是我可以通过架构来弥补，说个我现有用的数据库平台容量：主从数据总量在几百T以上，每天十多亿pv的动态页面，还有几个大项目是通过数据接口方式调用未算进pv总数，（其中包括一个大项目因为初期memcached没部署，导致单台数据库每天处理9千万的查询）。而我的整体数据库服务器平均负载都在0.5-1左右。</p><br><br><p> </p><br><br><p> </p><br>          </div>
 
           
         
@@ -1352,7 +1207,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/10/每次打开mysql服务不要像上一篇文章那样复杂，将bin加到path/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/88383404/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1372,7 +1227,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/10/每次打开mysql服务不要像上一篇文章那样复杂，将bin加到path/" class="post-title-link" itemprop="url">每次打开mysql服务不要像上一篇文章那样复杂，将bin加到path</a>
+                <a href="/2019/05/16/88383404/" class="post-title-link" itemprop="url">每次打开mysql服务不要像上一篇文章那样复杂，将bin加到path</a>
               
             
           </h1>
@@ -1397,24 +1252,12 @@
                 
               
 
-              <time title="创建时间：2019-03-10 20:41:13" itemprop="dateCreated datePublished" datetime="2019-03-10T20:41:13+08:00">2019-03-10</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:16" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:25" itemprop="dateModified" datetime="2019-05-09T15:38:25+08:00">2019-05-09</time>
               
             
           </span>
@@ -1450,14 +1293,7 @@
       
         
           
-            <p>   找到自己的mysql安装目录，将bin目录路径复制</p>
-<p> 例如我的</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190310203404764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> 然后右键我的电脑—-&gt;点击属性—-&gt;点击高级 系统设置—-&gt;点击环境变量</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190310203644400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt><img src="https://img-blog.csdnimg.cn/20190310203726236.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> 编辑系统变量的path,粘贴自己的bin路径，保存</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190310203823212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> 以后打开服务就只要管理员身份运行cmd，然后mysqld install。或者其他的一些与mysql相关的命令也直接输入就好了，不要再cd到目录了。</p>
+            <div class="htmledit_views" id="content_views"><br>            <p>找到自己的mysql安装目录，将bin目录路径复制</p><br><br><p>例如我的</p><br><br><p><img alt class="has" height="235" src="20190310203404764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="483"></p><br><br><p>然后右键我的电脑—-&gt;点击属性—-&gt;点击高级 系统设置—-&gt;点击环境变量</p><br><br><p><img alt class="has" height="351" src="20190310203644400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="451"><img alt class="has" height="232" src="20190310203726236.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="390"></p><br><br><p> 编辑系统变量的path,粘贴自己的bin路径，保存</p><br><br><p><img alt class="has" height="261" src="20190310203823212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="512"></p><br><br><p> 以后打开服务就只要管理员身份运行cmd，然后mysqld install。或者其他的一些与mysql相关的命令也直接输入就好了，不要再cd到目录了。</p><br>          </div>
 
           
         
@@ -1514,7 +1350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/10/打开mysqld服务/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/88383239/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1534,7 +1370,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/10/打开mysqld服务/" class="post-title-link" itemprop="url">打开mysqld服务</a>
+                <a href="/2019/05/16/88383239/" class="post-title-link" itemprop="url">打开mysqld服务</a>
               
             
           </h1>
@@ -1559,24 +1395,12 @@
                 
               
 
-              <time title="创建时间：2019-03-10 20:28:29" itemprop="dateCreated datePublished" datetime="2019-03-10T20:28:29+08:00">2019-03-10</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:18" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:26" itemprop="dateModified" datetime="2019-05-09T15:38:26+08:00">2019-05-09</time>
               
             
           </span>
@@ -1612,16 +1436,7 @@
       
         
           
-            <p>   首先找到你mysql的安装目录</p>
-<p> （例如我的）</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190310202149629.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> 然后将路径复制，例如我的（D:\Program Files\MySQL\MySQL Server 5.5\bin）</p>
-<p> （没有加到path的方法）</p>
-<p> 然后右键cmd管理员身份运行，首先cd到bin目录下</p>
-<p> （例如我的，因为我的是在d盘符下所以我首先切换到d盘符，然后我再，cd +bin路径）</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190310202531827.png" alt></p>
-<p> 然后再运行mysqld install命令(例如我的）</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190310202746202.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
+            <div class="htmledit_views" id="content_views"><br>            <p>首先找到你mysql的安装目录</p><br><br><p>（例如我的）</p><br><br><p><img alt class="has" height="248" src="20190310202149629.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="469"></p><br><br><p> 然后将路径复制，例如我的（D:\Program Files\MySQL\MySQL Server 5.5\bin）</p><br><br><p>（没有加到path的方法）</p><br><br><p>然后右键cmd管理员身份运行，首先cd到bin目录下</p><br><br><p>（例如我的，因为我的是在d盘符下所以我首先切换到d盘符，然后我再，cd +bin路径）</p><br><br><p><img alt class="has" height="189" src="20190310202531827.png" width="469"></p><br><br><p>然后再运行mysqld install命令(例如我的）</p><br><br><p><img alt class="has" height="223" src="20190310202746202.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="514"></p><br>          </div>
 
           
         
@@ -1678,7 +1493,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/Python3.7.2卸载不了和正确卸载方式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/88183474/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1698,7 +1513,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/05/Python3.7.2卸载不了和正确卸载方式/" class="post-title-link" itemprop="url">Python3.7.2卸载不了和正确卸载方式</a>
+                <a href="/2019/05/16/88183474/" class="post-title-link" itemprop="url">Python3.7.2卸载不了和正确卸载方式</a>
               
             
           </h1>
@@ -1723,24 +1538,12 @@
                 
               
 
-              <time title="创建时间：2019-03-05 15:18:31" itemprop="dateCreated datePublished" datetime="2019-03-05T15:18:31+08:00">2019-03-05</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:19" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:27" itemprop="dateModified" datetime="2019-05-09T15:38:27+08:00">2019-05-09</time>
               
             
           </span>
@@ -1776,13 +1579,7 @@
       
         
           
-            <p>   python3.7.2卸载顺序错了，然后导致卸载不完全，不能再此安装程序</p>
-<p> 打开控制面板—-&gt;点开卸载程序—-&gt;找到python3.7.2</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190305151443882.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> 右键选择更改—-&gt;点击修复</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190305151540220.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
-<p> 等待修复完成再回到控制面板的卸载程序页面，右键python3.7.2，点击卸载。</p>
-<p> 不要卸载其他有python英文的程序，卸载其他就卸载不了python3.7.2了，或者在系统里面有很多卸载不干净的文件，电脑管家都卸载不了。</p>
+            <div class="htmledit_views" id="content_views"><br>            <p>python3.7.2卸载顺序错了，然后导致卸载不完全，不能再此安装程序</p><br><br><p>打开控制面板—-&gt;点开卸载程序—-&gt;找到python3.7.2</p><br><br><p><img alt class="has" height="224" src="20190305151443882.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="356"></p><br><br><p>右键选择更改—-&gt;点击修复</p><br><br><p><img alt class="has" height="199" src="20190305151540220.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="323"></p><br><br><p> 等待修复完成再回到控制面板的卸载程序页面，右键python3.7.2，点击卸载。</p><br><br><p>不要卸载其他有python英文的程序，卸载其他就卸载不了python3.7.2了，或者在系统里面有很多卸载不干净的文件，电脑管家都卸载不了。</p><br>          </div>
 
           
         
@@ -1839,7 +1636,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/myeclipse激活工具闪退问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/88084683/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1859,7 +1656,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/03/myeclipse激活工具闪退问题/" class="post-title-link" itemprop="url">myeclipse激活工具闪退问题</a>
+                <a href="/2019/05/16/88084683/" class="post-title-link" itemprop="url">myeclipse激活工具闪退问题</a>
               
             
           </h1>
@@ -1884,24 +1681,12 @@
                 
               
 
-              <time title="创建时间：2019-03-03 09:31:52" itemprop="dateCreated datePublished" datetime="2019-03-03T09:31:52+08:00">2019-03-03</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:21" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:38:28" itemprop="dateModified" datetime="2019-05-09T15:38:28+08:00">2019-05-09</time>
               
             
           </span>
@@ -1937,14 +1722,7 @@
       
         
           
-            <p>   <a href="https://blog.csdn.net/weixin_37480339/article/details/80895441" target="_blank" rel="noopener">安装激活教程</a></p>
-<p> 注：安装myeclipse会自动安装java。</p>
-<p> 激活工具闪退，是由于没有运行的java环境，只要把java的bin文件夹加入环境变量，再重新激活就好了。</p>
-<p> 不知道java安装目录的查找方法：</p>
-<p> 首先：windows—-&gt;preferences</p>
-<p> 然后：java—-&gt;installed JREs</p>
-<p> 最后：打开箭头所示的路径，进入bin文件夹，将路径加入环境变量</p>
-<p> <img src="https://img-blog.csdnimg.cn/20190303092846194.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" alt></p>
+            <div class="htmledit_views" id="content_views"><br>            <p><a href="https://blog.csdn.net/weixin_37480339/article/details/80895441" rel="noopener" target="_blank">安装激活教程</a></p><br><br><p>注：安装myeclipse会自动安装java。</p><br><br><p>激活工具闪退，是由于没有运行的java环境，只要把java的bin文件夹加入环境变量，再重新激活就好了。</p><br><br><p>不知道java安装目录的查找方法：</p><br><br><p>首先：windows—-&gt;preferences</p><br><br><p>然后：java—-&gt;installed JREs</p><br><br><p>最后：打开箭头所示的路径，进入bin文件夹，将路径加入环境变量</p><br><br><p><img alt class="has" height="200" src="20190303092846194.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="490"></p><br>          </div>
 
           
         
@@ -1990,7 +1768,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2034,50 +1812,14 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">85</span>
+                    <span class="site-state-item-count">103</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">0</span>
-                    <span class="site-state-item-name">分类</span>
-                  
-                </div>
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
               
             </nav>
           

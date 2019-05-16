@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/RegConnectRegistry函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81161843/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -369,7 +369,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/05/RegConnectRegistry函数/" class="post-title-link" itemprop="url">RegConnectRegistry函数</a>
+                <a href="/2019/05/16/81161843/" class="post-title-link" itemprop="url">线段树----hdoj 1754 I here it</a>
               
             
           </h1>
@@ -394,24 +394,12 @@
                 
               
 
-              <time title="创建时间：2018-07-05 16:04:58" itemprop="dateCreated datePublished" datetime="2018-07-05T16:04:58+08:00">2018-07-05</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:56" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:34" itemprop="dateModified" datetime="2019-05-09T15:40:34+08:00">2019-05-09</time>
               
             
           </span>
@@ -447,19 +435,7 @@
       
         
           
-            <p>   RegConnectRegistry函数在另一台计算机上建立到预定义注册表键的连接。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**LONG RegConnectRegistry( LPCTSTR**_ [lpMachineName]()_**, **// 计算机名称 ** HKEY**_ [hKey]()_**, **// 预定义的注册表处理 ** PHKEY**_ [phkResult]()_ // 用于远程关键句柄的缓冲区。 **);**</span><br></pre></td></tr></table></figure>
-<p>参数</p>
-<p>lpMachineName：指向指定远程计算机名称的空终止字符串的指针。如果该参数为空，则使用本地计算机名。</p>
-<p>hkey：指定远程计算机上的下列预定义键之一。  </p>
-<p>HKEY_LOCAL_MACHINE  </p>
-<p>HKEY_USERS  </p>
-<p>Windows NT / 2000 / XP:HKEY_PERFORMANCE_DATA  </p>
-<p>Windows 95/98 / Me:HKEY_DYN_DATA  </p>
-<p>Windows 95/98 / Me:HKEY_CURRENT_CONFIG  </p>
-<p>不能为该参数指定HKEY_CLASSES_ROOT或HKEY_CURRENT_USER值。  </p>
-<p>phkResult：指向一个变量的指针，该变量接收一个关键句柄，用于识别远程计算机上的预定义句柄。返回值  </p>
-<p>如果函数成功，返回值为ERROR_SUCCESS。如果函数失败，返回值是Winerror.h中定义的非零错误代码。可以使用FormatMessage函数和FORMAT_MESSAGE_FROM_SYSTEM标志来获得错误的通用描述。   </p>
+            <div class="htmledit_views" id="content_views"><br>            <p>题目表述：</p><br><br><h1><span style="color:#1a5cc8;">I Hate It</span></h1><br><br><p><strong><strong><span style="color:#008000;">Time Limit: 9000/3000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others)<br><br>Total Submission(s): 96882    Accepted Submission(s): 36592</span></strong></strong></p><br><br><p><span style="color:#7ca9ed;"><strong>Problem Description</strong></span></p><br><br><p><span style="color:#000000;">很多学校流行一种比较的习惯。老师们很喜欢询问，从某某到某某当中，分数最高的是多少。<br><br>这让很多学生很反感。<br><br>不管你喜不喜欢，现在需要你做的是，就是按照老师的要求，写一个程序，模拟老师的询问。当然，老师有时候需要更新某位同学的成绩。</span></p><br><br><p><span style="color:#7ca9ed;"><strong>Input</strong></span></p><br><br><p><span style="color:#000000;">本题目包含多组测试，请处理到文件结束。<br><br>在每个测试的第一行，有两个正整数 N 和 M ( 0&lt;N&lt;=200000,0&lt;M&lt;5000 )，分别代表学生的数目和操作的数目。<br><br>学生ID编号分别从1编到N。<br><br>第二行包含N个整数，代表这N个学生的初始成绩，其中第i个数代表ID为i的学生的成绩。<br><br>接下来有M行。每一行有一个字符 C (只取’Q’或’U’) ，和两个正整数A，B。<br><br>当C为’Q’的时候，表示这是一条询问操作，它询问ID从A到B(包括A,B)的学生当中，成绩最高的是多少。<br><br>当C为’U’的时候，表示这是一条更新操作，要求把ID为A的学生的成绩更改为B。</span></p><br><br><p><span style="color:#7ca9ed;"><strong>Output</strong></span></p><br><br><p><span style="color:#000000;">对于每一次询问操作，在一行里面输出最高成绩。</span></p><br><br><p><span style="color:#7ca9ed;"><strong>Sample Input</strong></span></p><br><br><p><span style="color:#000000;">5<br><br>6 1 2 3 4 5<br><br>Q 1 5<br><br>U 3 6<br><br>Q 3 4<br><br>Q 4 5<br><br>U 2 9<br><br>Q 1 5</span></p><br><br><p><span style="color:#7ca9ed;"><strong>Sample Output</strong></span></p><br><br><p><span style="color:#000000;">5<br><br>6<br><br>5<br><br>9</span></p><br><br><p>题目分析： 因为学生的成绩的动态更新的，并且是区间查询，求区间的最大值。这是一个很明显的线段树的题目，线段树记录每一段区间的最大值。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;cstdio&gt;<br>#include&lt;algorithm&gt;<br>#include&lt;cmath&gt;<br>using namespace std;<br>const int  MAXN = 2e6+10;//学生的最大个数<br>const int  MAXNODE = 1&lt;&lt;19;//线段树节点的最多个数<br>//学生数量在最下层，我们可以根据满二叉树的性质计算所有节点的性质<br>struct {<br>    int value,right,left;//value记录区间的最大值<br>}node[MAXNODE];<br>int father[MAXN];//记录节点在二叉树中的位置<br>void BuildTree(int i,int left,int right){//建树，将树所有节点初始化为0，得到father的数据<br>    node[i].left = left;<br>    node[i].right = right;<br>    node[i].value = 0;<br>    if(left==right){<br>        father[left] = i;<br>        return ;<br>    }<br>    BuildTree(i&lt;&lt;1,left,(int) floor((right+left)/2.0));//建左数<br>    BuildTree((i&lt;&lt;1)+1,(int) floor((right+left)/2.0+1),right);//建右树<br>}<br><br>void UpdateTree(int ni){//更新树<br>    if(ni==1)return ;<br>    int fni=ni/2;<br>    int lv=node[fni&lt;&lt;1].value;<br>    int rv=node[(fni&lt;&lt;1)+1].value;<br>    node[fni].value=max(lv,rv);//得到左右孩子的最大值<br>    UpdateTree(ni/2);//更新父亲<br>}<br><br>int Max;<br>void Query(int i,int left,int right)//从i位置开始查询(left,right)区间的的最大值<br>{<br>    if(node[i].left==left&amp;&amp;node[i].right==right){//找到要查询的区间计算<br>        Max = max(Max,node[i].value);<br>        return ;<br>    }<br>    i=i&lt;&lt;1;<br>    if(left&lt;=node[i].right){//对左孩子查询<br>        if(right&lt;=node[i].right)Query(i,left,right);<br>        else Query(i,left,node[i].right);<br>    }<br>    i++;<br>    if(right&gt;=node[i].left)//对有孩子查询<br>    {<br>        if(left&gt;=node[i].left)Query(i,left,right);<br>        else Query(i,node[i].left,right);<br>    }<br>}<br><br>int main()<br>{<br>    int n,m,i,g;<br>    while(~scanf(“%d%d”,&amp;n,&amp;m)){<br>        BuildTree(1,1,n);//从1开始键树<br>        for(i=1;i&lt;=n;i++){<br>            scanf(“%d”,&amp;g);<br>            node[father[i]].value=g;//更新叶子节点<br>            UpdateTree(father[i]);//向上更新父亲节点<br>        }<br>        char par[2];<br>        int a,b;<br>        while(m–){<br>            scanf(“%s”,par);<br>            scanf(“%d%d”,&amp;a,&amp;b);<br>            if(par[0]==’Q’){<br>                Max=0;<br>                Query(1,a,b);//查询<br>                printf(“%d\n”,Max);<br>            }<br>            else{<br>                node[father[a]].value=b;//更新a学生的成绩<br>                UpdateTree(father[a]);<br>            }<br>        }<br>    }<br>    return 0;<br>}</code></pre><br><br><p> </p>          </div>
 
           
         
@@ -516,7 +492,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/RegCloseKey函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81161549/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -536,7 +512,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/05/RegCloseKey函数/" class="post-title-link" itemprop="url">RegCloseKey函数</a>
+                <a href="/2019/05/16/81161549/" class="post-title-link" itemprop="url">树状数组----poj 2352 stars</a>
               
             
           </h1>
@@ -561,24 +537,12 @@
                 
               
 
-              <time title="创建时间：2018-07-05 15:54:23" itemprop="dateCreated datePublished" datetime="2018-07-05T15:54:23+08:00">2018-07-05</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:57" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:35" itemprop="dateModified" datetime="2019-05-09T15:40:35+08:00">2019-05-09</time>
               
             
           </span>
@@ -614,13 +578,7 @@
       
         
           
-            <p>   RegCloseKey函数是释放一个对指定注册表项的句柄。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LONG RegCloseKey(</span><br><span class="line">  HKEY hKey   // 处理键关闭。</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<p>#### </p>
-<h4 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h4><p> hKey 对打开键的句柄关闭。</p>
-<p>返回值  </p>
-<p>如果函数成功，返回值为ERROR_SUCCESS。如果函数失败，返回值是Winerror.h中定义的非零错误代码。您可以使用FormatMessage函数和FORMAT_MESSAGE_FROM_SYSTEM标志来获得错误的通用描述。<br>例子代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define RTN_UNKNOWN 0 #define RTN_SERVER 1 #define RTN_WORKSTATION 2 #define RTN_NTAS 3 #define RTN_ERROR 13 DWORD GetWindowsVariant(void) &#123; #define MY_BUFSIZE 32 // Arbitrary initial value. // Dynamic allocation will be used. HKEY hKey; TCHAR szProductType[MY_BUFSIZE]; DWORD dwBufLen = MY_BUFSIZE; LONG lRet; if(RegOpenKeyEx(HKEY_LOCAL_MACHINE, TEXT(&quot;SYSTEM\\CurrentControlSet\\Control\\ProductOptions&quot;), 0, KEY_QUERY_VALUE, &amp;hKey) != ERROR_SUCCESS) return RTN_ERROR; lRet = RegQueryValueEx(hKey, TEXT(&quot;ProductType&quot;), NULL, NULL, (LPBYTE)szProductType, &amp;dwBufLen); RegCloseKey(hKey); if(lRet != ERROR_SUCCESS) return RTN_ERROR; // check product options, in order of likelihood if(lstrcmpi(TEXT(&quot;WINNT&quot;), szProductType) == 0) return RTN_WORKSTATION; if(lstrcmpi(TEXT(&quot;SERVERNT&quot;), szProductType) == 0) return RTN_SERVER; if(lstrcmpi(TEXT(&quot;LANMANNT&quot;), szProductType) == 0) return RTN_NTAS; // else return &quot;unknown variant&quot; code else return RTN_UNKNOWN; &#125;** **</span><br></pre></td></tr></table></figure>
+            <div class="htmledit_views" id="content_views"><br>            <p>题目描述：</p><br><br><p>Stars</p><br><br><table align="center"><tbody><tr><td><strong>Time Limit:</strong> 1000MS</td><br>            <td> </td><br>            <td><strong>Memory Limit:</strong> 65536K</td><br>        </tr><tr><td><strong>Total Submissions:</strong> 53181</td><br>            <td> </td><br>            <td><strong>Accepted:</strong> 22886</td><br>        </tr></tbody></table><p>Description</p><br><br><p>Astronomers often examine star maps where stars are represented by points on a plane and each star has Cartesian coordinates. Let the level of a star be an amount of the stars that are not higher and not to the right of the given star. Astronomers want to know the distribution of the levels of the stars. </p><br><br><p><img alt class="has" src="http://poj.org/images/2352_1.jpg"></p><br><br><p><br><br>For example, look at the map shown on the figure above. Level of the star number 5 is equal to 3 (it’s formed by three stars with a numbers 1, 2 and 4). And the levels of the stars numbered by 2 and 4 are 1. At this map there are only one star of the level 0, two stars of the level 1, one star of the level 2, and one star of the level 3. <br><br><br>You are to write a program that will count the amounts of the stars of each level on a given map.</p><br><br><p>Input</p><br><br><p>The first line of the input file contains a number of stars N (1&lt;=N&lt;=15000). The following N lines describe coordinates of stars (two integers X and Y per line separated by a space, 0&lt;=X,Y&lt;=32000). There can be only one star at one point of the plane. Stars are listed in ascending order of Y coordinate. Stars with equal Y coordinates are listed in ascending order of X coordinate. </p><br><br><p>Output</p><br><br><p>The output should contain N lines, one number per line. The first line contains amount of stars of the level 0, the second does amount of stars of the level 1 and so on, the last line contains amount of stars of the level N-1.</p><br><br><p>Sample Input</p><br><br><pre class="has"><br><code class="language-html">5<br>1 1<br>5 1<br>7 1<br>3 3<br>5 5</code></pre><br><br><p>Sample Output</p><br><br><pre class="has"><br><code class="language-html">1<br>2<br>1<br>1<br>0</code></pre><br><br><p>题目大意：所有点在笛卡尔坐标内，先输入点的数量N，然后已y坐标从小到大的顺序输入点的x,y坐标，要求将这些坐标分层，x&lt;=x1&amp;&amp;y&lt;=y1,的(x,y)在（x1,y1)的下面，计算(x,y)下面坐标的个数该点的层次，输出每一层点的数量，从第一层开始。只有每一个点的坐标都是唯一的，没有重叠的点。</p><br><br><p>题目分析：因为输入是按照y坐标的顺序输入，所以我们输入之后只要考虑x，计算小于x的元素的个数，我们可以用一个数组，记录c[x],每一次，查询就计算下标小于等于x的前面元素的和。这就可以用树状数组解决了，每一次输入进行更新。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;cstdio&gt;<br>#include&lt;cstring&gt;<br>using namespace std;<br>const int maxn=32005;<br>int level[maxn],cn[maxn];//level记录每层元素个数，cn树状数组，记录前缀和<br>int sum(int n)//查询n下标前面元素个数和<br>{<br>    int sum=0;<br>    while(n&gt;0)<br>    {<br>        sum+=cn[n];<br>        n-=n&amp;(-n);<br>    }<br>    return sum;<br>}<br>void add(int n)//更新树状数组n下标元素<br>{<br>    while(n&lt;=maxn)<br>    {<br>        cn[n]++;<br>        n+=n&amp;(-n);<br>    }<br>}<br>int main()<br>{<br>    int i,m,x,y;<br>    while(scanf(“%d”,&amp;m)!=EOF)<br>    {<br>        memset(level,0,sizeof(level));<br>        memset(cn,0,sizeof(cn));<br>        for(i=0;i&lt;m;i++)<br>        {<br>            scanf(“%d%d”,&amp;x,&amp;y);<br>            x++;//树状数组从1开始，因为笛卡尔坐标有0元素<br>            level[sum(x)]++;//更新对应层元素个数<br>            add(x);<br>        }<br>        for(i=0;i&lt;m;i++)<br>            printf(“%d\n”,level[i]);<br>    }<br>    return 0;<br>}</code></pre><br><br><p> </p><br><br><p> </p>          </div>
 
           
         
@@ -677,7 +635,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/03/WSASocket函数未定义和重定义错误/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81139579/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -697,7 +655,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/03/WSASocket函数未定义和重定义错误/" class="post-title-link" itemprop="url">WSASocket函数未定义和重定义错误</a>
+                <a href="/2019/05/16/81139579/" class="post-title-link" itemprop="url">莫队算法</a>
               
             
           </h1>
@@ -722,24 +680,12 @@
                 
               
 
-              <time title="创建时间：2018-07-03 19:03:46" itemprop="dateCreated datePublished" datetime="2018-07-03T19:03:46+08:00">2018-07-03</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:58" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:36" itemprop="dateModified" datetime="2019-05-09T15:40:36+08:00">2019-05-09</time>
               
             
           </span>
@@ -775,19 +721,9 @@
       
         
           
-            <p>   报错error C2065: ‘WSASocket’ : undeclared identifier</p>
-<p> 意思是WSASocket函数没有声明定义</p>
-<p> WSASocket()是：创建一个与指定传送服务提供者捆绑的套接口，可选地创建和/或加入一个套接口组。</p>
-<p> 此函数为socket（）的扩展版本，其功能都是创建一个原始套接字。使用时需要包含</p>
-<p> winsock2.h 头文件和链接ws2_32.lib库。</p>
-<p> 刚开始我的情况是再cpp文件中包含了windows.h的头文件，也链接了ws2_32.lib库，然后出现没有定义的错误，后来我通过百度查到其需要包含winsock2.h的头文件然后我再windows.h后面又包含了winsock2.h的头文件，但是出现的报错就更多了，报错如下：</p>
-<p> c:\program files\microsoft visual studio\vc98\include\winsock2.h(99) : error C2011: ‘fd_set’ : ‘struct’ type redefinition<br> c:\program files\microsoft visual studio\vc98\include\winsock2.h(134) : warning C4005: ‘FD_SET’ : macro redefinition<br> c:\program files\microsoft visual studio\vc98\include\winsock.h(84) : see previous definition of ‘FD_SET’</p>
-<p> 。。。。。。。。（还有好多）</p>
-<p> 然后我将winsock2.h的头文件删了，又到百度找答案，然后查到一篇博文说他误打误撞在winsock.h的头文件中包含stdafx.h头文件，我也试了一下，但是还是不行，可能是我的文件不同吧，因为编译之后我说stdafx.h没有定义，我找一下放头文件的文件夹是没有这个文件，我不至于这样就到网上找找一个包含进去吧，然后我打开我引入的头文件windows.h看了一下，里面包含了winsock.h，然后我到MSDN Library 找才知道winsock2.h是winsock.h的升级版，不能放在一起用，所以我就将winsock2.和定义到windows.h文件的前面，然后就可以了。</p>
-<p> 最后我打开winsock2.h和winsock.h两个文件，发现他们的宏定义是这样的</p>
-<p> <img src="https://img-blog.csdn.net/20180703185814153?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p> winsock2.h中定义了winsock.h的宏，说明如果先引入了winsock2.h同文件再引入winsock.h头文件，编译器是不会去编译winsock.h头文件的，如果倒过来就不同，并且会出现很多错误，是因为winsock.h和winsock2.h存在很多相同的定义或者其它。其实在winsock2.h文件中就能找到答案，下图“阻止包含windows.h中的winsock.h”。</p>
-<p> <img src="https://img-blog.csdn.net/20180703190149690?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
+            <div class="htmledit_views" id="content_views"><br>            <p>莫队算法是一种解决区间问题的算法，是一种很优的暴力算法。</p><br><br><p>莫队算法的基本思想是，知道一个区间[l,r]的一些信息，就可以在很短的时间内求出它的扩展区间的一些信息。</p><br><br><p>算法讲解挺详细的链接<a href="https://wenku.baidu.com/view/18b86cdc763231126fdb114f.html?from=search" rel="noopener" target="_blank">点击跳转到百度文库pdf文档</a></p><br><br><h2>题目描述</h2><br><br><p>Given a sequence of integers a1, a2, …, an and q pairs of integers (l1, r1), (l2, r2), …, (lq, rq), find count(l1, r1), count(l2, r2), …, count(lq, rq) where count(i, j) is the number of different integers among a1, a2, …, ai, aj, aj + 1, …, an.</p><br><br><h2>输入描述:</h2><br><br><pre class="has"><br><code class="language-html">The input consists of several test cases and is terminated by end-of-file.<br>The first line of each test cases contains two integers n and q.<br>The second line contains n integers a1, a2, …, an.<br>The i-th of the following q lines contains two integers li and ri.</code></pre><br><br><h2>输出描述:</h2><br><br><pre class="has"><br><code class="language-html">For each test case, print q integers which denote the result.</code></pre><br><br><p> </p><br><br><p>示例1</p><br><br><h2>输入</h2><br><br><p><a>复制</a></p><br><br><pre class="has"><br><code class="language-html">3 2<br>1 2 1<br>1 2<br>1 3<br>4 1<br>1 2 3 4<br>1 3</code></pre><br><br><h2>输出</h2><br><br><p><a>复制</a></p><br><br><pre class="has"><br><code class="language-html">2<br>1<br>3</code></pre><br><br><h2>备注:</h2><br><br><pre class="has"><br><code class="language-html"><em> 1 ≤ n, q ≤ 105
+</em> 1 ≤ ai ≤ n<br><em> 1 ≤ li, ri ≤ n
+</em> The number of test cases does not exceed 10.</code></pre><br><br><p>题目意思是给定一个序列，输入下标（i，j)计算序列不包括区间（i，j）之后的不同数字的个数。</p><br><br><p>首先用暴力求解：直接对于每一个样例进行去掉中间区间再进行遍历</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>using namespace std;<br>const int maxn=100005;<br>int q,m;<br>int s[maxn],rec[maxn],Ans[manx];<br>struct Par{int lef,rig}par[maxn];<br>int main()<br>{<br>    int i,j;<br>    while(scanf(“%d%d”,&amp;q,&amp;m)!=EOF)<br>    {<br>        memset(Ans,0,sizeof(Ans));<br>        for(i=0;i&lt;q;i++)<br>        {<br>            scanf(“%d”,&amp;s[i]);<br>        }<br>        for(i=0;i&lt;m;i++)<br>        {<br>            scanf(“%d%d”,&amp;par[i].lef,&amp;par[i].rig);<br>        }<br>        for(i=0;i&lt;m;i++)<br>        {<br>            memset(rec,0,sizoef(rec));<br>            for(j=0;j&lt;par[i].lef;j++)<br>            {<br>                if(rec[j]==0)<br>                    Ans[i]++;<br>                rec[j]=1;<br>            }<br>            for(j=par[i].rig;j++)<br>            {<br>                if(rec[j]==0)<br>                    Ans[i]++;<br>                rec[j]=1;<br>            }<br>        }<br>        for(j=0;j&lt;m;j++)<br>            printf(“%d\n”,Ans[j]);<br>    }<br>    return 0;<br>}</code></pre><br><br><p>提交的结果是运行超时。</p><br><br><p>莫队算法，同样是暴力但是它是根据知道了区间O(1)的时间去求它旁边的区间。</p><br><br><p>其算法思路是这样的，先将n个元素的序列分成sqrt（n）组，然后对查询区间先根据左端点所在的组排序，然后再根据右端点排序，再进行查询，每一次查询都使用前面得到的查询结果进行更新。</p><br><br><p>下面代码的思路是：先对整个序列进项查询，记录不同数组的总数，然后减去莫队算法得到的中间区间的总数，但是提交还是超时的，不过可以看出时间复杂度要比之前的暴力要更少。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;algorithm&gt;<br>#include&lt;cstring&gt;<br>#include&lt;cstdio&gt;<br>using namespace std;<br>const int maxn=100005;<br>int q,m;<br>int s[maxn],rec[maxn],md[maxn],Ans[maxn];<br>struct Par{int lef,rig,id;}par[maxn];<br>bool cmp(Par a,Par b)<br>{<br>    if(md[a.lef]!=md[b.lef])return a.lef&lt;b.lef;<br>    return a.rig&lt;b.rig;<br>}<br>void solve()<br>{<br>    int i,lef=1,rig=1,ans=0;<br>    for(i=1;i&lt;=m;i++)<br>    {<br>        while(lef&lt;par[i].lef)<br>            if(–rec[s[lef++]]==0)<br>                ans–;<br>        while(lef&gt;par[i].lef)<br>            if(rec[s[–lef]]++==0)<br>                ans++;<br>        while(rig&lt;par[i].rig)<br>            if(rec[s[++rig]]++==0)<br>                ans++;<br>        while(rig&gt;par[i].rig)<br>            if(–rec[s[rig–]]==0)<br>                ans–;<br>        Ans[par[i].id]=ans;<br>    }<br>    return ;<br>}<br>int main()<br>{<br>    int i,temp,total;<br>    while(scanf(“%d%d”,&amp;q,&amp;m)!=EOF)<br>    {<br>        memset(rec,0,sizeof(rec));<br>        temp=sqrt(q);<br>        total=0;<br>        for(i=1;i&lt;=q;i++)<br>        {<br>            scanf(“%d”,&amp;s[i]);<br>            md[i]=(i-1)/temp+1;<br>            if(rec[s[i]]==0)<br>            {<br>                total++;<br>                rec[s[i]]=1;<br>            }<br>        }<br>        for(i=1;i&lt;=m;i++)<br>        {<br>            scanf(“%d%d”,&amp;par[i].lef,&amp;par[i].rig);<br>            par[i].lef++;<br>            par[i].rig–;<br>            par[i].id=i;<br>        }<br>        sort(par+1,par+m+1,cmp);<br>        memset(rec,0,sizeof(rec));<br>        solve();<br>        for(i=1;i&lt;=m;i++)printf(“%d\n”,total-Ans[i]);<br>    }<br>    return 0;<br>}</code></pre><br><br><p> 下面的代码是优化后的莫队排序，通过直接计算两边区间的总数得到答案。提交时通过的，但是运行的时间和时间限制很接近，所以莫队算法并不是解这道题的最优算法。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;algorithm&gt;<br>#include&lt;cstring&gt;<br>#include&lt;cstdio&gt;<br>using namespace std;<br>const int maxn=100005;<br>int q,m;<br>int s[maxn],rec[maxn],md[maxn],Ans[maxn];<br>struct Par{int lef,rig,id;}par[maxn];<br>bool cmp(Par a,Par b)<br>{<br>    if(md[a.lef]!=md[b.lef])return a.lef&lt;b.lef;<br>    return a.rig&lt;b.rig;<br>}<br>void solve()<br>{<br>    int i,lef=0,rig=q+1,ans=0;<br>    for(i=1;i&lt;=m;i++)<br>    {<br>        while(rig&lt;par[i].rig)<br>        {<br>            rec[s[rig]]–;<br>            if(rec[s[rig]]==0)<br>                ans–;<br>            rig++;<br>        }<br>        while(rig&gt;par[i].rig)<br>        {<br>            rig–;<br>            if(rec[s[rig]]==0)<br>                ans++;<br>            rec[s[rig]]++;<br>        }<br>        while(lef&lt;par[i].lef)<br>        {<br>            lef++;<br>            if(rec[s[lef]]==0)<br>                ans++;<br>            rec[s[lef]]++;<br>        }<br>        while(lef&gt;par[i].lef)<br>        {<br>            rec[s[lef]]–;<br>            if(rec[s[lef]]==0)<br>                ans–;<br>            lef–;<br>        }<br>        Ans[par[i].id]=ans;<br>    }<br>    return ;<br>}<br>int main()<br>{<br>    int i,temp;<br>    while(scanf(“%d%d”,&amp;q,&amp;m)!=EOF)<br>    {<br>        memset(rec,0,sizeof(rec));<br>        memset(Ans,0,sizeof(Ans));<br>        temp=sqrt(q);<br>        for(i=1;i&lt;=q;i++)<br>        {<br>            scanf(“%d”,&amp;s[i]);<br>            md[i]=(i-1)/temp+1;<br>        }<br>        for(i=1;i&lt;=m;i++)<br>        {<br>            scanf(“%d%d”,&amp;par[i].lef,&amp;par[i].rig);<br>            par[i].id=i;<br>        }<br>        sort(par+1,par+m+1,cmp);<br>        solve();<br>        for(i=1;i&lt;=m;i++)printf(“%d\n”,Ans[i]);<br>    }<br>    return 0;<br>}</code></pre><br><br><p> </p>          </div>
 
           
         
@@ -844,7 +780,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/03/海明校验码/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81105176/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -864,7 +800,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/03/海明校验码/" class="post-title-link" itemprop="url">海明校验码</a>
+                <a href="/2019/05/16/81105176/" class="post-title-link" itemprop="url">枚举+深搜----poj 3279 Fliptile</a>
               
             
           </h1>
@@ -889,24 +825,12 @@
                 
               
 
-              <time title="创建时间：2018-07-03 12:46:33" itemprop="dateCreated datePublished" datetime="2018-07-03T12:46:33+08:00">2018-07-03</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:59" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:37" itemprop="dateModified" datetime="2019-05-09T15:40:37+08:00">2019-05-09</time>
               
             
           </span>
@@ -942,16 +866,7 @@
       
         
           
-            <p>   基本思想：将有效信息位按某种规律分成若干组，每组安排一个校验位进行奇偶测试。在一个数据位组中加入几个校验位，增大数据代码间的码距，当某一位发生变化时会引起校验结果发生变化，不同代码微商的凑无会得到不同的校验结果。</p>
-<p> 校验码的位数：设位数为N位，其中有效信息为k位，校验位为r位，分成r组奇偶校验，能产生r位验错信息，这r位信息就构成了一个二进制数的指误字，能指出2∧r-1位错误。所以N=k+r&lt;=2∧r-1</p>
-<p> 有效信息分组规律：若海明校验码有m位，最高为第m位，最低为第1位，即H[m]、H[m-1]… … H[2]、H[1],其中中括号里面的数为位号数，位号数等于2的次方的那些位（即1（2^0）、2(2^1)、4(2^2)、… …2^(r-1)位），作为奇偶校验位，并记为P1、P2……Pr，余下的位则为有效信息位。校验位与有效信息位之和为m。</p>
-<p> 每一位海明码由某些校验位所校验：即第i位由校验位位号之和等于i的那些校验位所校验。如下表：</p>
-<p> 海明校验 占用校 备注<br>码位号 验位号<br>1 1 1=1<br>2 2 2=2<br>3 1，2  3=1+2<br>4 4 4=4<br>5 1，4 5=1+4<br>6 2，4 6=2+4<br>7 1，2，4 7=1+2+4</p>
-<p> 海明码的编码、查找、纠错原理：</p>
-<p> 设有4位有效信息b1、b2、b3、b4和3位校验码P1、P2、P3<br> 海明校验<br> 码序号 1 2 3 4 5 6 7 出错位<br> 含义 P1 P2 b1 P2 b2 b3 b4 指误字 无错误 1 2 3 4 5 6 7<br> 第一组 <em> </em> <em> </em> G1 0 1 0 1 0 1 0 1<br> 第二组 <em> </em> <em> </em> G2 0 0 1 1 0 0 1 1</p>
-<p> 第三组 <em> </em> <em> </em> G3 0 0 0 0 1 1 1 1</p>
-<p> 编码原理 ： 若有效信息b1、b2、b3、b4=1011，则先将它分别填入第3、5、6、7位，再分组进行奇偶统计，分别将值填入校验位P1、P2、P3。这里分组采用偶校验，因此要确保三组校验位的取值都满足偶校验规则。例如第一组有P1b1b2b4，已含有偶数个1，因此P1应为0，以确保第一组为偶性。由此可得P1 P2 b1 P2 b2 b3 b4=0110011。</p>
-<p> 差错和纠错原理 ：计算G1=P1⊕b1⊕b2⊕b4;G2=P2⊕b1⊕b3⊕b4;G3=P2⊕b2⊕b3⊕b4;得到的G1G2G3的值就是出错位的二进制码序号，如G1G2G2=001，说明出错位的码序号是1。</p>
+            <div class="htmledit_views" id="content_views"><br>            <p>题目描述：</p><br><br><p>Fliptile</p><br><br><table align="center"><tbody><tr><td><strong>Time Limit:</strong> 2000MS</td><br>            <td> </td><br>            <td><strong>Memory Limit:</strong> 65536K</td><br>        </tr><tr><td><strong>Total Submissions:</strong> 15598</td><br>            <td> </td><br>            <td><strong>Accepted:</strong> 5712</td><br>        </tr></tbody></table><p>Description</p><br><br><p>Farmer John knows that an intellectually satisfied cow is a happy cow who will give more milk. He has arranged a brainy activity for cows in which they manipulate an <em>M</em> × <em>N</em> grid (1 ≤ <em>M</em> ≤ 15; 1 ≤ <em>N</em> ≤ 15) of square tiles, each of which is colored black on one side and white on the other side.</p><br><br><p>As one would guess, when a single white tile is flipped, it changes to black; when a single black tile is flipped, it changes to white. The cows are rewarded when they flip the tiles so that each tile has the white side face up. However, the cows have rather large hooves and when they try to flip a certain tile, they also flip all the adjacent tiles (tiles that share a full edge with the flipped tile). Since the flips are tiring, the cows want to minimize the number of flips they have to make.</p><br><br><p>Help the cows determine the minimum number of flips required, and the locations to flip to achieve that minimum. If there are multiple ways to achieve the task with the minimum amount of flips, return the one with the least lexicographical ordering in the output when considered as a string. If the task is impossible, print one line with the word “IMPOSSIBLE”.</p><br><br><p>Input</p><br><br><p>Line 1: Two space-separated integers: <em>M</em> and <em>N</em> <br><br>Lines 2..<em>M</em>+1: Line <em>i</em>+1 describes the colors (left to right) of row i of the grid with <em>N</em> space-separated integers which are 1 for black and 0 for white</p><br><br><p>Output</p><br><br><p>Lines 1..<em>M</em>: Each line contains <em>N</em> space-separated integers, each specifying how many times to flip that particular location.</p><br><br><p>Sample Input</p><br><br><pre class="has"><br><code class="language-html">4 4<br>1 0 0 1<br>0 1 1 0<br>0 1 1 0<br>1 0 0 1</code></pre><br><br><p>Sample Output</p><br><br><pre class="has"><br><code class="language-html">0 0 0 0<br>1 0 0 1<br>1 0 0 1<br>0 0 0 0<br></code></pre><br><br><p>题目大意：奶牛翻转地板，地板有两面，一面白色一面黑色，每翻转一块地板，与该地板有公共边的地板都会随着翻转，地板是正方形。我们要求的是，给出一块地面上面铺上了地板，地板黑白面给出，要求奶牛翻转地板最少多少次能将地面全部变成白色，输出翻转数组，如果不能全部变成白色输出”IMPOSSIBLE”，如果能输出翻转数组，每一块地板用一个数据表示，翻转为1，不翻转为0，输出翻转次数最少，并且翻转数组字典序最小的数组。</p><br><br><p>题目分析：要求到这个题目的解，可以将所有地板是否翻转的情况全部列举出来，但是全部列举出来的话有2的n<em>m次方种情况，并且要将每一种情况遍历完，所需要复杂度会很庞大的。必须先将情况减少，如果先将第一行确定的话，改变第一行的状态的就只有第二行的翻转了，因此第二行的翻转情况也被固定了，第二行翻转完成之后，……依次类推，当最后一行因为倒数第二行而翻转之后，如果最后一行全部变成了白色的话那么就翻转成功了。因此我们只要把第一行的情况全部考虑一遍，后面的情况基本上是固定了的。</em></p><br><br><p>我开始用的是递归遍历，将第一行遍历，每一次的出来的情况再推导出之后所有行的情况。代码</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>#include&lt;cstring&gt;<br>using namespace std;<br>typedef struct<br>{<br>    int d[16];<br>    int total;<br>}Vis;<br>bool operator&gt;(Vis v1,Vis v2)//vis的判断<br>{<br>    if(v1.total&gt;v2.total)<br>        return true;<br>    else if(v1.total==v2.total)<br>    {<br>        for(int i=0;i&lt;16;i++)<br>        if(v1.d[i]&gt;v2.d[i])<br>            return true;<br>        else if(v1.d[i]&lt;v2.d[i])<br>            return false;<br>        else<br>            continue;<br>        return true;<br>    }<br>    else<br>        return false;<br>}<br>Vis vis,vismin;<br>int bit[16];<br>int titles[16];<br>int titles1[16];<br>bool flag;<br>int m,n;<br>void dfs(int j)<br>{<br>    if(j&gt;=m)<br>    {<br>        int i,k;<br>        memset(titles1,0,sizeof(titles1));<br>        for(i=0;i&lt;m;i++)titles1[i]=titles[i];//将title备份<br>        vis.total=0;<br>        for(k=0;k&lt;n;k++)//将vis第一行中的情况体现在title1中<br>        if(vis.d[0]&amp;bit[k])<br>        {<br>            vis.total++;//记录第一行翻转的次数<br>            if(k-1&gt;=0)titles1[0]^=bit[k-1];<br>            titles1[0]^=bit[k];<br>            if(k+1&lt;n)titles1[0]^=bit[k+1];<br>            titles1[1]^=bit[k];<br>        }<br>        for(i=1;i&lt;m;i++)//翻转第一行之后的所有行<br>        for(k=0;k&lt;n;k++)<br>        {<br>            if(titles1[i-1]&amp;bit[k])<br>            {<br>                vis.total++;//记录第一行之后要翻转次数<br>                vis.d[i]|=bit[k];<br>                titles1[i-1]^=bit[k];<br>                if(k-1&gt;=0)titles1[i]^=bit[k-1];<br>                titles1[i]^=bit[k];<br>                if(k+1&lt;n)titles1[i]^=bit[k+1];<br>                if(i&lt;m-1)titles1[i+1]^=bit[k];<br>            }<br>        }<br>        if(!titles1[m-1])//判断最后一行是否全部为0<br>        {<br>            flag=true;//为0则有解<br>            if(vismin&gt;vis)//判断是否比vismin更优<br>                vismin=vis;<br>        }<br>        for(i=1;i&lt;m;i++)//退出来的时候要将vis.d第一行后面的都置零<br>            vis.d[i]=0;<br>        return ;<br>    }<br>    vis.d[0]&amp;=~bit[j];//不翻转的情况<br>    dfs(j+1);<br>    vis.d[0]|=bit[j];//翻转的情况<br>    dfs(j+1);<br>}<br>int main()<br>{<br>    int i,j,nu;<br>    for(i=0;i&lt;16;i++)//定义bit位运算<br>        bit[i]=1&lt;&lt;i;<br>    while(cin&gt;&gt;m&gt;&gt;n&amp;&amp;(m!=0||n!=0))<br>    {<br>        flag=false;<br>        memset(titles,0,sizeof(titles));<br>        memset(vis.d,0,sizeof(titles));<br>        vis.total=0;<br>        for(i=0;i&lt;m;i++)//输入，初始化title<br>        for(j=0;j&lt;n;j++)<br>        {<br>            scanf(“%d”,&amp;nu);<br>            if(nu)<br>            titles[i]|=bit[j];<br>        }<br>        for(i=0;i&lt;m;i++)//初始化vismin<br>            vismin.d[i]=~0;<br>        vismin.total=mn;<br>        dfs(0);//对第一行从第一个元素开始深搜<br>        if(flag)<br>        for(i=0;i&lt;m;i++)<br>        {<br>            for(j=0;j&lt;n;j++)<br>                if(vismin.d[i]&amp;bit[j])<br>                    printf(“1 “);<br>                else<br>                    printf(“0 “);<br>            printf(“\n”);<br>        }<br>        else<br>            printf(“IMPOSSIBLE\n”);<br>    }<br>        return 0;<br>}</code></pre><br><br><p>上面的代码中因为考虑在递归栈中保存状态的时候会使用很大的内存，因此我用的是一个整型的以为数组存储二维状态，每一个整型数据中每一个二进制位都表示一块地板的状态和翻转的状态。</p><br><br><p>上面代码的时间复杂度和空间消耗是：</p><br><br><table align="center"><tbody><tr><td><strong>Memory:</strong> 180K</td><br>            <td> </td><br>            <td><strong>Time:</strong> 188MS</td><br>        </tr></tbody></table><p> </p><br><br><p>优化：其实在遍历第一行的所有情况的时候并不需要用递归，枚举是完全有优势的，因为枚举出来的情况是2的n<em>m次方，而从0开始到2的n</em>m次方的所有数据的二进制形式就是第一行翻转的所有情况情况，所以只要将这个数据复制给vis[0]就确定了第一行的情况了。后面的翻转的时候只i-1行的地板状态就是i行翻转的情况，然后翻转的时候就是将i与对应的地方抑或就可以实现翻转了。优化后的代码：</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;cstdio&gt;<br>#include&lt;cstring&gt;<br>using namespace std;<br>int bit[16],tit[16],n,m,flag;<br>typedef struct<br>{<br>    int d[16],t;<br>}Vis;<br>Vis vismin,vis;<br>bool operator&gt;(Vis v1,Vis v2)<br>{<br>    if(v1.t&gt;v2.t)return true;<br>    else if(v1.t==v2.t)<br>    {<br>        for(int i=0;i&lt;16;i++)<br>        if(v1.d[i]&gt;v2.d[i])return true;<br>        else if(v1.d[i]&lt;v2.d[i])return false;<br>        return true;<br>    }<br>    else return false;<br>}<br>void dfs(int tmp)<br>{<br>    int tit1[16],i,j;<br>    memcpy(tit1,tit,sizeof(tit));<br>    vis.t=0;<br>    vis.d[0]=tmp;<br>    for(i=0;i&lt;m;i++)<br>    {<br>        if(i&gt;0){<br>            vis.d[i]=tit1[i-1];<br>            tit1[i-1]=0;<br>        }<br>        tit1[i]^=(vis.d[i]&lt;&lt;1)^(vis.d[i])^(vis.d[i]&gt;&gt;1);<br>        if(i!=m-1)tit1[i+1]^=vis.d[i];<br>        tit1[i]&amp;=(1&lt;&lt;n)-1;<br>    }<br>    if(!tit1[m-1])<br>    {<br>        flag=1;<br>        for(i=0;i&lt;m;i++)<br>        for(j=0;j&lt;n;j++)<br>        if(vis.d[i]&amp;bit[j])<br>        vis.t++;<br>        if(vismin&gt;vis)<br>        vismin=vis;<br>    }<br>}<br>int main()<br>{<br>    int i,j,tmp;<br>    for(i=0;i&lt;16;i++)<br>    bit[i]=1&lt;&lt;i;<br>    scanf(“%d%d”,&amp;m,&amp;n);<br>    flag=0;<br>    vismin.t=16*16;<br>    memset(tit,0,sizeof(tit));<br>    for(i=0;i&lt;m;i++)<br>    for(j=0;j&lt;n;j++)<br>    if(scanf(“%d”,&amp;tmp)&amp;&amp;tmp)<br>    tit[i]|=bit[j];<br>    tmp=1&lt;&lt;n;<br>    for(i=0;i&lt;tmp;i++)dfs(i);<br>    if(flag)<br>    {<br>        for(i=0;i&lt;m;i++){<br>            for(j=0;j&lt;n;j++){<br>            if(vismin.d[i]&amp;bit[j])printf(“1”);<br>            else printf(“0”);<br>            if(j!=n-1)printf(“ “);<br>            }<br>        printf(“\n”);<br>        }<br>    }<br>    else printf(“IMPOSSIBLE\n”);<br>    return 0;<br>}</code></pre><br><br><p>优化后的时间空间消耗是：</p><br><br><table align="center"><tbody><tr><td><strong>Memory:</strong> 92K</td><br>            <td> </td><br>            <td><strong>Time:</strong> 0MS</td><br>        </tr></tbody></table>          </div>
 
           
         
@@ -1008,7 +923,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/word纠错设置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81066389/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1028,7 +943,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/21/word纠错设置/" class="post-title-link" itemprop="url">word纠错设置</a>
+                <a href="/2019/05/16/81066389/" class="post-title-link" itemprop="url">bfs+dfs分析----poj 3278 Catch That Cow</a>
               
             
           </h1>
@@ -1053,24 +968,12 @@
                 
               
 
-              <time title="创建时间：2018-06-21 13:58:06" itemprop="dateCreated datePublished" datetime="2018-06-21T13:58:06+08:00">2018-06-21</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:00" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:40" itemprop="dateModified" datetime="2019-05-09T15:40:40+08:00">2019-05-09</time>
               
             
           </span>
@@ -1106,12 +1009,8 @@
       
         
           
-            <p>   <img src="https://img-blog.csdn.net/20180621135651837?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p><img src="https://img-blog.csdn.net/2018062113570859?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p><img src="https://img-blog.csdn.net/20180621135718568?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p><img src="https://img-blog.csdn.net/20180621135728515?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p><img src="https://img-blog.csdn.net/20180621135738326?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p><img src="https://img-blog.csdn.net/20180621135746677?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
+            <div class="htmledit_views" id="content_views"><br>            <p>题目详情</p><br><br><p>Catch That Cow</p><br><br><table align="center"><tbody><tr><td><strong>Time Limit:</strong> 2000MS</td><br>            <td> </td><br>            <td><strong>Memory Limit:</strong> 65536K</td><br>        </tr><tr><td><strong>Total Submissions:</strong> 115430</td><br>            <td> </td><br>            <td><strong>Accepted:</strong> 36066</td><br>        </tr></tbody></table><p>Description</p><br><br><p>Farmer John has been informed of the location of a fugitive cow and wants to catch her immediately. He starts at a point <em>N</em> (0 ≤ <em>N</em> ≤ 100,000) on a number line and the cow is at a point <em>K</em> (0 ≤ <em>K</em> ≤ 100,000) on the same number line. Farmer John has two modes of transportation: walking and teleporting.</p><br><br><p><em> Walking: FJ can move from any point <em>X</em> to the points <em>X </em>- 1 or <em>X </em>+ 1 in a single minute<br>
+</em> Teleporting: FJ can move from any point <em>X</em> to the point 2 × <em>X</em> in a single minute.</p><br><br><p>If the cow, unaware of its pursuit, does not move at all, how long does it take for Farmer John to retrieve it?</p><br><br><p>Input</p><br><br><p>Line 1: Two space-separated integers: <em>N</em> and <em>K</em></p><br><br><p>Output</p><br><br><p>Line 1: The least amount of time, in minutes, it takes for Farmer John to catch the fugitive cow.</p><br><br><p>Sample Input</p><br><br><pre class="has"><br><code class="language-sio">5 17</code></pre><br><br><p>Sample Output</p><br><br><pre class="has"><br><code class="language-sio">4</code></pre><br><br><p>Hint</p><br><br><p>The fastest way for Farmer John to reach the fugitive cow is to move along the following path: 5-10-9-18-17, which takes 4 minutes.</p><br><br><p> </p><br><br><p>解题思路：刚开始看这个题目的时候我首先想到的是dfs，可能因为dfs递归比较好用，而且发现倒过来从牛到人要好弄，因为是奇数还是偶数，会影响搜索路口。奇数的话一定是从加减过来的，而偶数如果要加减的话，就要一次执行两次加减才能再次除二，而且如果执行两次减再除和执行一次除再减一次效果一样后者更加优，加也一样。另外还有一种就是连加减两次以上和先除一次可能会出现歧义，所以增加了一次判断每次执行除2都与n-k相比较。我们将边界设置为n&gt;=k，因为当n&gt;k时，我们执行除法和减法都会越来越远，就只能连加n-k次；当n==k时，也就是catch的时候了。所以我就写了下面的代码，下面的代码是不行的。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;cstdio&gt;<br>#include&lt;cstring&gt;<br>#include&lt;algorithm&gt;<br>using namespace std;<br>int dfs(int n,int k)<br>{<br>    if(n&gt;=k)<br>        return n-k;<br>    if(k%2==0)<br>        return min(k-n,dfs(n,k/2)+1);<br>    else<br>        return min(dfs(n,k+1),dfs(n,k-1))+1;<br>}<br>int main()<br>{<br>    int n,k,result=0;<br>    scanf(“%d%d”,&amp;n,&amp;k);<br>    printf(“%d\n”,result+dfs(n,k));<br>    return 0;<br>}</code></pre><br><br><p>找了好久，都没有找到错误的，都找不到re的原因，后来我放弃了dfs。dicuss里面都是用的bfs。</p><br><br><p>bfs很简单，就是一个队列记录走的坐标和走的步数，然后进行层次遍历，当找到牛所在的地方就结束，这样就不会出现dfs那中没有尽头的路，或者总很长才发现不是最短的那条路，在一些特殊情况面前就要更加节约时间。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>#include&lt;cstring&gt;<br>using namespace std;<br>int n,k;<br>struct<br>{<br>    int n;<br>    int level;<br>}du[100005];//辅助dfs的队列，n表示人走到的坐标，level表示已经走的步数<br>int vis[100005];//标记数组，避免重复走相同的坐标<br>int front,rear;<br>int bfs(int n)<br>{<br>    int level;<br>    memset(vis,0,sizeof(vis));<br>    vis[n]=1;<br>    front=rear=-1;<br>    rear++;//入队操作，将第一个坐标入队<br>    du[rear].n=n;<br>    du[rear].level=0;<br>    while(rear!=front)<br>    {<br>        front++;//出队操作<br>        n=du[front].n;<br>        level=du[front].level;<br>        int m;<br>        for(int i=0;i&lt;3;i++)//向三个方向走<br>        {<br>            switch(i)<br>            {<br>                case 0:m=n+1;break;<br>                case 1:m=n-1;break;<br>                case 2:m=n*2;break;<br>            }<br>            if(m&gt;0&amp;&amp;m&lt;100005&amp;&amp;!vis[m])<br>            {<br>                rear++;//入队操作<br>                du[rear].n=m;<br>                du[rear].level=level+1;<br>                vis[m]=1;<br>                if(m==k)return level+1;//判断是否能catch<br>            }<br>        }<br>    }<br>    return 0;<br>}<br>int main()<br>{<br>    cin&gt;&gt;n&gt;&gt;k;<br>    if(n&gt;=k)<br>        cout&lt;&lt;n-k&lt;&lt;endl;//判断n&gt;k，大于则直接减法走完<br>    else<br>        cout&lt;&lt;bfs(n)&lt;&lt;endl;<br>    return 0;<br>}</code></pre><br><br><p>后来我翻看discuss中发现有人说0的情况，然后我试了一下，我前面那个dfs的方法是真的不行，于是我开始模拟0的情况，我发现0时dfs就是那种没有尽头的情况。原来其它任何元素都是有多个方法走到的，但是0，却只能通过1减过来，但是在我们第二个return的时候我们判断k+1和k-1的时候dfs会把两种情况都走完才能得到return值，因此k+1时永远也走不到0的，于是我改了一下代码，就过了。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;cstdio&gt;<br>#include&lt;cstring&gt;<br>#include&lt;algorithm&gt;<br>using namespace std;<br>int dfs(int n,int k)<br>{<br>    if(n&gt;=k)<br>        return n-k;<br>    if(k%2==0)<br>        return min(k-n,dfs(n,k/2)+1);<br>    else<br>        return min(dfs(n,k+1),dfs(n,k-1))+1;<br>}<br>int main()<br>{<br>    int n,k,result=0;<br>    scanf(“%d%d”,&amp;n,&amp;k);<br>    if(n==0)<br>        n=result=1;<br>    printf(“%d\n”,result+dfs(n,k));<br>    return 0;<br>}</code></pre><br><br><p> </p>          </div>
 
           
         
@@ -1168,7 +1067,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/设置windows10 的默认应用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81054715/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1188,7 +1087,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/21/设置windows10 的默认应用/" class="post-title-link" itemprop="url">设置windows10 的默认应用</a>
+                <a href="/2019/05/16/81054715/" class="post-title-link" itemprop="url">广度优先搜索----poj 2251 Dungeon Master</a>
               
             
           </h1>
@@ -1213,24 +1112,12 @@
                 
               
 
-              <time title="创建时间：2018-06-21 13:52:22" itemprop="dateCreated datePublished" datetime="2018-06-21T13:52:22+08:00">2018-06-21</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:00" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:41" itemprop="dateModified" datetime="2019-05-09T15:40:41+08:00">2019-05-09</time>
               
             
           </span>
@@ -1266,10 +1153,7 @@
       
         
           
-            <p>   先按win键</p>
-<p><img src="https://img-blog.csdn.net/20180621135117176?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p><img src="https://img-blog.csdn.net/20180621135125217?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p><img src="https://img-blog.csdn.net/20180621135133856?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
+            <div class="htmledit_views" id="content_views"><br>            <p><span style="color:#000000;">题目描述：</span></p><br><br><p>Dungeon Master</p><br><br><table align="center"><tbody><tr><td><strong>Time Limit:</strong> 1000MS</td><br>            <td> </td><br>            <td><strong>Memory Limit:</strong> 65536K</td><br>        </tr><tr><td><strong>Total Submissions:</strong> 46622</td><br>            <td> </td><br>            <td><strong>Accepted:</strong> 17566</td><br>        </tr></tbody></table><p>Description</p><br><br><p>You are trapped in a 3D dungeon and need to find the quickest way out! The dungeon is composed of unit cubes which may or may not be filled with rock. It takes one minute to move one unit north, south, east, west, up or down. You cannot move diagonally and the maze is surrounded by solid rock on all sides. <br><br><br>Is an escape possible? If yes, how long will it take? </p><br><br><p>Input</p><br><br><p>The input consists of a number of dungeons. Each dungeon description starts with a line containing three integers L, R and C (all limited to 30 in size). <br><br>L is the number of levels making up the dungeon. <br><br>R and C are the number of rows and columns making up the plan of each level. <br><br>Then there will follow L blocks of R lines each containing C characters. Each character describes one cell of the dungeon. A cell full of rock is indicated by a ‘#’ and empty cells are represented by a ‘.’. Your starting position is indicated by ‘S’ and the exit by the letter ‘E’. There’s a single blank line after each level. Input is terminated by three zeroes for L, R and C.</p><br><br><p>Output</p><br><br><p>Each maze generates one line of output. If it is possible to reach the exit, print a line of the form </p><br><br><blockquote>Escaped in x minute(s).</blockquote><br><br><p><br><br>where x is replaced by the shortest time it takes to escape. <br><br>If it is not possible to escape, print the line </p><br><br><blockquote>Trapped!</blockquote><br><br><p>Sample Input</p><br><br><pre class="has"><br><code class="language-sio">3 4 5<br>S….<br>.###.<br>.##..<br>###.#<br><br>#####<br>#####<br>##.##<br>##…<br><br>#####<br>#####<br>#.###<br>####E<br><br>1 3 3<br>S##<br>#E#<br>###<br><br>0 0 0<br></code></pre><br><br><p>Sample Output</p><br><br><pre class="has"><br><code class="language-sio">Escaped in 11 minute(s).<br>Trapped!</code></pre><br><br><p>Description - 题目描述<br><br>[NWUACM] <br><br>你被困在一个三维的空间中,现在要寻找最短路径逃生！<br><br>空间由立方体单位构成<br><br>你每次向上下前后左右移动一个单位需要一分钟<br><br>你不能对角线移动并且四周封闭<br><br>是否存在逃出生天的可能性？如果存在，则需要多少时间？<br><br><br><br>Input - 输入<br><br>　　输入第一行是一个数表示空间的数量。<br><br>　　每个空间的描述的第一行为L，R和C（皆不超过30）。<br><br>　　L表示空间的高度。<br><br>　　R和C分别表示每层空间的行与列的大小。<br><br>　　随后L层地牢，每层R行，每行C个字符。<br><br>　　每个字符表示空间的一个单元。’#’表示不可通过单元，’.’表示空白单元。你的起始位置在’S’，出口为’E’。<br><br>　　每层空间后都有一个空行。L，R和C均为0时输入结束。<br><br>Output - 输出<br><br>　　每个空间对应一行输出。<br><br>　　如果可以逃生，则输出如下<br><br>    Escaped in x minute(s).<br><br>　　x为最短脱离时间。<br><br>　　如果无法逃生，则输出如下</p><br><br><p>    Trapped!</p><br><br><p>解题思路：这个题目一看就是一个广度优先搜索的题目，就像迷宫求解那样搜索，只是这个题目从迷宫的二维变成了三维，搜索的方向就从以前的四个变成了六个，方法还是一样的。我写了两个函数，path是通过搜索将数据纪录在队列数组中，然后result函数向前面跳，跳到入口位置就是最短路径了。其实也可以通过在队列数组中放一个记步变量，直接获取最短路径长度。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>#include&lt;cstring&gt;<br>using namespace std;<br>typedef struct<br>{<br>    int pre;//指向它的上一个元素，路径上的前驱<br>    int l,r,c;<br>} que;<br>int front,rear;<br>int r,c,l;<br>int li,ri,ci;//入口数据<br>char dungeon[32][32][32];<br>que qu[30<em>30</em>30];//队列数组<br>int path(int li,int ri,int ci)<br>{<br>    int i,j,k,di;<br>    front=rear=-1;<br>    rear++;<br>    qu[rear].l=li;qu[rear].r=ri;<br>    qu[rear].c=ci;qu[rear].pre=-1;<br><br>    while(front!=rear)<br>    {<br>        front++;<br>        i=qu[front].l;j=qu[front].r;<br>        k=qu[front].c;<br><br>        for(di=0;di&lt;6;di++)//分别向六个方向搜索<br>        {<br>            switch(di)<br>            {<br>                case 0:i=qu[front].l-1;j=qu[front].r;k=qu[front].c;break;<br>                case 1:i=qu[front].l+1;j=qu[front].r;k=qu[front].c;break;<br>                case 2:i=qu[front].l;j=qu[front].r-1;k=qu[front].c;break;<br>                case 3:i=qu[front].l;j=qu[front].r+1;k=qu[front].c;break;<br>                case 4:i=qu[front].l;j=qu[front].r;k=qu[front].c-1;break;<br>                case 5:i=qu[front].l;j=qu[front].r;k=qu[front].c+1;break;<br>            }<br>            if(dungeon[i][j][k]==’E’)//如果是出口，将出口入队（便于计算步数），返回true<br>            {<br>                rear++;<br>                qu[rear].l=i;qu[rear].r=j;<br>                qu[rear].c=k;qu[rear].pre=front;<br>                return true;<br>            }<br>            if(dungeon[i][j][k]==’.’)//如果走的通就入队<br>            {<br>                rear++;<br>                qu[rear].l=i;qu[rear].r=j;<br>                qu[rear].c=k;qu[rear].pre=front;<br>                dungeon[i][j][k]=’#’;<br>            }<br>        }<br>    }<br>    return false;<br>}<br>int result()//得到路径<br>{<br>    int i=qu[rear].pre,res=0;<br>    while(i!=-1)<br>    {<br>        res++;<br>        i=qu[i].pre;<br>    }<br>    return res;<br>}<br>int main()<br>{<br>    int i,j,k;<br>    while(cin&gt;&gt;l&gt;&gt;r&gt;&gt;c&amp;&amp;(r||l||c))<br>    {<br>        for(i=0;i&lt;l;i++)<br>        for(j=0;j&lt;r;j++)<br>        for(k=0;k&lt;c;k++)<br>        {<br>            cin&gt;&gt;dungeon[i][j][k];<br>            if(dungeon[i][j][k]==’S’)//找到入口，纪录入口位置<br>            {<br>                li=i;ri=j;ci=k;<br>            }<br>        }<br>        if(path(li,ri,ci))<br>            cout&lt;&lt;”Escaped in “&lt;&lt;result()&lt;&lt;” minute(s).”&lt;&lt;endl;<br>        else<br>            cout&lt;&lt;”Trapped!”&lt;&lt;endl;<br>    }<br>    return 0;<br>}<br></code></pre><br><br><p> </p>          </div>
 
           
         
@@ -1326,7 +1210,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/window10设置文件的默认打开方式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81053100/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1346,7 +1230,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/21/window10设置文件的默认打开方式/" class="post-title-link" itemprop="url">window10设置文件的默认打开方式</a>
+                <a href="/2019/05/16/81053100/" class="post-title-link" itemprop="url">深度优先搜索----poj 1321棋盘问题</a>
               
             
           </h1>
@@ -1371,24 +1255,12 @@
                 
               
 
-              <time title="创建时间：2018-06-21 13:49:52" itemprop="dateCreated datePublished" datetime="2018-06-21T13:49:52+08:00">2018-06-21</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:01" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:42" itemprop="dateModified" datetime="2019-05-09T15:40:42+08:00">2019-05-09</time>
               
             
           </span>
@@ -1424,12 +1296,7 @@
       
         
           
-            <p>   //以下是设置图片管理器的默认文件打开方式</p>
-<p><img src="https://img-blog.csdn.net/20180621134842496?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt><img src="https://img-blog.csdn.net/20180621134850950?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p><img src="https://img-blog.csdn.net/20180621134858517?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p><img src="https://img-blog.csdn.net/2018062113491220?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
-<p><img src="https://img-blog.csdn.net/20180621134922745?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>左键点击“保存”然后退出。  </p>
+            <div class="htmledit_views" id="content_views"><br>            <p><span style="color:#333333;">题目描述</span></p><br><br><p>棋盘问题</p><br><br><table align="center"><tbody><tr><td><strong>Time Limit:</strong> 1000MS</td><br>            <td> </td><br>            <td><strong>Memory Limit:</strong> 10000K</td><br>        </tr><tr><td><strong>Total Submissions:</strong> 63237</td><br>            <td> </td><br>            <td><strong>Accepted:</strong> 30234</td><br>        </tr></tbody></table><p>Description</p><br><br><p>在一个给定形状的棋盘（形状可能是不规则的）上面摆放棋子，棋子没有区别。要求摆放时任意的两个棋子不能放在棋盘中的同一行或者同一列，请编程求解对于给定形状和大小的棋盘，摆放k个棋子的所有可行的摆放方案C。</p><br><br><p>Input</p><br><br><p>输入含有多组测试数据。 <br><br>每组数据的第一行是两个正整数，n k，用一个空格隔开，表示了将在一个n*n的矩阵内描述棋盘，以及摆放棋子的数目。 n &lt;= 8 , k &lt;= n <br><br>当为-1 -1时表示输入结束。 <br><br>随后的n行描述了棋盘的形状：每行有n个字符，其中 # 表示棋盘区域， . 表示空白区域（数据保证不出现多余的空白行或者空白列）。 </p><br><br><p>Output</p><br><br><p>对于每一组数据，给出一行输出，输出摆放的方案数目C （数据保证C&lt;2^31）。</p><br><br><p>Sample Input</p><br><br><pre class="has"><br><code class="language-sio">2 1<br>#.<br>.#<br>4 4<br>…#<br>..#.<br>.#..<br>#…<br>-1 -1<br></code></pre><br><br><p>Sample Output</p><br><br><pre class="has"><br><code class="language-sio">2<br>1<br></code></pre><br><br><p>Source</p><br><br><p><span style="color:#000000;">解题思路：从问题出发，可以看出是一个搜索问题，棋盘是不规则的，而且棋子也不一定是排满的。需要对每一个位置进行可不可以下棋搜索，如果可以下，要考虑是否安排下棋。考虑到一行或者一列不能下两个棋子，对没行进行搜索，搜索到可以下的行需要考虑是否将棋子下入改行。最后考虑边界，停止搜索的边界有两个：一棋盘的边界n、二棋子下完的边界k。</span></p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>using namespace std;<br>int way,result;//way表示已排多少棋子，result表示结果<br>int n,k;<br>int temp[10];//标记列是否已有棋子<br>char ch[10][10];<br>void dps(int l)//深度优先搜索函数<br>{<br>    if(way==k)//棋子排满边界<br>    {<br>        result++;<br>        return ;<br>    }<br>    if(l&gt;=n)//设置数组边界<br>    {<br>        return ;<br>    }<br>    for(int i=0;i&lt;n;i++)//考虑第l列的情况<br>    {<br>        if(ch[l][i]==’#’&amp;&amp;temp[i]==0)<br>        {<br>            temp[i]=1;<br>            way++;<br>            dps(l+1);//将搜索的节点计算入内的情况<br>            temp[i]=0;//不将节点计算入内的情况<br>            way–;<br>        }<br>    }<br>    dps(l+1);//不考虑第l列的情况<br>}<br>int main()<br>{<br>    int i,j;<br>    while(cin&gt;&gt;n&gt;&gt;k&amp;&amp;(n!=-1||k!=-1))<br>    {<br>        //初始化<br>        way=0;result=0;<br>        for(i=0;i&lt;n;i++)<br>        for(j=0;j&lt;n;j++)<br>        cin&gt;&gt;ch[i][j];<br>        //从第0行开始深度优先搜索<br>        dps(0);<br>        cout&lt;&lt;result&lt;&lt;endl;<br>    }<br>    return 0;<br>}<br></code></pre><br><br><p> </p>          </div>
 
           
         
@@ -1486,7 +1353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/设置windows10相应文件格式的打开方式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80933368/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1506,7 +1373,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/21/设置windows10相应文件格式的打开方式/" class="post-title-link" itemprop="url">设置windows10相应文件格式的打开方式</a>
+                <a href="/2019/05/16/80933368/" class="post-title-link" itemprop="url">GetModuleFileName函数</a>
               
             
           </h1>
@@ -1531,24 +1398,12 @@
                 
               
 
-              <time title="创建时间：2018-06-21 13:46:38" itemprop="dateCreated datePublished" datetime="2018-06-21T13:46:38+08:00">2018-06-21</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:03" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:43" itemprop="dateModified" datetime="2019-05-09T15:40:43+08:00">2019-05-09</time>
               
             
           </span>
@@ -1584,22 +1439,7 @@
       
         
           
-            <p>   上一篇我们讲到了卸载自带软件的方法，其原因就是打开方式不能根据自己想要的方式打开。而这里正是解决这个问题的更加符合要求的方式。</p>
-<p>设置某格式打开方式是如下：</p>
-<p>//该经验是设置将图片管理器设置可以打开.gif后缀文件，其它文件格式可以依次类推</p>
-<p>首先我们按win+r键打开运行窗口如下：</p>
-<p><img src="https://img-blog.csdn.net/20180621134300451?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>然后我们打开注册表编辑器，在运行窗口中输入regedit点击确认，具体操作如上图</p>
-<p>找到目录</p>
-<p>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsPhoto Viewer\Capabilities\FileAssociations</p>
-<p>如下：</p>
-<p><img src="https://img-blog.csdn.net/20180621134454800?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt><img src="https://img-blog.csdn.net/20180621134501104?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p><img src="https://img-blog.csdn.net/20180621134518442?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p><img src="https://img-blog.csdn.net/20180621134530866?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>将新值设置为.gif后在右键点击文件然后左键点击“_修改_”</p>
-<p><img src="https://img-blog.csdn.net/20180621134555977?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>然后退出注册表，再右键.gif后缀的文件选择打开方式就会有图片管理器选项了。</p>
-<p>附：如果你想要使用Windows照片查看器查看.png后缀的文件，那么数值名称写为.png，数值数据还是为PhotoViewer.FileAssoc.Tiff。换句话说，只要你想更改任何格式的图片文件打开方式，那么数值名称就是.格式名称，数值数据一直为PhotoViewer.FileAssoc.Tiff。</p>
+            <p><div class="htmledit_views" id="content_views"><br>            <p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">GetModuleFileName函数检索指定模块的完全限定路径。</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">要指定包含模块的进程，请使用GetModuleFileNameEx函数。</span><br></span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></p><pre class="syntax"><strong>DWORD GetModuleFileName(<br>  HMODULE</strong><em> <a class="synParam" href rel="nofollow">hModule</a></em><strong>,    </strong>// handle to module<br><strong>  LPTSTR</strong><em> <a class="synParam" href rel="nofollow">lpFilename</a></em><strong>,  </strong>// path buffer<br><strong>  DWORD</strong><em> <a class="synParam" href rel="nofollow">nSize</a></em>         // size of buffer<br><strong>);</strong></pre><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">参数</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">hModule:[in]<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">请求路径的模块的句柄。如果该参数为空，GetModuleFileName将检索当前模块的路径。</span></span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">lpFilename:[out]<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指向缓冲区的指针，该缓冲区接收模块的完全限定路径。如果字符串的长度超过了nSize参数指定的大小，则该字符串将被截断。</span><br style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></p><div class="br-height" style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></div>&lt;</div></p>
 
           
         
@@ -1656,7 +1496,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/windows10卸载自带软件的方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80930883/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1676,7 +1516,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/21/windows10卸载自带软件的方法/" class="post-title-link" itemprop="url">windows10卸载自带软件的方法</a>
+                <a href="/2019/05/16/80930883/" class="post-title-link" itemprop="url">RegQueryValueEx函数</a>
               
             
           </h1>
@@ -1701,24 +1541,12 @@
                 
               
 
-              <time title="创建时间：2018-06-21 13:37:21" itemprop="dateCreated datePublished" datetime="2018-06-21T13:37:21+08:00">2018-06-21</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:04" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:44" itemprop="dateModified" datetime="2019-05-09T15:40:44+08:00">2019-05-09</time>
               
             
           </span>
@@ -1754,39 +1582,7 @@
       
         
           
-            <p>   大部分手机用户可能因为手机自带软件对我们没有用想卸载，但是手机在没有刷机的情况下是不能卸载的。而电脑不同，但是我们想卸载的原因可能和我们想卸载手机软件是不同的，就比如说我，我当时是因为电脑自带软件打开太慢，而当时又想用自己设置的软件默认打开，但是window10的设置我设置了多次都没有用，所以就产生了想卸载它的想法。</p>
-<p>卸载自带软件的步骤如下：</p>
-<p>首先我们按window键然后在所有程序列表中找到Windows powershell文件夹打开，找到第一个Windows power shell程序，右键以管理员运行，如下图</p>
-<p><img src="https://img-blog.csdn.net/20180621133454351?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>运行结果如下</p>
-<p><img src="https://img-blog.csdn.net/20180621133524712?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>比如我们要卸载3d画图软件我们在命令行输入</p>
-<p>Get-AppxPackage <em>Paint3D</em> |Remove-AppxPackage</p>
-<p>其它的自带软件卸载命令如下：</p>
-<p>OneNote：</p>
-<p>Get-AppxPackage<em>OneNote</em> | Remove-AppxPackage</p>
-<p>3D：</p>
-<p>Get-AppxPackage<em>3d</em> | Remove-AppxPackage</p>
-<p>Camera相机：</p>
-<p>Get-AppxPackage<em>camera</em> | Remove-AppxPackage</p>
-<p>邮件和日历：</p>
-<p>Get-AppxPackage<em>communi</em> | Remove-AppxPackage</p>
-<p>新闻订阅：</p>
-<p>Get-AppxPackage<em>bing</em> | Remove-AppxPackage</p>
-<p>Groove音乐、电影与电视：</p>
-<p>Get-AppxPackage<em>zune</em> | Remove-AppxPackage</p>
-<p>人脉：</p>
-<p>Get-AppxPackage<em>people</em> | Remove-AppxPackage</p>
-<p>手机伴侣（Phone Companion）：</p>
-<p>Get-AppxPackage<em>phone</em> | Remove-AppxPackage</p>
-<p>照片：</p>
-<p>Get-AppxPackage<em>photo</em> | Remove-AppxPackage</p>
-<p>纸牌游戏：</p>
-<p>Get-AppxPackage<em>solit</em> | Remove-AppxPackage</p>
-<p>录音机：</p>
-<p>Get-AppxPackage<em>soundrec</em> | Remove-AppxPackage</p>
-<p>Xbox：</p>
-<p>Get-AppxPackage<em>xbox</em> | Remove-AppxPackage</p>
+            <p><div class="htmledit_views" id="content_views"><br>            <p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">RegQueryValueEx函数检索与开放注册表键关联的指定值名称的类型和数据。</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></p><pre class="syntax"><strong>LONG RegQueryValueEx(<br>  HKEY</strong><em> <a class="synParam" href rel="nofollow">hKey</a></em><strong>,            </strong>// handle to key<br><strong>  LPCTSTR</strong><em> <a class="synParam" href rel="nofollow">lpValueName</a></em><strong>,  </strong>// value name<br><strong>  LPDWORD</strong><em> <a class="synParam" href rel="nofollow">lpReserved</a></em><strong>,   </strong>// reserved<br><strong>  LPDWORD</strong><em> <a class="synParam" href rel="nofollow">lpType</a></em><strong>,       </strong>// type buffer<br><strong>  LPBYTE</strong><em> <a class="synParam" href rel="nofollow">lpData</a></em><strong>,        </strong>// data buffer<br><strong>  LPDWORD</strong><em> <a class="synParam" href rel="nofollow">lpcbData</a></em>      // size of data buffer<br><strong>);</strong></pre><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">参数</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">hKey：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">当前打开的密钥或以下预定义密钥之一的句柄:</span></span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></span></p><p><strong>HKEY_CLASSES_ROOT<br>HKEY_CURRENT_CONFIG<br>HKEY_CURRENT_USER<br>HKEY_LOCAL_MACHINE<br>HKEY_USERS<br>Windows NT/2000/XP: HKEY_PERFORMANCE_DATA <br>Windows XP: HKEY_PERFORMANCE_TEXT <br>HKEY_PERFORMANCE_NLSTEXT <br>Windows 95/98/Me: HKEY_DYN_DATA</strong></p><p><span style="font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;color:#2e3033;"><span style="font-size:14px;background-color:rgb(255,255,255);">lpValueName：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指向一个以null结尾的字符串的指针，该字符串包含要查询的值的名称。</span><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">如果lpValueName是NULL或空字符串“”，函数将检索键的未命名或默认值(如果有的话)的类型和数据。</span></span></span></p><p><span style="font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;color:#2e3033;"><span style="font-size:14px;background-color:rgb(255,255,255);"><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">Windows 95/98/Me:每个键都有一个默认值，最初不包含数据。在Windows 95上，默认值类型总是REG_SZ。在Windows 98上，键的默认值的类型最初是REG_SZ，但是RegSetValueEx可以指定具有不同类型的默认值。</span></span></span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">Windows NT/2000/XP:键不自动具有未命名或默认值。未命名值可以是任何类型。</span><br></p><p><span style="font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;color:#2e3033;"><span style="font-size:14px;background-color:rgb(255,255,255);">lpReserved：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">保留;必须为NULL。</span></span></span></p><p><span style="font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;color:#2e3033;"><span style="font-size:14px;background-color:rgb(255,255,255);">lpType：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指向一个变量的指针，该变量接收指示存储在指定值中的数据类型的代码。有关可能的类型代码的列表，请参见注册表值类型。如果不需要类型代码，则lpType参数可以为NULL。</span></span></span></p><p><span style="font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;color:#2e3033;"><span style="font-size:14px;background-color:rgb(255,255,255);">lpData：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指向接收该值数据的缓冲区的指针。如果不需要数据，此参数可以为空。</span></span></span></p><p><span style="font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;color:#2e3033;"><span style="font-size:14px;background-color:rgb(255,255,255);">lpcbData：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指向一个变量的指针，该变量指定lpData参数指向的缓冲区的大小(以字节为单位)。当函数返回时，该变量包含复制到lpData的数据的大小。</span><br style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></span></p><div class="br-height" style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></div>&lt;</div></p>
 
           
         
@@ -1843,7 +1639,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/ubuntu与windows10双系统安装/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80930685/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ke_yi_">
@@ -1863,7 +1659,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/20/ubuntu与windows10双系统安装/" class="post-title-link" itemprop="url">ubuntu与windows10双系统安装</a>
+                <a href="/2019/05/16/80930685/" class="post-title-link" itemprop="url">RegOpenKeyEx函数</a>
               
             
           </h1>
@@ -1888,24 +1684,12 @@
                 
               
 
-              <time title="创建时间：2018-06-20 17:17:34" itemprop="dateCreated datePublished" datetime="2018-06-20T17:17:34+08:00">2018-06-20</time>
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:05" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 15:40:44" itemprop="dateModified" datetime="2019-05-09T15:40:44+08:00">2019-05-09</time>
               
             
           </span>
@@ -1941,49 +1725,7 @@
       
         
           
-            <p>   第一步将ubuntu写入u盘</p>
-<p>安装ultralso软件，选择继续使用软件（安装系统只要制作一次，没有必要买）</p>
-<p>进入软件界面，再上面的菜单栏中选择，文件-&gt;打开</p>
-<p><img src="https://img-blog.csdn.net/20180620165434231?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
-<p>进入如下界面，然后进入你要写入u盘的ios文件所在的文件夹</p>
-<p><img src="https://img-blog.csdn.net/20180620165500125?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>选择你要写入的ios文件然后点击打开</p>
-<p><img src="https://img-blog.csdn.net/20180620165536389?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>再点击菜单栏的启动选项-&gt;写入硬盘映像</p>
-<p><img src="https://img-blog.csdn.net/20180620165554348?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>在磁盘驱动器中选择你要写入ios文件的U盘（如果不要找打开我的电脑，查看u盘的盘符）在写入方式中选择usb-hdd+</p>
-<p>然后点击便捷启动-&gt;写入新硬盘主引导纪录(MBR)-&gt;usb-hdd+</p>
-<p><img src="https://img-blog.csdn.net/20180620165715370?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
-<p><img src="https://img-blog.csdn.net/20180620165623680?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>弹出提示窗口，选择是，再弹出提示窗口，选择确认</p>
-<p><img src="https://img-blog.csdn.net/20180620165733483?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
-<p><img src="https://img-blog.csdn.net/20180620165740597?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
-<p><img src="https://img-blog.csdn.net/20180620165750275?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
-<p>再在出现的提示窗口选择是。</p>
-<p>进入如下界面，等待一段时间。</p>
-<p><img src="https://img-blog.csdn.net/20180620165813181?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt><img src="https://img-blog.csdn.net/20180620165819355?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>刻录完成点击返回。</p>
-<p>第二步安装系统</p>
-<p>u盘插到电脑上重启电脑</p>
-<p>//进入bios会根据电脑牌子的不同有不同的进入方式，可以百度。一般是f10或者f2，笔记本的话有fn键就fn+f10或fn+f2，以前我笔记本老是进不去我直接戳复位键进入的。</p>
-<p>进入u盘的bios系统，设置电脑的第一启动项为u盘，再重启电脑进入u盘系统如下图</p>
-<p>点击桌面的install</p>
-<p><img src="https://img-blog.csdn.net/20180620165849887?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
-<p>然后出现语言选择，找到汉语，点击下一步（continue）</p>
-<p><img src="https://img-blog.csdn.net/20180620165919986?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
-<p>再选择键盘布局，选择汉语或者English都可以</p>
-<p><img src="https://img-blog.csdn.net/20180620165936652?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt><br>也可以选择下面的测试键盘来测试你的键盘</p>
-<p><img src="https://img-blog.csdn.net/20180620165950650?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
-<p>然后选择继续，接下来真正进入安装系统的重要设置了</p>
-<p><img src="https://img-blog.csdn.net/20180620170007893?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
-<p>如果不是安装双系统可以不要更改，如果是安装双系统就按照上图选择</p>
-<p>点击继续</p>
-<p><img src="https://img-blog.csdn.net/20180620170023908?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
-<p>这是分区设置界面，给系统设置分区系统结构，选自空闲，然后点击+号会出现如下弹窗</p>
-<p><img src="https://img-blog.csdn.net/20180620170040714?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt><br>一般的用户没有对系统有过高要求的可以按照我的方式设置分区</p>
-<p><img src="https://img-blog.csdn.net/20180620170119221?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt>  </p>
-<p>我的是设置一个/分区15G，/swap分区1.5G，/boot分区500m，/home分区把剩下的都分给它；其它都是默认选项，然后ok。在选择主分区和逻辑分区的时候我百度了一下，然后我选择了逻辑分区。分区格式是ext4。设置好分区后就可以点击选在安装了</p>
-<p>写后感，其实以前就有装过很多次双系统的经历，而且以前在安装双系统的时候由于不是ubuntu系统还会遇到很多的安装问题，而且英文界面看不同，但是其实是大同小异的，先是制作U盘然后再安装系统，安装系统的时候做一些语言时间用户地点的简单设置，还有磁盘分区设置网络设置的一些稍微复杂一点的设置等。以前映像比较深刻的一次是centos在选择分区的时候，它不像ubuntu那样有图形界面的选择，他是通过命令行设置，而且是英文界面又看不懂，如果遇到那样的问题网上也是能找到的设置方法的。其实不能忘记的是安装windows10和centos7双系统的时候，真的是把我的意志给消磨尽了，它不仅出现了各种各样的问题卡住安装的进程，而且在安装成功后居然不能找到window10的引导了，导致安装完成后只能进入centos7系统，如果遇到这种情况也不要急，因为windows中的所有文件是没有丢失的，只要centos7系统文件格式化就可以了。但是后来我在网上找类似的经验的时候，看到一些成功的例子，虽然后来我去测试过那些解决办法，但是最后我还是没有测试成功，因为在安装的时候我又遇到了好多问题让我难以前进。这一次我写这个也有一些是因为它的失败吧。把失败或者成功的经历写下来，以后看到就能更加清晰的回忆起来当时的教训与体会。   </p>
+            <p><div class="htmledit_views" id="content_views"><br>            <p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">RegOpenKeyEx函数打开指定的注册表项。</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></p><pre class="syntax"><strong>LONG RegOpenKeyEx(<br>  HKEY</strong><em> <a class="synParam" href rel="nofollow">hKey</a></em><strong>,         </strong>// handle to open key<br><strong>  LPCTSTR</strong><em> <a class="synParam" href rel="nofollow">lpSubKey</a></em><strong>,  </strong>// subkey name<br>  <strong>DWORD</strong> <em><a class="synParam" href rel="nofollow">ulOptions</a></em><strong>,</strong>   // reserved<br><strong>  REGSAM</strong><em> <a class="synParam" href rel="nofollow">samDesired</a></em><strong>, </strong>// security access mask<br><strong>  PHKEY</strong><em> <a class="synParam" href rel="nofollow">phkResult</a></em>    // handle to open key<br><strong>);</strong></pre><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">参数</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">hkey：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">当前打开的密钥或以下预定义密钥之一的句柄</span></span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></span></p><p><strong>HKEY_CLASSES_ROOT<br>HKEY_CURRENT_CONFIG<br>HKEY_CURRENT_USER<br>HKEY_LOCAL_MACHINE<br>HKEY_USERS<br>Windows NT/2000/XP: HKEY_PERFORMANCE_DATA <br>Windows 95/98/Me: HKEY_DYN_DATA</strong></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">lpSubKey：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指向一个空终止字符串的指针，该字符串包含要打开的子键的名称。如果该参数为NULL或指向空字符串的指针，则函数将为由hKey参数标识的键打开一个新句柄。在这种情况下，函数将不会关闭先前打开的句柄。</span></span></p><p>ulOptions：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">保留;必须是零。</span><br></p><p>samDesired：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">一个访问掩码，它指定对密钥的期望访问权限。这个参数可以是以下值的组合。</span><span style="text-align:justify;">KEY_CREATE_LINK、</span><span style="text-align:justify;">KEY_CREATE_SUB_KEY、</span><span style="text-align:justify;">KEY_ENUMERATE_SUB_KEYS、</span><span style="text-align:justify;">KEY_EXECUTE、</span><span style="text-align:justify;">KEY_NOTIFY、</span><span style="text-align:justify;">KEY_QUERY_VALUE、</span><span style="text-align:justify;">KEY_SET_VALUE、</span><span style="text-align:justify;">KEY_ALL_ACCESS、</span><span style="text-align:justify;">KEY_READ、</span><span style="text-align:justify;">KEY_WOW64_64KEY、</span><span style="text-align:justify;">KEY_WOW64_32KEY、</span><span style="text-align:justify;">KEY_WRITE。</span></p><p>phkResult：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指向变量的指针，该变量接收打开的键的句柄。当您不再需要返回的句柄时，请调用RegCloseKey函数来关闭它。</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">返回值</span><br style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></p><div class="br-height" style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></div>&lt;</div></p>
 
           
         
@@ -2029,7 +1771,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2073,50 +1815,14 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">85</span>
+                    <span class="site-state-item-count">103</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">0</span>
-                    <span class="site-state-item-name">分类</span>
-                  
-                </div>
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
               
             </nav>
           
