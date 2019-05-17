@@ -349,6 +349,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81559288/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ke_yi_">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/ke_yi_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KE_YI_">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/16/81559288/" class="post-title-link" itemprop="url">SecureCRT链接失败+ubuntu中root用户登录失败</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:37" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div class="htmledit_views" id="content_views"><br>            <p>事情是这样的，前几天使用redhat的时候用到了securecrt软件登录linux终端，最近又使用ubuntu系统，在使用找这个软件的时候发现连接不了然后在找了好久终于找到了原因。</p><br><br><p>原来是Ubuntu是没有带ssh这个软件的，</p><br><br><p>//              1.sudo apt-get install openssh-server openssh-client<br><br>//　　　　2.rpm -qa | grep ssh查看SSH是否安装 若没有执行第1步<br><br>//　　　　3.service sshd status 查看是否开启 如果没有继续下面<br><br>//　　　　4.启动SSH服务 service sshd restart 停止服务 service sshd stop <br><br>//　　　　5.netstat -antp | grep sshd 查看是否启动22端口<br><br>//　　　　6.chkconfig sshd on 设置SSH服务为开机启</p><br><br><p>sudo apt install ssh  下载这个软件后是用root用户还是不能链接</p><br><br><p>思考了一下是不是密码忘了</p><br><br><p>然后我就直接gurb模式改了root密码，像前一篇文章一样</p><br><br><p>改了之后我又登，发现还是登不上，我还是怀疑密码有问题</p><br><br><p>于是打开虚拟机登了一下，发现密码还真是错的，于是又进入那个模式开始改密码，发现进去不了了</p><br><br><p>于是我找原因，其实我第一次进入的时候是在虚拟机加载界面的时候像redhat那样随便按e进入的，原来redhat还没有打开开机grub选项，于是我又找到grub的配置文件/etc/default/grub</p><br><br><p>打开/etc/default/grub文件</p><br><br><p>找到 GRUB_HIDDEN_TIMEOUT=0 这行，使用#注释掉，变成 #GRUB_HIDDEN_TIMEOUT=0</p><br><br><p> 找到 GRUB_TIMEOUT=10 把10变成3,意思是等待3秒钟。 保存文件</p><br><br><p>其实在这个过程中，还好我的本地用户在root组中，不然可能就要以其它的方式进入grub了，因为grub这个文件是readonly只读文件</p><br><br><p>sudo chmod 666 grub，更改文件权限，当然是在/etc/default文件目录下执行的</p><br><br><p>然后vi grub 然后改咯（命令模式下：i前插，a后插，x删字，dd删行，p粘贴，u撤回，hjkl移动；然后wq保存退出）</p><br><br><p>执行命令 sudo update-grub 现在启动的时候就会显示grub菜单了，如果3秒内不选择，则会自动进入系统。</p><br><br><p>有了这个以后，用上一篇文章更改，但是在下面登录的时候，老是提示要ctrl+d,然后一直循环，仔细一看说要确认密码，然后改输入，上一次没有打开Num Lock，的数字密码后enter，就进入了root了</p><br><br><p><img alt class="has" height="122" src="https://img-blog.csdn.net/20180810110103453?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="355"></p><br><br><p>更改密码以后，还是不行</p><br><br><p>于是我又找，发现下载的ssh是没有把root设置允许的,于是寻找配置文件</p><br><br><p>$ sudo vi /etc/ssh/sshd_config</p><br><br><p>找到PermitRootLogin no（prohibit password)一行，改为PermitRootLogin yes</p><br><br><p>重启 openssh server</p><br><br><p>service sshd restart</p><br><br><p>然后就可以了登陆了。</p><br><br><p> </p><br><br><p>中间参考文章</p><br><br><p><a href="https://blog.csdn.net/sfe1012/article/details/53113271" rel="noopener" target="_blank">https://blog.csdn.net/sfe1012/article/details/53113271</a></p><br><br><p><a href="https://blog.csdn.net/xiaocai9999/article/details/78012235" rel="noopener" target="_blank">https://blog.csdn.net/xiaocai9999/article/details/78012235</a></p><br><br><p><a href="https://blog.csdn.net/cnyygj/article/details/76086430" rel="noopener" target="_blank">https://blog.csdn.net/cnyygj/article/details/76086430</a></p>          </div>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81556915/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1621,149 +1764,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/81293215/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ke_yi_">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/ke_yi_head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KE_YI_">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/16/81293215/" class="post-title-link" itemprop="url">Saruman`s Army(POJ 3069)</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:54:45" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="htmledit_views" id="content_views"><br>            <p>Saruman’s Army<br><br>Time Limit: 1000MS        Memory Limit: 65536K<br><br>Total Submissions: 13974        Accepted: 7011<br><br>Description</p><br><br><p>Saruman the White must lead his army along a straight path from Isengard to Helm’s Deep. To keep track of his forces, Saruman distributes seeing stones, known as palantirs, among the troops. Each palantir has a maximum effective range of R units, and must be carried by some troop in the army (i.e., palantirs are not allowed to “free float” in mid-air). Help Saruman take control of Middle Earth by determining the minimum number of palantirs needed for Saruman to ensure that each of his minions is within R units of some palantir.</p><br><br><p>Input</p><br><br><p>The input test file will contain multiple cases. Each test case begins with a single line containing an integer R, the maximum effective range of all palantirs (where 0 ≤ R ≤ 1000), and an integer n, the number of troops in Saruman’s army (where 1 ≤ n ≤ 1000). The next line contains n integers, indicating the positions x1, …, xn of each troop (where 0 ≤ xi ≤ 1000). The end-of-file is marked by a test case with R = n = −1.</p><br><br><p>Output</p><br><br><p>For each test case, print a single integer indicating the minimum number of palantirs needed.</p><br><br><p>Sample Input</p><br><br><p>0 3<br><br>10 20 20<br><br>10 7<br><br>70 30 1 7 15 20 50<br><br>-1 -1<br><br>Sample Output</p><br><br><p>2<br><br>4</p><br><br><p>将点从小到大排序，从左边开始选点，排除覆盖的点，再从新开始选点。</p><br><br><pre class="has"><br><code class="language-cpp">#include&lt;iostream&gt;<br>#include&lt;algorithm&gt;<br>using namespace std;<br>int main()<br>{<br>    int r,n,d=0;<br>    int data[1010];<br>    while(cin&gt;&gt;r&gt;&gt;n&amp;&amp;(r!=-1||n!=-1))<br>    {<br>        d++;<br>        for(int i=0;i&lt;n;i++)<br>            cin&gt;&gt;data[i];<br>        sort(data,data+n);<br>        int i=0;<br>        int a=data[0];<br>        int b=data[n-1];<br>        int total=0;<br>        while(i&lt;n&amp;&amp;a&lt;=b)<br>        {<br>            while(i&lt;n&amp;&amp;data[i]&lt;=a+r)i++;<br>            a=data[i-1];<br>            while(i&lt;n&amp;&amp;data[i]&lt;=a+r)i++;<br>            total++;<br>            if(i&lt;n)a=data[i];<br>        }<br>        cout&lt;&lt;total&lt;&lt;endl;<br>    }<br>    return 0;<br>}<br></code></pre><br><br><p> </p>          </div>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1812,7 +1812,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

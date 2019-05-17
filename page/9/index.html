@@ -349,6 +349,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80930685/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ke_yi_">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/ke_yi_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KE_YI_">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/16/80930685/" class="post-title-link" itemprop="url">RegOpenKeyEx函数</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:05" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><div class="htmledit_views" id="content_views"><br>            <p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">RegOpenKeyEx函数打开指定的注册表项。</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></p><pre class="syntax"><strong>LONG RegOpenKeyEx(<br>  HKEY</strong><em> <a class="synParam" href rel="nofollow">hKey</a></em><strong>,         </strong>// handle to open key<br><strong>  LPCTSTR</strong><em> <a class="synParam" href rel="nofollow">lpSubKey</a></em><strong>,  </strong>// subkey name<br>  <strong>DWORD</strong> <em><a class="synParam" href rel="nofollow">ulOptions</a></em><strong>,</strong>   // reserved<br><strong>  REGSAM</strong><em> <a class="synParam" href rel="nofollow">samDesired</a></em><strong>, </strong>// security access mask<br><strong>  PHKEY</strong><em> <a class="synParam" href rel="nofollow">phkResult</a></em>    // handle to open key<br><strong>);</strong></pre><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">参数</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">hkey：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">当前打开的密钥或以下预定义密钥之一的句柄</span></span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></span></p><p><strong>HKEY_CLASSES_ROOT<br>HKEY_CURRENT_CONFIG<br>HKEY_CURRENT_USER<br>HKEY_LOCAL_MACHINE<br>HKEY_USERS<br>Windows NT/2000/XP: HKEY_PERFORMANCE_DATA <br>Windows 95/98/Me: HKEY_DYN_DATA</strong></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">lpSubKey：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指向一个空终止字符串的指针，该字符串包含要打开的子键的名称。如果该参数为NULL或指向空字符串的指针，则函数将为由hKey参数标识的键打开一个新句柄。在这种情况下，函数将不会关闭先前打开的句柄。</span></span></p><p>ulOptions：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">保留;必须是零。</span><br></p><p>samDesired：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">一个访问掩码，它指定对密钥的期望访问权限。这个参数可以是以下值的组合。</span><span style="text-align:justify;">KEY_CREATE_LINK、</span><span style="text-align:justify;">KEY_CREATE_SUB_KEY、</span><span style="text-align:justify;">KEY_ENUMERATE_SUB_KEYS、</span><span style="text-align:justify;">KEY_EXECUTE、</span><span style="text-align:justify;">KEY_NOTIFY、</span><span style="text-align:justify;">KEY_QUERY_VALUE、</span><span style="text-align:justify;">KEY_SET_VALUE、</span><span style="text-align:justify;">KEY_ALL_ACCESS、</span><span style="text-align:justify;">KEY_READ、</span><span style="text-align:justify;">KEY_WOW64_64KEY、</span><span style="text-align:justify;">KEY_WOW64_32KEY、</span><span style="text-align:justify;">KEY_WRITE。</span></p><p>phkResult：<span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">指向变量的指针，该变量接收打开的键的句柄。当您不再需要返回的句柄时，请调用RegCloseKey函数来关闭它。</span></p><p><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"><span style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);">返回值</span><br style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></span></p><div class="br-height" style="color:rgb(46,48,51);font-family:Arial, 'Microsoft YaHei', '微软雅黑', '宋体', 'Malgun Gothic', Meiryo, sans-serif;font-size:14px;line-height:18px;background-color:rgb(255,255,255);"></div>&lt;</div></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80930423/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1621,149 +1764,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/80759403/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ke_yi_">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/ke_yi_head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KE_YI_">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/16/80759403/" class="post-title-link" itemprop="url">word纠错设置</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:55:13" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="htmledit_views" id="content_views"><br>            <p><img src="https://img-blog.csdn.net/20180621135651837?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p><p></p><p><img src="https://img-blog.csdn.net/2018062113570859?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p><p></p><p><img src="https://img-blog.csdn.net/20180621135718568?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p><p></p><p><img src="https://img-blog.csdn.net/20180621135728515?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p><p></p><p><img src="https://img-blog.csdn.net/20180621135738326?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p><p><img src="https://img-blog.csdn.net/20180621135746677?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt><br></p>          </div>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1812,7 +1812,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

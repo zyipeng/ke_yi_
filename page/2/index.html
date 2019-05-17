@@ -349,6 +349,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89636370/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ke_yi_">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/ke_yi_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KE_YI_">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/16/89636370/" class="post-title-link" itemprop="url">希尔排序</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:08" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div class="htmledit_views" id="content_views"><br>            <p><strong>希尔排序思想：</strong>插入排序的一种变体。由于插入排序对于特别乱的序列排序会很糟。而它就是先将序列变成接近有序的序列。</p><br><br><p><strong>排序步骤：</strong><br><br>举例：10、16、11、4、15、3、9、6、1、17、8、12、7</p><br><br><p>（1）分组：将上面序列分为6组，按照每一组按照相隔多少取一个数，比如第一组取0号、6号、12号。如下：</p><br><br><p style="text-align:center;"><img alt class="has" height="121" src="20190428134138587.png" width="404"></p><br><br><p> （2）分组排序：对每一组进行插入排序，得到数组的状态为7、1、4、8、3、9、16、11、17、15、12、10；如下：</p><br><br><p style="text-align:center;"><img alt class="has" height="128" src="20190428134756858.png" width="277"></p><br><br><p>（3）缩小分格距离（一般缩小为上一次分组的一般），继续分组，排序，知道分组距离为1。 </p><br><br><p><strong>排序图解：</strong></p><br><br><p><img alt class="has" height="208" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556440904482&amp;di=1fd941d457b11a8a5f004ddbde41fa9a&amp;imgtype=0&amp;src=http%3A%2F%2Fimg2018.cnblogs.com%2Fblog%2F1332969%2F201812%2F1332969-20181205235841818-800963141.gif" width="477"> <img alt class="has" src="https://gss0.bdstatic.com/7LsWdDW5_xN3otebn9fN2DJv/doc/pic/item/d1a20cf431adcbef3f0b6a8ca5af2edda3cc9f78.jpg"></p><br><br><p><strong>希尔排序代码：</strong> </p><br><br><pre class="has"><br><code class="language-java">public class Sheel_Sort {<br>    //对a序列中的第first组进行排序，<br>    //这个组是从first元素开始间距为<br>    //space的位置的所有元素<br>    private static &lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void incrementalInsertionSort(T[] a,int first,int last,int space){<br>        int unsorted,i;<br>        for(unsorted=first+space;unsorted&lt;=last;unsorted=unsorted+space){<br>            T firstUnsorted=a[unsorted];<br>            for(i=unsorted-space;(i&gt;=first)&amp;&amp;(firstUnsorted.compareTo(a[i])&lt;0);i=i-space){<br>                a[i+space]=a[i];<br>            }<br>            a[i+space]=firstUnsorted;<br>        }<br>    }<br>    public static&lt;T extends Comparable&lt;? super T&gt;&gt;<br>    void shellSort(T[] a,int first,int last){<br>        int n=last-first+1;<br>        for(int space=n/2;space&gt;0;space=space/2){<br>            for(int begin=first;begin&lt;first+space;begin++){<br>                incrementalInsertionSort(a, begin, last, space);<br>            }<br>        }<br>    }<br>    public static void main(String[] args) {<br>        Integer[] a={9,8,7,6,5,4,3,2,1};<br>        Sheel_Sort.shellSort(a, 0, 8);<br>        for(Integer i:a){<br>            System.out.println(i);<br>        }<br>    }<br>}<br></code></pre><br><br><p><strong>时间复杂度：O(n^1.5) </strong>平均情况是这样，最坏情况还是n^2，如果当space为偶数时进行优化的话，可以实现搜友都是n^2<br><strong>空间复杂度：O(n)</strong></p><br>          </div>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/89567277/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1621,149 +1764,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/88084683/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ke_yi_">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/ke_yi_head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KE_YI_">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/16/88084683/" class="post-title-link" itemprop="url">myeclipse激活工具闪退问题</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-05-16 14:30:08 / 修改时间：13:53:21" itemprop="dateCreated datePublished" datetime="2019-05-16T14:30:08+08:00">2019-05-16</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="htmledit_views" id="content_views"><br>            <p><a href="https://blog.csdn.net/weixin_37480339/article/details/80895441" rel="noopener" target="_blank">安装激活教程</a></p><br><br><p>注：安装myeclipse会自动安装java。</p><br><br><p>激活工具闪退，是由于没有运行的java环境，只要把java的bin文件夹加入环境变量，再重新激活就好了。</p><br><br><p>不知道java安装目录的查找方法：</p><br><br><p>首先：windows—-&gt;preferences</p><br><br><p>然后：java—-&gt;installed JREs</p><br><br><p>最后：打开箭头所示的路径，进入bin文件夹，将路径加入环境变量</p><br><br><p><img alt class="has" height="200" src="20190303092846194.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlX3lpXw==,size_16,color_FFFFFF,t_70" width="490"></p><br>          </div>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1812,7 +1812,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
